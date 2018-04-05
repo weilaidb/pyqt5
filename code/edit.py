@@ -33,34 +33,35 @@ class Example(QWidget):
          
     def initUI(self):
          
-        title = QLabel('Title')
-        author = QLabel('Author')
-        review = QLabel('Review')
- 
-        titleEdit = QLineEdit(self)
-        authorEdit = QLineEdit(self)
-        reviewEdit = QTextEdit(self)
+        self.title = QLabel('Title')
+        self.author = QLabel('Author')
+        self.review = QLabel('Review')
+
+        self.titleEdit = QLineEdit(self)
+        self.authorEdit = QLineEdit(self)
+        self.reviewEdit = QTextEdit(self)
 
         # reviewEdit.setText("abc")
         # titleEdit.setText("aaaaaaaaaa")
         # titleEdit.s
         # titleEdit.textChanged[str].connect(self.onChangedText)
         # titleEdit.textChanged(self,str).co
-        titleEdit.textChanged[str].connect(self.onChangedText)
-        titleEdit.textChanged.connect(reviewEdit.setText)
+        # titleEdit.textChanged[str].connect(self.onTextChned)
+        self.titleEdit.textChanged.connect(self.onTextChned)
+        # titleEdit.textChanged.connect(reviewEdit.setText)
 
  
         grid = QGridLayout()
         grid.setSpacing(10)
  
-        grid.addWidget(title, 1, 0)
-        grid.addWidget(titleEdit, 1, 1)
+        grid.addWidget(self.title, 1, 0)
+        grid.addWidget(self.titleEdit, 1, 1)
  
-        grid.addWidget(author, 2, 0)
-        grid.addWidget(authorEdit, 2, 1)
+        grid.addWidget(self.author, 2, 0)
+        grid.addWidget(self.authorEdit, 2, 1)
  
-        grid.addWidget(review, 3, 0)
-        grid.addWidget(reviewEdit, 3, 1, 5, 1)
+        grid.addWidget(self.review, 3, 0)
+        grid.addWidget(self.reviewEdit, 3, 1, 5, 1)
          
         self.setLayout(grid)
          
@@ -71,10 +72,19 @@ class Example(QWidget):
         self.showMaximized()
 
     def onChangedText(self, text):
-        self.reviewEdit.setText(text)
-        self.reviewEdit.adjustSize()
+        print(text)
+        # self.review.setText(text)
+        # self.reviewEdit.setText(text)
+        # self.reviewEdit.adjustSize()
+        # self.reviewEdit.setText(text)
         # self.reviewEdit.setText(self,text);
-         
+
+    def onTextChned(self,text):
+        print(text)
+        # self.review.setText(text)
+        self.reviewEdit.setText(text);
+
+
 if __name__ == '__main__':
      
     app = QApplication(sys.argv)
