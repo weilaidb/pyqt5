@@ -38,6 +38,8 @@ class Example(QWidget):
         self.setGeometry(300, 300, 250, 150)
         self.setWindowTitle('Absolute')   
         self.show()
+        # self.showMaximized()
+        # self.showMinimized()
          
          
 if __name__ == '__main__':

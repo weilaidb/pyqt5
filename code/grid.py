@@ -48,6 +48,7 @@ class Example(QWidget):
         self.move(300, 150)
         self.setWindowTitle('Calculator')
         self.show()
+        # self.showMaximized()
          
          
 if __name__ == '__main__':
