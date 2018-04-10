@@ -39,7 +39,7 @@ class Form(QWidget):
         self.clearlineptn.clicked.connect(self.clearline)
         self.clearbroswerptn.clicked.connect(self.clearbroswer)
         self.versionptn.clicked.connect(self.showversion)
-        self.setWindowTitle("Calculate")
+        self.setWindowTitle("Python Calculater")
         self.setGeometry(300, 300, 800, 600)
         self.center()
         self.show()
