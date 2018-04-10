@@ -3,6 +3,7 @@ import  sys
 from math import  *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIcon
 # from PyQt5.QtWidgets import QApplication, QWidget, QDesktopWidget
 
 class Form(QWidget):
@@ -41,6 +42,9 @@ class Form(QWidget):
         self.versionptn.clicked.connect(self.showversion)
         self.setWindowTitle("Python Calculater")
         self.setGeometry(300, 300, 800, 600)
+        # 设置窗口图标
+        self.setWindowIcon(QIcon('icons/pyCalc.ico'))
+
         self.center()
         self.show()
 
@@ -50,7 +54,7 @@ class Form(QWidget):
     def updateUi(self):
         try:
             text = (self.lineedit.text())
-            self.browser.append("%s= <b><font color=red>%s</font></b>" % (text, eval(text)))
+            self.browser.append("%s= <b><font color=red>%s</font></b><p></p>" % (text, eval(text)))
         except:
             self.browser.append(
                 "<font color=red>%s is invalid!</font>" % text)
@@ -91,6 +95,7 @@ class Form(QWidget):
         cp = QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
+
 
 
 app = QApplication(sys.argv)
