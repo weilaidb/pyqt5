@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project hello -->
-<!-- Saved: 2018-04-03, 22:45:31 -->
+<!-- Saved: 2018-04-12, 22:19:42 -->
 <!-- Copyright (C) 2018 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -11,7 +11,7 @@
   <Version>0.1</Version>
   <Author></Author>
   <Email></Email>
-  <TranslationPattern>venv/Lib/site-packages/PyQt5/Qt/translations/qtbase_%language%.qm</TranslationPattern>
+  <TranslationPattern>venv/Lib/site-packages/PyQt5/Qt/translations/designer_%language%.qm</TranslationPattern>
   <Eol index="0"/>
   <Sources>
     <Source>__init__.py</Source>
@@ -26,10 +26,27 @@
     <Source>code/combine1.py</Source>
     <Source>code/edit.py</Source>
     <Source>code/grid.py</Source>
+    <Source>code/gui/Bank.py</Source>
+    <Source>code/gui/caculater.py</Source>
+    <Source>code/gui/cmdserverUi.py</Source>
+    <Source>code/gui/connections.py</Source>
+    <Source>code/gui/connections2.py</Source>
+    <Source>code/gui/loadafterui.py</Source>
+    <Source>code/gui/loadui.py</Source>
+    <Source>code/gui/mainwindow.after.py</Source>
+    <Source>code/gui/one_clock.py</Source>
+    <Source>code/gui/qmessagebox.py</Source>
+    <Source>code/gui/selfdefinesignals.py</Source>
+    <Source>code/gui/version.py</Source>
     <Source>code/hellp.py</Source>
     <Source>code/label.py</Source>
     <Source>code/layout.py</Source>
+    <Source>code/setup.py</Source>
     <Source>code/toolBar.py</Source>
+    <Source>code/xml/dom.xml.py</Source>
+    <Source>code/xml/xml.tree.py</Source>
+    <Source>mainwindow.after.py</Source>
+    <Source>venv/Lib/site-packages/PyQt5Singleton/__init__.py</Source>
     <Source>venv/Lib/site-packages/PyQt5/__init__.py</Source>
     <Source>venv/Lib/site-packages/PyQt5/pylupdate_main.py</Source>
     <Source>venv/Lib/site-packages/PyQt5/pyrcc_main.py</Source>
@@ -68,6 +85,69 @@
     <Source>venv/Lib/site-packages/PyQt5/uic/widget-plugins/qtquickwidgets.py</Source>
     <Source>venv/Lib/site-packages/PyQt5/uic/widget-plugins/qtwebenginewidgets.py</Source>
     <Source>venv/Lib/site-packages/PyQt5/uic/widget-plugins/qtwebkit.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/__init__.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/connection.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/cursor.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/log.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/pool.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/sa/__init__.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/sa/connection.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/sa/engine.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/sa/exc.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/sa/result.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/sa/transaction.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/sqlite_thread.py</Source>
+    <Source>venv/Lib/site-packages/aiosqlite3/utils.py</Source>
+    <Source>venv/Lib/site-packages/antiorm.py</Source>
+    <Source>venv/Lib/site-packages/antipool.py</Source>
+    <Source>venv/Lib/site-packages/blessings/__init__.py</Source>
+    <Source>venv/Lib/site-packages/blessings/tests.py</Source>
+    <Source>venv/Lib/site-packages/csvsqlite3/__init__.py</Source>
+    <Source>venv/Lib/site-packages/csvsqlite3/csvsqlite3.py</Source>
+    <Source>venv/Lib/site-packages/csvsqlite3/test_csvsqlite3.py</Source>
+    <Source>venv/Lib/site-packages/db/__init__.py</Source>
+    <Source>venv/Lib/site-packages/db/drivers.py</Source>
+    <Source>venv/Lib/site-packages/db_sqlite3.py</Source>
+    <Source>venv/Lib/site-packages/dbapiext.py</Source>
+    <Source>venv/Lib/site-packages/dbrelmgr.py</Source>
+    <Source>venv/Lib/site-packages/docopt.py</Source>
+    <Source>venv/Lib/site-packages/httplib.py</Source>
+    <Source>venv/Lib/site-packages/httplib2/__init__.py</Source>
+    <Source>venv/Lib/site-packages/httplib2/iri2uri.py</Source>
+    <Source>venv/Lib/site-packages/httplib2/socks.py</Source>
+    <Source>venv/Lib/site-packages/lxml/ElementInclude.py</Source>
+    <Source>venv/Lib/site-packages/lxml/__init__.py</Source>
+    <Source>venv/Lib/site-packages/lxml/_elementpath.py</Source>
+    <Source>venv/Lib/site-packages/lxml/builder.py</Source>
+    <Source>venv/Lib/site-packages/lxml/cssselect.py</Source>
+    <Source>venv/Lib/site-packages/lxml/doctestcompare.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/ElementSoup.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/__init__.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/_diffcommand.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/_html5builder.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/_setmixin.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/builder.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/clean.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/defs.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/diff.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/formfill.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/html5parser.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/soupparser.py</Source>
+    <Source>venv/Lib/site-packages/lxml/html/usedoctest.py</Source>
+    <Source>venv/Lib/site-packages/lxml/includes/__init__.py</Source>
+    <Source>venv/Lib/site-packages/lxml/isoschematron/__init__.py</Source>
+    <Source>venv/Lib/site-packages/lxml/pyclasslookup.py</Source>
+    <Source>venv/Lib/site-packages/lxml/sax.py</Source>
+    <Source>venv/Lib/site-packages/lxml/usedoctest.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/__init__.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/contenttypes.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/document.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/namespaces.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/presentation.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/shell.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/spreadsheet.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/utils.py</Source>
+    <Source>venv/Lib/site-packages/openxmllib/wordprocessing.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/__init__.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/__main__.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/_vendor/__init__.py</Source>
@@ -310,9 +390,92 @@
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/vcs/mercurial.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/vcs/subversion.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/wheel.py</Source>
+    <Source>venv/Lib/site-packages/pyqt5_installer/__init__.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/__init__.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/comments.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/compat.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/composer.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/configobjwalker.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/constructor.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/cyaml.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/dumper.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/emitter.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/error.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/events.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/loader.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/main.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/nodes.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/parser.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/reader.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/representer.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/resolver.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/scalarfloat.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/scalarint.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/scalarstring.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/scanner.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/serializer.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/timestamp.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/tokens.py</Source>
+    <Source>venv/Lib/site-packages/ruamel/yaml/util.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3database/__init__.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3database/helper/__init__.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3server/__init__.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3server/__main__.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3server/sqlite3server.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3worker/__init__.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3worker/register.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3worker/setup.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3worker/sqlite3worker.py</Source>
+    <Source>venv/Lib/site-packages/sqlite3worker/sqlite3worker_test.py</Source>
     <Source>venv/Lib/site-packages/sync/__init__.py</Source>
     <Source>venv/Lib/site-packages/sync/_version.py</Source>
     <Source>venv/Lib/site-packages/sync/copy.py</Source>
+    <Source>venv/Lib/site-packages/urllib2.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/__init__.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/_collections.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/connection.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/connectionpool.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/__init__.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/_securetransport/__init__.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/_securetransport/bindings.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/_securetransport/low_level.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/appengine.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/ntlmpool.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/pyopenssl.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/securetransport.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/contrib/socks.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/exceptions.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/fields.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/filepost.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/packages/__init__.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/packages/backports/__init__.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/packages/backports/makefile.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/packages/ordered_dict.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/packages/six.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/packages/ssl_match_hostname/__init__.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/packages/ssl_match_hostname/_implementation.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/poolmanager.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/request.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/response.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/__init__.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/connection.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/request.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/response.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/retry.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/selectors.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/ssl_.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/timeout.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/url.py</Source>
+    <Source>venv/Lib/site-packages/urllib3/util/wait.py</Source>
+    <Source>venv/Lib/site-packages/vext/__init__.py</Source>
+    <Source>venv/Lib/site-packages/vext/cmdline/__init__.py</Source>
+    <Source>venv/Lib/site-packages/vext/env/__init__.py</Source>
+    <Source>venv/Lib/site-packages/vext/gatekeeper/__init__.py</Source>
+    <Source>venv/Lib/site-packages/vext/helpers/__init__.py</Source>
+    <Source>venv/Lib/site-packages/vext/helpers/sip.py</Source>
+    <Source>venv/Lib/site-packages/vext/install/__init__.py</Source>
+    <Source>venv/Lib/site-packages/vext/registry/__init__.py</Source>
+    <Source>venv/Lib/site-packages/wget.py</Source>
     <Source>venv/Lib/site-packages/win32/Demos/BackupRead_BackupWrite.py</Source>
     <Source>venv/Lib/site-packages/win32/Demos/BackupSeek_streamheaders.py</Source>
     <Source>venv/Lib/site-packages/win32/Demos/CopyFileEx.py</Source>
@@ -622,6 +785,8 @@
     <Source>venv/Scripts/easy_install-3.6-script.py</Source>
     <Source>venv/Scripts/easy_install-script.py</Source>
     <Source>venv/Scripts/futurize-script.py</Source>
+    <Source>venv/Scripts/install_pyqt5.py</Source>
+    <Source>venv/Scripts/openxmlinfo-script.py</Source>
     <Source>venv/Scripts/pasteurize-script.py</Source>
     <Source>venv/Scripts/pip-script.py</Source>
     <Source>venv/Scripts/pip3-script.py</Source>
@@ -634,8 +799,14 @@
     <Source>venv/Scripts/pyinstaller-script.py</Source>
     <Source>venv/Scripts/pywin32_postinstall.py</Source>
     <Source>venv/Scripts/pywin32_testall.py</Source>
+    <Source>venv/Scripts/sqlite3server-script.py</Source>
+    <Source>venv/Scripts/vext-script.py</Source>
   </Sources>
+  <Forms>
+    <Form>code/gui/ui/mainwindow.ui</Form>
+  </Forms>
   <Translations>
+    <Translation>venv/Lib/site-packages/PyQt5/Qt/translations/designer_zh_CN.qm</Translation>
     <Translation>venv/Lib/site-packages/PyQt5/Qt/translations/qt_ar.qm</Translation>
     <Translation>venv/Lib/site-packages/PyQt5/Qt/translations/qt_bg.qm</Translation>
     <Translation>venv/Lib/site-packages/PyQt5/Qt/translations/qt_ca.qm</Translation>
@@ -813,25 +984,111 @@
     <Interface>venv/Lib/site-packages/win32com/test/pippo.idl</Interface>
   </Interfaces>
   <Others>
-    <Other>.gitignore</Other>
     <Other>README.md</Other>
     <Other>bin/build/Menubar/warnMenubar.txt</Other>
+    <Other>code/gui/build/caculater/warncaculater.txt</Other>
+    <Other>hello.e4p</Other>
     <Other>venv/Lib/site-packages/PyQt5-5.10.1.dist-info/entry_points.txt</Other>
+    <Other>venv/Lib/site-packages/PyQt5Designer-5.10.1.dist-info/DESCRIPTION.rst</Other>
+    <Other>venv/Lib/site-packages/PyQt5Designer-5.10.1.dist-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/PyQt5Singleton-0.1.dist-info/DESCRIPTION.rst</Other>
+    <Other>venv/Lib/site-packages/PyQt5Singleton-0.1.dist-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/SQLite3Database-0.2.0-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/SQLite3Database-0.2.0-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/SQLite3Database-0.2.0-py3.6.egg-info/entry_points.txt</Other>
+    <Other>venv/Lib/site-packages/SQLite3Database-0.2.0-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/SQLite3Database-0.2.0-py3.6.egg-info/requires.txt</Other>
+    <Other>venv/Lib/site-packages/SQLite3Database-0.2.0-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/aiosqlite3-0.2.0.dist-info/DESCRIPTION.rst</Other>
+    <Other>venv/Lib/site-packages/aiosqlite3-0.2.0.dist-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/antiorm-1.2.1-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/antiorm-1.2.1-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/antiorm-1.2.1-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/antiorm-1.2.1-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/blessings-1.6.1.dist-info/DESCRIPTION.rst</Other>
+    <Other>venv/Lib/site-packages/blessings-1.6.1.dist-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/csvsqlite3-0.1.1-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/csvsqlite3-0.1.1-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/csvsqlite3-0.1.1-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/csvsqlite3-0.1.1-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/db-0.1.1-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/db-0.1.1-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/db-0.1.1-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/db-0.1.1-py3.6.egg-info/requires.txt</Other>
+    <Other>venv/Lib/site-packages/db-0.1.1-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/db_sqlite3-0.0.1-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/db_sqlite3-0.0.1-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/db_sqlite3-0.0.1-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/db_sqlite3-0.0.1-py3.6.egg-info/requires.txt</Other>
+    <Other>venv/Lib/site-packages/db_sqlite3-0.0.1-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/docopt-0.6.2-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/docopt-0.6.2-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/docopt-0.6.2-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/docopt-0.6.2-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/httplib2-0.11.3-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/httplib2-0.11.3-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/httplib2-0.11.3-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/httplib2-0.11.3-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/httplib2/cacerts.txt</Other>
+    <Other>venv/Lib/site-packages/httpsproxy_urllib2-1.0-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/httpsproxy_urllib2-1.0-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/httpsproxy_urllib2-1.0-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/httpsproxy_urllib2-1.0-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/lxml-4.2.1.dist-info/DESCRIPTION.rst</Other>
+    <Other>venv/Lib/site-packages/lxml-4.2.1.dist-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt</Other>
+    <Other>venv/Lib/site-packages/openxmllib-1.1.1-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/openxmllib-1.1.1-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/openxmllib-1.1.1-py3.6.egg-info/entry_points.txt</Other>
+    <Other>venv/Lib/site-packages/openxmllib-1.1.1-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/openxmllib-1.1.1-py3.6.egg-info/requires.txt</Other>
+    <Other>venv/Lib/site-packages/openxmllib-1.1.1-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/openxmllib/version.txt</Other>
     <Other>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/EGG-INFO/SOURCES.txt</Other>
     <Other>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/EGG-INFO/dependency_links.txt</Other>
     <Other>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/EGG-INFO/entry_points.txt</Other>
     <Other>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/EGG-INFO/requires.txt</Other>
     <Other>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/EGG-INFO/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/pyqt5_installer-5.7.0-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/pyqt5_installer-5.7.0-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/pyqt5_installer-5.7.0-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/pyqt5_installer-5.7.0-py3.6.egg-info/requires.txt</Other>
+    <Other>venv/Lib/site-packages/pyqt5_installer-5.7.0-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/ruamel.yaml-0.15.37.dist-info/DESCRIPTION.rst</Other>
+    <Other>venv/Lib/site-packages/ruamel.yaml-0.15.37.dist-info/LICENSE.txt</Other>
+    <Other>venv/Lib/site-packages/ruamel.yaml-0.15.37.dist-info/namespace_packages.txt</Other>
+    <Other>venv/Lib/site-packages/ruamel.yaml-0.15.37.dist-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3server-0.1.3-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3server-0.1.3-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3server-0.1.3-py3.6.egg-info/entry_points.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3server-0.1.3-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3server-0.1.3-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3worker-1.1.7-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3worker-1.1.7-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3worker-1.1.7-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/sqlite3worker-1.1.7-py3.6.egg-info/top_level.txt</Other>
     <Other>venv/Lib/site-packages/sync-1.0.0-py3.6.egg-info/SOURCES.txt</Other>
     <Other>venv/Lib/site-packages/sync-1.0.0-py3.6.egg-info/dependency_links.txt</Other>
     <Other>venv/Lib/site-packages/sync-1.0.0-py3.6.egg-info/installed-files.txt</Other>
     <Other>venv/Lib/site-packages/sync-1.0.0-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/urllib3-1.22.dist-info/DESCRIPTION.rst</Other>
+    <Other>venv/Lib/site-packages/urllib3-1.22.dist-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/vext-0.7.0-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/vext-0.7.0-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/vext-0.7.0-py3.6.egg-info/entry_points.txt</Other>
+    <Other>venv/Lib/site-packages/vext-0.7.0-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/vext-0.7.0-py3.6.egg-info/requires.txt</Other>
+    <Other>venv/Lib/site-packages/vext-0.7.0-py3.6.egg-info/top_level.txt</Other>
+    <Other>venv/Lib/site-packages/wget-3.2-py3.6.egg-info/SOURCES.txt</Other>
+    <Other>venv/Lib/site-packages/wget-3.2-py3.6.egg-info/dependency_links.txt</Other>
+    <Other>venv/Lib/site-packages/wget-3.2-py3.6.egg-info/installed-files.txt</Other>
+    <Other>venv/Lib/site-packages/wget-3.2-py3.6.egg-info/top_level.txt</Other>
     <Other>venv/Lib/site-packages/win32/license.txt</Other>
     <Other>venv/Lib/site-packages/win32com/License.txt</Other>
     <Other>venv/Lib/site-packages/win32com/readme.htm</Other>
     <Other>venv/Lib/site-packages/win32com/test/readme.txt</Other>
   </Others>
-  <MainScript>qtbase.py</MainScript>
+  <MainScript>designer.py</MainScript>
   <Vcs>
     <VcsType>Git</VcsType>
     <VcsOptions>
