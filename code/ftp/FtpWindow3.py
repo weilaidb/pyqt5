@@ -102,9 +102,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.selectfile = file
 
     def setlabelfilesize(self,file):
-        self.label_fileinfo.setText("文件大小：%u,%fK,%fM" % ((os.path.getsize(file)),
-                                    os.path.getsize(file)/1024.0,
-                                    (os.path.getsize(file))/1024/1024.0))
+        if(os.path.exists(file)):
+            self.label_fileinfo.setText("文件大小：%u,%fK,%fM" % ((os.path.getsize(file)),
+                                        os.path.getsize(file)/1024.0,
+                                        (os.path.getsize(file))/1024/1024.0))
   
   
   

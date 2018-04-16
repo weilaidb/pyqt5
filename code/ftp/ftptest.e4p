@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project ftptest -->
-<!-- Saved: 2018-04-13, 00:24:15 -->
+<!-- Saved: 2018-04-15, 21:18:31 -->
 <!-- Copyright (C) 2018 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -13,8 +13,16 @@
   <Email></Email>
   <Eol index="0"/>
   <Sources>
+    <Source>FtpWindow3.py</Source>
+    <Source>Ui_FtpWindow3.py</Source>
     <Source>__init__.py</Source>
   </Sources>
+  <Forms>
+    <Form>FtpWindow.ui</Form>
+    <Form>FtpWindow2.ui</Form>
+    <Form>FtpWindow3.ui</Form>
+  </Forms>
+  <MainScript>__init__.py</MainScript>
   <Vcs>
     <VcsType>None</VcsType>
   </Vcs>
