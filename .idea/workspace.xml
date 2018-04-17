@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="800c1e1d-61d0-4a0a-8491-c443acb3885a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pyqt5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pyqt5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +15,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FtpWindow3.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/ftp/FtpWindow3.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/easyuse/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="225">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EasyUseUi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/easyuse/EasyUseUi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+              <folding>
+                <element signature="e#66#99#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ui_EasyUseUi.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/easyuse/Ui_EasyUseUi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-164">
+              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -53,6 +75,7 @@
       <find>ddatetime</find>
       <find>lineEdit_upfilepath</find>
       <find>file</find>
+      <find>textEdit_show</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -90,10 +113,11 @@
         <option value="$PROJECT_DIR$/code/ftp/ftptest.py" />
         <option value="$PROJECT_DIR$/code/ftp/FtpWindow.py" />
         <option value="$PROJECT_DIR$/code/ftp/FtpWindow3.py" />
+        <option value="$PROJECT_DIR$/code/easyuse/EasyUseUi.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="81" />
     <option name="y" value="60" />
     <option name="width" value="1320" />
@@ -133,7 +157,7 @@
             <path>
               <item name="pyqt5" type="b2602c69:ProjectViewProjectNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="ftp" type="462c0819:PsiDirectoryNode" />
+              <item name="easyuse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pyqt5" type="b2602c69:ProjectViewProjectNode" />
@@ -175,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.__init__">
+  <component name="RunManager" selected="Python.main">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pyqt5" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,7 +272,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pyqt5" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,30 +280,30 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/easyuse" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/setup.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/easyuse/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.setup" />
       <item itemvalue="Python.loadui" />
       <item itemvalue="Python.loadafterui" />
       <item itemvalue="Python.loadafterui (1)" />
       <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.loadafterui (1)" />
         <item itemvalue="Python.loadafterui" />
         <item itemvalue="Python.loadui" />
-        <item itemvalue="Python.setup" />
       </list>
     </recent_temporary>
   </component>
@@ -309,12 +333,12 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13401254" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28291535" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4984326" weight="0.32857144" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.32288402" side_tool="true" visible="true" weight="0.2952381" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3236677" side_tool="true" visible="true" weight="0.2952381" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4992163" weight="0.32857144" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.80956113" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.677116" weight="0.2952381" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6763323" weight="0.2952381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.81739813" weight="0.0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -337,15 +361,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Menubar.spec" />
-    <entry file="file://$PROJECT_DIR$/edit.py" />
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/936827738/PyQt5/QtWidgets/QLayout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/pyvenv.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -665,8 +680,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/ftp/FtpWindow3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="79">
+          <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/easyuse/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/easyuse/EasyUseUi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+          <folding>
+            <element signature="e#66#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/easyuse/Ui_EasyUseUi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-164">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
         </state>
       </provider>
     </entry>

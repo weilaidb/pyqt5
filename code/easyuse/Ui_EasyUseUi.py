@@ -1,0 +1,111 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'E:\Qtexample\git\pyqt5\code\easyuse\EasyUseUi.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(654, 632)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setUnderline(False)
+        MainWindow.setFont(font)
+        self.centralWidget = QtWidgets.QWidget(MainWindow)
+        self.centralWidget.setObjectName("centralWidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralWidget)
+        self.gridLayout.setObjectName("gridLayout")
+        self.tabWidget = QtWidgets.QTabWidget(self.centralWidget)
+        font = QtGui.QFont()
+        font.setKerning(False)
+        self.tabWidget.setFont(font)
+        self.tabWidget.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.tabWidget.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.tabWidget.setTabPosition(QtWidgets.QTabWidget.West)
+        self.tabWidget.setTabShape(QtWidgets.QTabWidget.Triangular)
+        self.tabWidget.setIconSize(QtCore.QSize(32, 32))
+        self.tabWidget.setElideMode(QtCore.Qt.ElideNone)
+        self.tabWidget.setTabsClosable(False)
+        self.tabWidget.setMovable(False)
+        self.tabWidget.setTabBarAutoHide(False)
+        self.tabWidget.setObjectName("tabWidget")
+        self.tab = QtWidgets.QWidget()
+        self.tab.setObjectName("tab")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.tab)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.textEdit = QtWidgets.QTextEdit(self.tab)
+        self.textEdit.setObjectName("textEdit")
+        self.gridLayout_2.addWidget(self.textEdit, 0, 0, 1, 1)
+        self.tabWidget.addTab(self.tab, "")
+        self.tab_2 = QtWidgets.QWidget()
+        self.tab_2.setObjectName("tab_2")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.tab_2)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.textEdit_2 = QtWidgets.QTextEdit(self.tab_2)
+        self.textEdit_2.setObjectName("textEdit_2")
+        self.gridLayout_3.addWidget(self.textEdit_2, 0, 0, 1, 1)
+        self.tabWidget.addTab(self.tab_2, "")
+        self.tab_3 = QtWidgets.QWidget()
+        self.tab_3.setObjectName("tab_3")
+        self.tabWidget.addTab(self.tab_3, "")
+        self.tab_4 = QtWidgets.QWidget()
+        self.tab_4.setObjectName("tab_4")
+        self.tabWidget.addTab(self.tab_4, "")
+        self.tab_5 = QtWidgets.QWidget()
+        self.tab_5.setObjectName("tab_5")
+        self.tabWidget.addTab(self.tab_5, "")
+        self.tab_6 = QtWidgets.QWidget()
+        self.tab_6.setObjectName("tab_6")
+        self.tabWidget.addTab(self.tab_6, "")
+        self.tab_7 = QtWidgets.QWidget()
+        self.tab_7.setObjectName("tab_7")
+        self.tabWidget.addTab(self.tab_7, "")
+        self.tab_8 = QtWidgets.QWidget()
+        self.tab_8.setObjectName("tab_8")
+        self.tabWidget.addTab(self.tab_8, "")
+        self.tab_9 = QtWidgets.QWidget()
+        self.tab_9.setObjectName("tab_9")
+        self.tabWidget.addTab(self.tab_9, "")
+        self.tab_10 = QtWidgets.QWidget()
+        self.tab_10.setObjectName("tab_10")
+        self.tabWidget.addTab(self.tab_10, "")
+        self.tab_11 = QtWidgets.QWidget()
+        self.tab_11.setObjectName("tab_11")
+        self.tabWidget.addTab(self.tab_11, "")
+        self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
+        MainWindow.setCentralWidget(self.centralWidget)
+
+        self.retranslateUi(MainWindow)
+        self.tabWidget.setCurrentIndex(3)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "生活"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "工作"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "游戏"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "Page"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MainWindow", "Page"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("MainWindow", "Page"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("MainWindow", "Page"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), _translate("MainWindow", "Page"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_9), _translate("MainWindow", "Page"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_10), _translate("MainWindow", "Page"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_11), _translate("MainWindow", "Page"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
