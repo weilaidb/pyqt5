@@ -1,7 +1,7 @@
 @echo on
-@echo pyinstaller __init__.py
-pyinstaller --noconsole   __init__.py
-@echo pyinstaller __init__.py done!!!
+@echo pyinstaller ftptools.py
+pyinstaller --noconsole   ftptools.py
+@echo pyinstaller ftptools.py done!!!
 
 pause
 @echo off
