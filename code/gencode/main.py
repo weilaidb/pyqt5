@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #pyqtmain pyqt main
 from mainui import *
 import math 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project gencode -->
-<!-- Saved: 2018-04-21, 18:57:38 -->
+<!-- Saved: 2018-04-21, 19:15:00 -->
 <!-- Copyright (C) 2018 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -13,9 +13,13 @@
   <Email></Email>
   <Eol index="0"/>
   <Sources>
-    <Source>__init__.py</Source>
+    <Source>Ui_mainui.py</Source>
     <Source>main.py</Source>
+    <Source>mainui.py</Source>
   </Sources>
+  <Forms>
+    <Form>mainui.ui</Form>
+  </Forms>
   <MainScript>main.py</MainScript>
   <Vcs>
     <VcsType>None</VcsType>
