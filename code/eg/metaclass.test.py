@@ -120,11 +120,11 @@ class Model(dict, metaclass=ModelMetaclass):
             args.append(getattr(self, k, None))
         sql = 'insert into %s (%s) values (%s)' % (self.__table__, ','.join(fields), ','.join(params))
         print('SQL: %s' % sql)
-        print('ARGS: %s' % str(args))
-
-
-class User(Model):
-    # 定义类的属性到列的映射：
+    #         print('ARGS: %s' % str(args))
+    #
+    #
+    # class User(Model):
+    #     # 定义类的属性到列的映射：
     id = IntegerField('id')
     name = StringField('username')
     email = StringField('email')
