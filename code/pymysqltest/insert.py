@@ -1,35 +1,42 @@
 import pymysql.cursors
 
+databasename = 'python6'
 # 连接数据库
 connect = pymysql.Connect(
     host='localhost',
-    port=3306,
     user='root',
     passwd='123456',
-    db='python',
+    port=3306,
+    # db=databasename,
     charset='utf8'
 )
 
 # 获取游标
 cursor = connect.cursor()
 
-# cursor.execute("drop table if exists trade")  #如果数据表已经存在，那么删除后重新创建
-# sql = """
-# CREATE TABLE trade (
-# name CHAR(20) NOT NULL,
-# account CHAR(20),
-# saving FLOAT )
-# """
-# cursor.execute(sql)
+try:
+  # 执行 SQL 语句
+  sql = 'create database if not exists %s' % databasename
+  cursor.execute(sql)
+  # 提交修改
+  connect.commit()
+  print("creat database ok,", databasename)
+except Exception as e :
+    # 发生错误时回滚
+    connect.rollback()
+    print("create database failed, reason:", e)
+
+
+connect.select_db(databasename)
 
 try:
   # 执行 SQL 语句
   sql = '''
   CREATE TABLE `trade` (
   `id` int(4) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(6) NOT NULL COMMENT '用户真实姓名',
-  `account` varchar(11) NOT NULL COMMENT '银行储蓄账号',
-  `saving` decimal(8,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '账户储蓄金额',
+  `name` varchar(600) NOT NULL COMMENT '用户真实姓名',
+  `account` varchar(1000) NOT NULL COMMENT '银行储蓄账号',
+  `saving` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '账户储蓄金额',
   `expend` decimal(8,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '账户支出总计',
   `income` decimal(8,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '账户收入总计',
   PRIMARY KEY (`id`),
@@ -41,22 +48,22 @@ try:
   # 提交修改
   connect.commit()
   print("creat table ok")
-except:
+except Exception as e :
     # 发生错误时回滚
     connect.rollback()
-    print("create table failed")
+    print("create table failed, reason:", e)
 
 
 # 插入数据
-for i in range(1000):
+for i in range(100000):
     try:
         sql = "INSERT INTO trade (name, account, saving) VALUES ( '%s', '%s', %.2f )"
-        data = ('雷军'.join(str(i)), '13512345678', 10000)
+        data = ('世界里' + str(i * 3), '13512345678', 10000 * i)
         cursor.execute(sql % data)
         connect.commit()
-        print('成功插入', cursor.rowcount, '条数据')
-    except:
-        print('失败插入', cursor.rowcount, '条数据')
+        print('成功插入', cursor.rowcount, '条数据, curpos:', i + 1)
+    except Exception as e :
+        print('失败插入', cursor.rowcount, '条数据, reason:', e, 'curpos', i + 1)
 
 # 修改数据
 sql = "UPDATE trade SET saving = %.2f WHERE account = '%s' "
