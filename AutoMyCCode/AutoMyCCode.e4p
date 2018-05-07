@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project AutoMyCCode -->
-<!-- Saved: 2018-05-06, 21:09:12 -->
+<!-- Saved: 2018-05-07, 23:47:18 -->
 <!-- Copyright (C) 2018 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -14,7 +14,9 @@
   <Eol index="0"/>
   <Sources>
     <Source>__init__.py</Source>
-    <Source>db/__init__.py</Source>
+    <Source>db/Ui_automyccode.py</Source>
+    <Source>db/automyccode.py</Source>
+    <Source>db/main.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/__init__.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/__main__.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/_vendor/__init__.py</Source>
@@ -264,15 +266,7 @@
     <Source>venv/Scripts/pip3.6-script.py</Source>
   </Sources>
   <Forms>
-    <Form>db/PushDbdialog.ui</Form>
-    <Form>db/autoccode.ui</Form>
-    <Form>db/autoindb.ui</Form>
-    <Form>db/codesophia.ui</Form>
-    <Form>db/codetools.ui</Form>
-    <Form>db/dialog_select_database.ui</Form>
-    <Form>db/setup1.ui</Form>
-    <Form>db/toolstabwidget.ui</Form>
-    <Form>db/udppkgdialog.ui</Form>
+    <Form>db/automyccode.ui</Form>
   </Forms>
   <Others>
     <Other>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/EGG-INFO/SOURCES.txt</Other>

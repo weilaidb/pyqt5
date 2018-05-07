@@ -125,18 +125,21 @@ def closeDatabase(cursor, connect):
 
 
 
-##################################### main functions#######################
-connect = initDatabase('localhost', 'root', '123456',3306,'utf8')
-# 获取游标
-cursor = connect.cursor()
-databasename = 'python9'
-createDataBase(cursor, connect, databasename)
-selectDataBase(connect, databasename)
-createTable(cursor, connect)
-insertTable(cursor, connect)
-modifyTable(cursor, connect)
-searchTale(cursor, connect)
-deleteTable(cursor, connect)
-atomCommit(cursor, connect)
-closeDatabase(cursor, connect)
+def one_pymysql_test():
+    ##################################### main functions#######################
+    connect = initDatabase('localhost', 'root', '123456',3306,'utf8')
+    # 获取游标
+    cursor = connect.cursor()
+    databasename = 'python9'
+    createDataBase(cursor, connect, databasename)
+    selectDataBase(connect, databasename)
+    createTable(cursor, connect)
+    insertTable(cursor, connect)
+    modifyTable(cursor, connect)
+    searchTale(cursor, connect)
+    deleteTable(cursor, connect)
+    atomCommit(cursor, connect)
+    closeDatabase(cursor, connect)
 
+if __name__ == '__main__':
+    one_pymysql_test()
