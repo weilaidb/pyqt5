@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import pymysql.cursors
 
 def initDatabase(host, usr, pwd, port, charset):

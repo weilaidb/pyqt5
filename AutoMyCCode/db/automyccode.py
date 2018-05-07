@@ -4,14 +4,11 @@
 Module implementing MainWindow.
 """
 
-from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 
-from Ui_automyccode import Ui_MainWindow
-from pymysqldb import default_insert_contetNameWithTime
-import win32clipboard as wc
-import win32con
+from Ui_automyccode import *
+from dbApi import *
 import pyperclip
 
 
