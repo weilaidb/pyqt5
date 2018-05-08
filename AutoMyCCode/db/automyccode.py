@@ -14,6 +14,10 @@ import pyperclip
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     """
+    global variable
+    """
+    namelist, contents = [],[]
+    """
     Class documentation goes here.
     """
     def __init__(self, parent=None):
@@ -37,15 +41,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def showresult(self):
         pass
 
+    @pyqtSlot()
+    def showinsertUI(self):
+        self.listWidget_search.hide()
+        self.textEdit_inserttext.show()
+
 
     @pyqtSlot()
     def on_pushButton_insert_clicked(self):
         """
         Slot documentation goes here.
         """
+        self.showinsertUI()
         print("insert 2 db")
         content = self.textEdit_inserttext.toPlainText()
-        print(content)
+        # print(content)
         name = ""
 
         if(len(content.strip()) == 0):
@@ -76,6 +86,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
+        self.showinsertUI()
         self.textEdit_inserttext.setText("")
     
     @pyqtSlot()
@@ -83,9 +94,108 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
+        self.showinsertUI()
         self.textEdit_inserttext.setText(pyperclip.paste())
 
     def operate(self):
         #具体操作
         self.statusBar.showMessage("")
         self.timer.stop()
+    
+    @pyqtSlot()
+    def on_lineEdit_search_returnPressed(self):
+        """
+        Slot documentation goes here.
+        """
+        print("lineedit search return pressed")
+        searchtext = self.lineEdit_search.text()
+        if(len(searchtext.strip()) == 0):
+            self.textEdit_showresult.setText("请输入搜索关键字")
+            return
+        print(searchtext)
+        self.namelist.clear()
+        self.contents.clear()
+        retval,self.namelist, self.contents = default_search_contetName(data=(searchtext.strip()))
+        if(retval):
+            self.statusBar.showMessage("查找到数据条数:%d" % retval)
+        else:
+            self.statusBar.showMessage("未查到数据")
+            self.namelist.clear()
+            self.contents.clear()
+            self.listWidget_search.clear()
+            return
+
+        showtxtresult = ""
+
+        self.listWidget_search.clear()
+        self.listWidget_search.show()
+        self.textEdit_inserttext.hide()
+        for i in range(0,len(self.namelist)):
+            # print(i)
+            # print(namelist[i][0])
+            # showtxtresult += "<h2>" + namelist[i][0] + "</h2>"
+            # showtxtresult += '\n\n'
+            splitlist = self.namelist[i].split("\n")
+            print(splitlist)
+            print(len(splitlist))
+            showheight = 0
+            if (len(splitlist) >= 4):
+                showheight = 4
+            else:
+                showheight = len(splitlist)
+            if (showheight == 0):
+                showheight = 1
+
+            print(showheight)
+
+            itemnamestring = ""
+            for i in range(0,showheight):
+                print(splitlist[i])
+                itemnamestring += splitlist[i]
+                if(i > 0 and i + 1 < showheight):
+                    itemnamestring += '\n'
+                # itemnamelist.append(splitlist[i] + '\n')
+                # print(self.namelist[i])
+
+            print(itemnamestring)
+            self.listWidget_search.addItem(itemnamestring)
+            # self.listWidget_search.addItem(self.namelist[i])
+
+        # self.textEdit_showresult.setText(showtxtresult)
+        self.timer.start(2000)
+    
+    @pyqtSlot(QModelIndex)
+    def on_listWidget_search_clicked(self, index):
+        """
+        Slot documentation goes here.
+        
+        @param index DESCRIPTION
+        @type QModelIndex
+        """
+        # print(index)
+        # print(type(index))
+        # self.textEdit_showresult.setText(self.contents[index])
+        pass
+
+
+    
+    @pyqtSlot(QModelIndex)
+    def on_listWidget_search_doubleClicked(self, index):
+        """
+        Slot documentation goes here.
+        
+        @param index DESCRIPTION
+        @type QModelIndex
+        """
+        pass
+    
+    @pyqtSlot(int)
+    def on_listWidget_search_currentRowChanged(self, currentRow):
+        """
+        Slot documentation goes here.
+        
+        @param currentRow DESCRIPTION
+        @type int
+        """
+        print(currentRow)
+        self.textEdit_showresult.setText(self.contents[currentRow])
