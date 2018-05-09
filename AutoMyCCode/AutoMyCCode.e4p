@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project AutoMyCCode -->
-<!-- Saved: 2018-05-07, 23:47:18 -->
+<!-- Saved: 2018-05-08, 23:53:10 -->
 <!-- Copyright (C) 2018 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -13,7 +13,6 @@
   <Email></Email>
   <Eol index="0"/>
   <Sources>
-    <Source>__init__.py</Source>
     <Source>db/Ui_automyccode.py</Source>
     <Source>db/automyccode.py</Source>
     <Source>db/main.py</Source>

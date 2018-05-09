@@ -17,6 +17,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
+    versionnum = 1.1
+
     """
     Class documentation goes here.
     """
@@ -33,12 +35,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer = QTimer(self)  # 初始化一个定时器
         self.timer.timeout.connect(self.operate)  # 计时结束调用operate()方法
         # self.timer.start(2000)  # 设置计时间隔并启动
+        self.aboutVersion()
+        self.showtipsinfo()
 
-    def insert2db():
+    def aboutVersion(self):
+        self.statusBar.showMessage("数据库版本V%s"% self.versionnum)
+
+    def showtipsinfo(self):
+        # self.textEdit_showresult.setText("")
+        self.lineEdit_search.setPlaceholderText("请输入搜索关键字")
+
+    def insert2db(self):
         pass
 
 
     def showresult(self):
+
+
         pass
 
     @pyqtSlot()
@@ -67,12 +80,25 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             name = content
 
         retval = default_insert_contetNameWithTime(data=(name, content))
-        if(retval):
+        if(retval != 0xFFFF):
             self.statusBar.showMessage("成功")
+        elif (retval == 0xFFFF):
+            # print("aaa")
+            self.statusBar.showMessage("数据库未开启，请开启数据库")
+            return
         else:
             self.statusBar.showMessage("失败")
 
         self.timer.start(2000)
+
+    def showresultbyText(self,text):
+        self.lineEdit_search.setText(text)
+        self.on_lineEdit_search_returnPressed()
+        searchtext = self.lineEdit_search.text()
+        if(len(searchtext.strip()) == 0):
+            self.textEdit_showresult.setText("")
+            self.listWidget_search.clear()
+            self.lineEdit_search.setText("")
 
     @pyqtSlot()
     def on_pushButton_showresult_clicked(self):
@@ -80,6 +106,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Slot documentation goes here.
         """
         print("show result")
+        self.showresultbyText(pyperclip.paste())
     
     @pyqtSlot()
     def on_pushButton_clean_clicked(self):
@@ -110,14 +137,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         print("lineedit search return pressed")
         searchtext = self.lineEdit_search.text()
         if(len(searchtext.strip()) == 0):
-            self.textEdit_showresult.setText("请输入搜索关键字")
+            self.textEdit_showresult.setText("")
+            self.listWidget_search.clear()
+            self.lineEdit_search.setText("")
             return
         print(searchtext)
         self.namelist.clear()
         self.contents.clear()
         retval,self.namelist, self.contents = default_search_contetName(data=(searchtext.strip()))
-        if(retval):
+        if(retval and self.namelist[0] != 0xFFFF):
             self.statusBar.showMessage("查找到数据条数:%d" % retval)
+        elif (retval == 0xFFFF and self.namelist[0] == 0xFFFF and self.contents[0] == 0xFFFF):
+            # print("aaa")
+            self.statusBar.showMessage("数据库未开启，请开启数据库")
+            return
         else:
             self.statusBar.showMessage("未查到数据")
             self.namelist.clear()
@@ -199,3 +232,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         print(currentRow)
         self.textEdit_showresult.setText(self.contents[currentRow])
+    
+    @pyqtSlot()
+    def on_pushButton_searchclean_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        self.showresultbyText("")
