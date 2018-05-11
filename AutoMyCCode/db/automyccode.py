@@ -19,7 +19,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 1.4
+    versionnum = 1.5
 
     """
     Class documentation goes here.
@@ -192,8 +192,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print(splitlist)
             print(len(splitlist))
             showheight = 0
-            if (len(splitlist) >= 4):
-                showheight = 4
+            maxline = 3
+            if (len(splitlist) >= maxline):
+                showheight = maxline
             else:
                 showheight = len(splitlist)
             if (showheight == 0):
