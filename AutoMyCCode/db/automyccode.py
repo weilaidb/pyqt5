@@ -6,10 +6,12 @@ Module implementing MainWindow.
 
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIcon
 
 from Ui_automyccode import *
 from dbApi import *
 import pyperclip
+import os
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -17,7 +19,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 1.1
+    versionnum = 1.2
 
     """
     Class documentation goes here.
@@ -37,6 +39,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.timer.start(2000)  # 设置计时间隔并启动
         self.aboutVersion()
         self.showtipsinfo()
+        # 设置窗口的图标，引用当前目录下的web.png图片
+        if(os.path.exists("web.png")):
+            print("web.png exist")
+        else:
+            print("web.png no exist!")
+        # self.setWindowIcon(QIcon('web.png'))
+        self.setWindowIcon(QIcon('akregator.png'))
+
+        # computer_item->setIcon(QIcon(":/res/pix/computer.png"));
 
     def aboutVersion(self):
         self.statusBar.showMessage("数据库版本V%s"% self.versionnum)
@@ -47,7 +58,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def insert2db(self):
         pass
-
 
     def showresult(self):
 
