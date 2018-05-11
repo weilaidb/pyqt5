@@ -1,7 +1,7 @@
 missing module named resource - imported by posix, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
 missing module named posix - imported by os, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
 missing module named _posixsubprocess - imported by subprocess, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
-missing module named org - imported by pickle, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
+missing module named 'org.python' - imported by pickle, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py, xml.sax
 missing module named readline - imported by cmd, code, pdb, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
 excluded module named _frozen_importlib - imported by importlib, importlib.abc, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
 missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
@@ -12,9 +12,9 @@ missing module named 'java.lang' - imported by platform, E:\Qtexample\git\pyqt5\
 missing module named vms_lib - imported by platform, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
 missing module named termios - imported by tty, getpass, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
 missing module named grp - imported by shutil, tarfile, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
+missing module named org - imported by copy, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
 missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, getpass, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py, netrc
 missing module named _dummy_threading - imported by dummy_threading, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py
-missing module named 'org.python' - imported by copy, E:\Qtexample\git\pyqt5\AutoMyCCode\db\main.py, xml.sax
 missing module named AppKit - imported by pyperclip
 missing module named Foundation - imported by pyperclip
 missing module named PyQt4 - imported by pyperclip

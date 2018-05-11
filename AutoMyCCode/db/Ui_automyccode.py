@@ -81,6 +81,16 @@ class Ui_MainWindow(object):
         self.statusBar = QtWidgets.QStatusBar(MainWindow)
         self.statusBar.setObjectName("statusBar")
         MainWindow.setStatusBar(self.statusBar)
+        self.menuBar = QtWidgets.QMenuBar(MainWindow)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 752, 23))
+        self.menuBar.setObjectName("menuBar")
+        self.menuOperation = QtWidgets.QMenu(self.menuBar)
+        self.menuOperation.setObjectName("menuOperation")
+        MainWindow.setMenuBar(self.menuBar)
+        self.actionSearchText = QtWidgets.QAction(MainWindow)
+        self.actionSearchText.setObjectName("actionSearchText")
+        self.menuOperation.addAction(self.actionSearchText)
+        self.menuBar.addAction(self.menuOperation.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -93,6 +103,8 @@ class Ui_MainWindow(object):
         self.pushButton_clean.setText(_translate("MainWindow", "Clean"))
         self.pushButton_showresult.setText(_translate("MainWindow", "ShowResult"))
         self.pushButton_searchclean.setText(_translate("MainWindow", "Clear"))
+        self.menuOperation.setTitle(_translate("MainWindow", "Operation"))
+        self.actionSearchText.setText(_translate("MainWindow", "SearchText"))
 
 
 if __name__ == "__main__":

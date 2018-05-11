@@ -167,6 +167,28 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>752</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOperation">
+    <property name="title">
+     <string>Operation</string>
+    </property>
+    <addaction name="actionSearchText"/>
+   </widget>
+   <addaction name="menuOperation"/>
+  </widget>
+  <action name="actionSearchText">
+   <property name="text">
+    <string>SearchText</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

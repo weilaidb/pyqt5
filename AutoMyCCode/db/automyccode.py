@@ -19,7 +19,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 1.2
+    versionnum = 1.4
 
     """
     Class documentation goes here.
@@ -48,6 +48,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setWindowIcon(QIcon('akregator.png'))
 
         # computer_item->setIcon(QIcon(":/res/pix/computer.png"));
+
+        # self.actionSearchText.setShortCut()
+        self.actionSearchText.setShortcut('Ctrl+F')  # shortcut key
+        self.actionSearchText.triggered.connect(self.searchtext)
+
 
     def aboutVersion(self):
         self.statusBar.showMessage("数据库版本V%s"% self.versionnum)
@@ -81,11 +86,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # print(content)
         name = ""
 
+        cursor = self.textEdit_inserttext.textCursor()
+        selectext = cursor.selectedText()
+
         if(len(content.strip()) == 0):
             print("content len 0")
             return
-        if(len(content) > 100) :
+        if(len(content) > 100 and (len(selectext.strip()) == 0)) :
             name = content.lstrip()[0:100]
+        elif(len(selectext.strip()) != 0):
+            name = selectext[0:100]
         else:
             name = content
 
@@ -249,3 +259,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Slot documentation goes here.
         """
         self.showresultbyText("")
+        self.lineEdit_search.setText("")
+        self.lineEdit_search.setFocus()
+    
+    @pyqtSlot()
+    def on_actionSearchText_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+
+        self.lineEdit_search.setFocus()
+
+    def searchtext(self):
+        self.lineEdit_search.setFocus()
