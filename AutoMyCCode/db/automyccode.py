@@ -19,7 +19,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 1.6
+    versionnum = 1.7
 
     """
     Class documentation goes here.
@@ -273,3 +273,4 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def searchtext(self):
         self.lineEdit_search.setFocus()
+        self.lineEdit_search.clear()
