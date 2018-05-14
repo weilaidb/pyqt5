@@ -19,7 +19,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 1.7
+    versionnum = 1.8
 
     """
     Class documentation goes here.

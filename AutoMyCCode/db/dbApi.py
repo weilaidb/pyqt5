@@ -128,7 +128,10 @@ def modifyTable(cursor,connect, tablename):
 def searchTale(cursor,connect, tablename,data=('')):
     # 查询数据
     sql = '''SELECT name,content FROM '''\
-          + tablename + ''' WHERE content like "%''' + data +  '''%"'''
+          + tablename \
+          + ''' WHERE content like "%''' + data +  '''%"''' \
+          + ''' order by id desc ''' \
+ \
     # sql = '''SELECT name FROM '''\
     #       + tablename + ''' WHERE content like "%''' + data +  '''%"'''
     # data = ('13512345678',)
