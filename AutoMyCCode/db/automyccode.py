@@ -6,7 +6,14 @@ Module implementing MainWindow.
 
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import *
+import platform
+import sys
+import html
+# from PyQt5.QtCore import QSize, Qt,pyqtSignal
+# from PyQt5.QtGui import QColor, QFont,QFontMetrics, QIcon, QKeySequence, QPixmap,QTextCharFormat
+# from PyQt5.QtWidgets import QAction,QApplication,QMenu,QTextEdit
+#
 
 from Ui_automyccode import *
 from dbApi import *
@@ -19,7 +26,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 1.8
+    versionnum = 1.9
 
     """
     Class documentation goes here.
@@ -68,6 +75,47 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
         pass
+
+    # @pyqtSlot()
+    def toSimpleHtml(self):
+        htmltext = ""
+        black = QColor(Qt.black)
+        block = self.textEdit_showresult.document().begin()
+        while block.isValid():
+            iterator = block.begin()
+            while iterator != block.end():
+                fragment = iterator.fragment()
+                if fragment.isValid():
+                    format = fragment.charFormat()
+                    family = format.fontFamily()
+                    color = format.foreground().color()
+                    text=html.escape(fragment.text())
+                    if (format.verticalAlignment() ==
+                        QTextCharFormat.AlignSubScript):
+                        text = "<sub>{0}</sub>".format(text)
+                    elif (format.verticalAlignment() ==
+                          QTextCharFormat.AlignSuperScript):
+                        text = "<sup>{0}</sup>".format(text)
+                    if format.fontUnderline():
+                        text = "<u>{0}</u>".format(text)
+                    if format.fontItalic():
+                        text = "<i>{0}</i>".format(text)
+                    if format.fontWeight() > QFont.Normal:
+                        text = "<b>{0}</b>".format(text)
+                    if format.fontStrikeOut():
+                        text = "<s>{0}</s>".format(text)
+                    if color != black or family:
+                        attribs = ""
+                        if color != black:
+                            attribs += ' color="{0}"'.format(color.name())
+                        if family:
+                            attribs += ' face="{0}"'.format(family)
+                        text = "<font{0}>{1}</font>".format(attribs,text)
+                    htmltext += text
+                iterator += 1
+            block = block.next()
+        return htmltext
+
 
     @pyqtSlot()
     def showinsertUI(self):
@@ -127,7 +175,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         print("show result")
         self.showresultbyText(pyperclip.paste())
-    
+
     @pyqtSlot()
     def on_pushButton_clean_clicked(self):
         """
@@ -135,7 +183,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         self.showinsertUI()
         self.textEdit_inserttext.setText("")
-    
+
     @pyqtSlot()
     def on_pushButton_paste_clicked(self):
         """
@@ -148,7 +196,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #具体操作
         self.statusBar.showMessage("")
         self.timer.stop()
-    
+
+    def getSearchText(self):
+        return self.lineEdit_search.text().strip()
+
     @pyqtSlot()
     def on_lineEdit_search_returnPressed(self):
         """
@@ -217,7 +268,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # self.textEdit_showresult.setText(showtxtresult)
         self.timer.start(2000)
-    
+
     @pyqtSlot(QModelIndex)
     def on_listWidget_search_clicked(self, index):
         """
@@ -232,7 +283,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         pass
 
 
-    
+
     @pyqtSlot(QModelIndex)
     def on_listWidget_search_doubleClicked(self, index):
         """
@@ -242,7 +293,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         @type QModelIndex
         """
         pass
-    
+
+    @pyqtSlot(QTextEdit)
+    def printout(lineedit):
+        print(str(lineedit.toHtml()))
+        print(str(lineedit.toPlainText()))
+        print(str(lineedit.toSimpleHtml()))
+
     @pyqtSlot(int)
     def on_listWidget_search_currentRowChanged(self, currentRow):
         """
@@ -252,8 +309,107 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         @type int
         """
         print(currentRow)
-        self.textEdit_showresult.setText(self.contents[currentRow])
-    
+        print("search text:", self.getSearchText())
+        keyword = self.getSearchText()
+        rowcontent = self.contents[currentRow]
+        rowcontent2 = self.contents[currentRow]
+        # if keyword in rowcontent:
+        #     print("in it ")
+        #     # rowcontent = rowcontent.replace(keyword, "<h1>" + keyword + "</h1>")
+        #     rowcontent = rowcontent.replace("\t", "    ")
+        #     rowcontent = rowcontent.replace(keyword, "<font color=\"red\">" + keyword + "</font>")
+        #     rowcontent = rowcontent.replace("\n", "<p>" + "\n" + "</p>")
+        #     # rowcontent = rowcontent.replace(" ", "&nbsp")
+
+        print("after deal rowcontent:", rowcontent)
+
+        def normalOutputWritten(self, text):
+            """Append text to the QTextEdit."""
+            # Maybe QTextEdit.append() works as well, but this is how I do it:
+            cursor = self.textEdit.textCursor()
+            cursor.movePosition(QTextCursor.End)
+            cursor.insertText(text)
+            self.textEdit.setTextCursor(cursor)
+            self.textEdit.ensureCursorVisible()
+
+        to_find_text = rowcontent2
+
+        if(currentRow >= 0):
+            # self.textEdit_showresult.setText(self.contents[currentRow])
+            self.textEdit_showresult.setText(to_find_text)
+            find_cursor = self.textEdit_showresult.textCursor()
+            plainFormat = find_cursor.charFormat()
+            colorFormat = plainFormat
+            colorFormat.setForeground(Qt.blue)
+            print("colorFormat:", colorFormat)
+            self.textEdit_showresult.mergeCurrentCharFormat(colorFormat)
+            self.textEdit_showresult.update()
+            return
+
+
+            document = self.textEdit_showresult.document()
+            cursor = QTextCursor(document)
+            # cursor.insertImage("./testimage.png")
+            f = cursor.charFormat()
+            print(f)
+
+            prop_id = 0x100000 + 1
+            f.setProperty(prop_id, 100)
+            print(f.intProperty(prop_id))
+            print('------')
+
+            block = document.firstBlock()
+            while block.length() > 0:
+                print(block)
+                it = block.begin()
+                while not it.atEnd():
+                    f = it.fragment()
+                    fmt = f.charFormat()
+                    print(fmt)
+                    print(fmt.intProperty(prop_id))
+                    it += 1
+                block = block.next()
+
+            # colorFormat.setForeground(Qt::red)
+            #
+            #
+            # while (ui->textEdit->find(to_find_text, QTextDocument::FindBackward)){
+            #
+            # QTextCharFormat
+            # QTextCharFormat colorFormat = plainFormat;
+            # colorFormat.setForeground(Qt::red);
+            # ui->textEdit->mergeCurrentCharFormat(colorFormat);
+            # // QPalette
+            # palette = ui->textEdit->palette();
+            # // palette.setColor(QPalette::Highlight, QColor(107, 194, 53));
+            # // ui->textEdit->setPalette(palette);
+            # }
+
+        # app = QApplication(sys.argv)
+        # lineedit = RichTextLineEdit()
+        # lineedit.returnPressed.connect(lambda: printout(lineedit))
+        # self.textEdit_showresult.textChanged.connect(lambda: printout(self.textEdit_showresult))
+        # self.textEdit_showresult.returnPressed.connect(lambda: printout(self.textEdit_showresult))
+
+
+        return
+        htmlbody = "<html><body>" + rowcontent + "</body></html>"
+
+
+
+        if(currentRow >= 0):
+            # self.textEdit_showresult.setText(self.contents[currentRow])
+            self.textEdit_showresult.setText(htmlbody)
+            # self.textEdit_showresult.setText(rowcontent)
+            # self.textEdit_showresult.update()
+            # htmltext = self.toSimpleHtml()
+            # print("after deal htmltext22222 is:", htmltext)
+            # self.textEdit_showresult.setText(htmltext)
+
+            # self.textEdit_showresult.toSimpleHtml()
+            # self.
+            # self.textEdit_showresult.setText(htmlbody)
+
     @pyqtSlot()
     def on_pushButton_searchclean_clicked(self):
         """
@@ -262,7 +418,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.showresultbyText("")
         self.lineEdit_search.setText("")
         self.lineEdit_search.setFocus()
-    
+
     @pyqtSlot()
     def on_actionSearchText_triggered(self):
         """
@@ -274,3 +430,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def searchtext(self):
         self.lineEdit_search.setFocus()
         self.lineEdit_search.clear()
+
+    @pyqtSlot()
+    def on_textEdit_showresult_textChanged(self):
+        """
+        Slot documentation goes here.
+        """
+        pass
+
+
+    @pyqtSlot(bool)
+    def on_textEdit_showresult_copyAvailable(self, b):
+        """
+        Slot documentation goes here.
+
+        @param b DESCRIPTION
+        @type bool
+        """
+        pass

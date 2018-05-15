@@ -122,11 +122,16 @@ def modifyTable(cursor,connect, tablename):
     connect.commit()
     print('成功修改', cursor.rowcount, '条数据')
 
+def dealsign(data=('')):
+    data = data.replace('"', '\\"')
+    return  data
 
 
 
 def searchTale(cursor,connect, tablename,data=('')):
     # 查询数据
+    data = dealsign(data)
+    print("after deal data:",data)
     sql = '''SELECT name,content FROM '''\
           + tablename \
           + ''' WHERE content like "%''' + data +  '''%"''' \
