@@ -26,7 +26,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 1.9
+    versionnum = 2.0
+    staticcharformat = 0
+
 
     """
     Class documentation goes here.
@@ -60,6 +62,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionSearchText.setShortcut('Ctrl+F')  # shortcut key
         self.actionSearchText.triggered.connect(self.searchtext)
 
+        #high light something
+        self.setupEditor()
+
+    def setupEditor(self):
+        font = QFont()
+        font.setFamily('Courier')
+        font.setFixedPitch(True)
+        font.setPointSize(10)
+
+        self.editor = QTextEdit()
+        self.editor.setFont(font)
+
+        self.highlighter = Highlighter(self.textEdit_showresult.document())
 
     def aboutVersion(self):
         self.statusBar.showMessage("数据库版本V%s"% self.versionnum)
@@ -300,6 +315,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         print(str(lineedit.toPlainText()))
         print(str(lineedit.toSimpleHtml()))
 
+    ##save old charFormat of textEdit_showresult
+    def getshowresultOldCharFormat(self):
+        global plainFormat
+        if (self.staticcharformat == 0):
+            find_cursor = self.textEdit_showresult.textCursor()
+            plainFormat = (find_cursor.charFormat())
+            self.staticcharformat = 1
+        return  plainFormat
+
+
     @pyqtSlot(int)
     def on_listWidget_search_currentRowChanged(self, currentRow):
         """
@@ -312,103 +337,65 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         print("search text:", self.getSearchText())
         keyword = self.getSearchText()
         rowcontent = self.contents[currentRow]
-        rowcontent2 = self.contents[currentRow]
-        # if keyword in rowcontent:
-        #     print("in it ")
-        #     # rowcontent = rowcontent.replace(keyword, "<h1>" + keyword + "</h1>")
-        #     rowcontent = rowcontent.replace("\t", "    ")
-        #     rowcontent = rowcontent.replace(keyword, "<font color=\"red\">" + keyword + "</font>")
-        #     rowcontent = rowcontent.replace("\n", "<p>" + "\n" + "</p>")
-        #     # rowcontent = rowcontent.replace(" ", "&nbsp")
-
         print("after deal rowcontent:", rowcontent)
-
-        def normalOutputWritten(self, text):
-            """Append text to the QTextEdit."""
-            # Maybe QTextEdit.append() works as well, but this is how I do it:
-            cursor = self.textEdit.textCursor()
-            cursor.movePosition(QTextCursor.End)
-            cursor.insertText(text)
-            self.textEdit.setTextCursor(cursor)
-            self.textEdit.ensureCursorVisible()
-
-        to_find_text = rowcontent2
+        # self.textEdit_showresult.mergeCurrentCharFormat(self.getshowresultOldCharFormat())
 
         if(currentRow >= 0):
-            # self.textEdit_showresult.setText(self.contents[currentRow])
-            self.textEdit_showresult.setText(to_find_text)
-            find_cursor = self.textEdit_showresult.textCursor()
-            plainFormat = find_cursor.charFormat()
-            colorFormat = plainFormat
-            colorFormat.setForeground(Qt.blue)
-            print("colorFormat:", colorFormat)
-            self.textEdit_showresult.mergeCurrentCharFormat(colorFormat)
-            self.textEdit_showresult.update()
-            return
+            self.textEdit_showresult.setText(self.contents[currentRow])
+            self.textEdit_showresult.textCursor().charFormat().setForeground(Qt.black)
 
+            org_cursor = self.textEdit_showresult.textCursor()
+            self.textEdit_showresult.textCursor().clearSelection()
+            # self.textEdit_showresult.textCursor().clear()
+            # selection.cursor.clearSelection();
 
-            document = self.textEdit_showresult.document()
-            cursor = QTextCursor(document)
-            # cursor.insertImage("./testimage.png")
-            f = cursor.charFormat()
-            print(f)
+            to_find_text = self.getSearchText()
+            print("to find text:", to_find_text )
 
-            prop_id = 0x100000 + 1
-            f.setProperty(prop_id, 100)
-            print(f.intProperty(prop_id))
-            print('------')
+            # functionFormat = QTextCharFormat()
+            # functionFormat.setFontItalic(True)
+            # functionFormat.setForeground(Qt.blue)
+            # self.highlightingRules.append((QRegExp("\\b"+to_find_text),
+            #                                functionFormat))
 
-            block = document.firstBlock()
-            while block.length() > 0:
-                print(block)
-                it = block.begin()
-                while not it.atEnd():
-                    f = it.fragment()
-                    fmt = f.charFormat()
-                    print(fmt)
-                    print(fmt.intProperty(prop_id))
-                    it += 1
-                block = block.next()
+            #move cursor to end
+            self.textEdit_showresult.moveCursor(QTextCursor.End)
+            while (self.textEdit_showresult.find(to_find_text, QTextDocument.FindBackward)):
+                print("while loop")
+                # self.__lastSearch = (txt, caseSensitive, wholeWord)
+                # flags = QTextDocument.FindFlags(QTextDocument.FindBackward)
+                # if caseSensitive:
+                #     flags |= QTextDocument.FindCaseSensitively
+                # if wholeWord:
+                #     flags |= QTextDocument.FindWholeWords
+                # ok = self.find(txt, flags)
 
-            # colorFormat.setForeground(Qt::red)
-            #
-            #
-            # while (ui->textEdit->find(to_find_text, QTextDocument::FindBackward)){
-            #
-            # QTextCharFormat
-            # QTextCharFormat colorFormat = plainFormat;
+                find_cursor = self.textEdit_showresult.textCursor()
+                if(find_cursor.isNull()):
+                    continue
+                platformat = find_cursor.charFormat()
+                # colorFormat = platformat
+                colorFormat = (org_cursor.charFormat())
+                # colorFormat.setForeground(Qt.blue)
+
+                print("find_cursor:", find_cursor)
+                find_cursor.movePosition(QTextCursor.WordRight,
+                                                      QTextCursor.KeepAnchor)
+
+                self.textEdit_showresult.mergeCurrentCharFormat(colorFormat)
+
+            # self.textEdit_showresult.mergeCurrentCharFormat(self.getshowresultOldCharFormat())
+
+            # {
+            # QTextCursor find_cursor=ui->textEdit->textCursor()
+            # QTextCharFormat plainFormat(find_cursor.charFormat())
+            # QTextCharFormat colorFormat = plainFormat
             # colorFormat.setForeground(Qt::red);
-            # ui->textEdit->mergeCurrentCharFormat(colorFormat);
-            # // QPalette
-            # palette = ui->textEdit->palette();
-            # // palette.setColor(QPalette::Highlight, QColor(107, 194, 53));
-            # // ui->textEdit->setPalette(palette);
+            # ui->textEdit->mergeCurrentCharFormat(colorFormat)
             # }
 
-        # app = QApplication(sys.argv)
-        # lineedit = RichTextLineEdit()
-        # lineedit.returnPressed.connect(lambda: printout(lineedit))
-        # self.textEdit_showresult.textChanged.connect(lambda: printout(self.textEdit_showresult))
-        # self.textEdit_showresult.returnPressed.connect(lambda: printout(self.textEdit_showresult))
 
 
-        return
-        htmlbody = "<html><body>" + rowcontent + "</body></html>"
-
-
-
-        if(currentRow >= 0):
-            # self.textEdit_showresult.setText(self.contents[currentRow])
-            self.textEdit_showresult.setText(htmlbody)
-            # self.textEdit_showresult.setText(rowcontent)
-            # self.textEdit_showresult.update()
-            # htmltext = self.toSimpleHtml()
-            # print("after deal htmltext22222 is:", htmltext)
-            # self.textEdit_showresult.setText(htmltext)
-
-            # self.textEdit_showresult.toSimpleHtml()
-            # self.
-            # self.textEdit_showresult.setText(htmlbody)
 
     @pyqtSlot()
     def on_pushButton_searchclean_clicked(self):
@@ -448,3 +435,87 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         @type bool
         """
         pass
+
+
+class Highlighter(QSyntaxHighlighter):
+    def __init__(self, parent=None):
+        super(Highlighter, self).__init__(parent)
+
+        keywordFormat = QTextCharFormat()
+        keywordFormat.setForeground(Qt.darkBlue)
+        keywordFormat.setFontWeight(QFont.Bold)
+
+        keywordPatterns = ["\\bchar\\b", "\\bclass\\b", "\\bconst\\b",
+                "\\bdouble\\b", "\\benum\\b", "\\bexplicit\\b", "\\bfriend\\b",
+                "\\binline\\b", "\\bint\\b", "\\blong\\b", "\\bnamespace\\b",
+                "\\boperator\\b", "\\bprivate\\b", "\\bprotected\\b",
+                "\\bpublic\\b", "\\bshort\\b", "\\bsignals\\b", "\\bsigned\\b",
+                "\\bslots\\b", "\\bstatic\\b", "\\bstruct\\b",
+                "\\btemplate\\b", "\\btypedef\\b", "\\btypename\\b",
+                "\\bunion\\b", "\\bunsigned\\b", "\\bvirtual\\b", "\\bvoid\\b",
+                "\\bvolatile\\b",
+                           "\\berror\\b" ,
+                           "\\bERROR\\b" ,
+                           "\\bfailed\\b" ,
+                           ]
+
+        self.highlightingRules = [(QRegExp(pattern), keywordFormat)
+                for pattern in keywordPatterns]
+
+        classFormat = QTextCharFormat()
+        classFormat.setFontWeight(QFont.Bold)
+        classFormat.setForeground(Qt.darkMagenta)
+        self.highlightingRules.append((QRegExp("\\bQ[A-Za-z]+\\b"),
+                classFormat))
+
+        singleLineCommentFormat = QTextCharFormat()
+        singleLineCommentFormat.setForeground(Qt.red)
+        self.highlightingRules.append((QRegExp("//[^\n]*"),
+                singleLineCommentFormat))
+
+        self.multiLineCommentFormat = QTextCharFormat()
+        self.multiLineCommentFormat.setForeground(Qt.red)
+
+        quotationFormat = QTextCharFormat()
+        quotationFormat.setForeground(Qt.darkGreen)
+        self.highlightingRules.append((QRegExp("\".*\""), quotationFormat))
+
+        functionFormat = QTextCharFormat()
+        functionFormat.setFontItalic(True)
+        functionFormat.setForeground(Qt.blue)
+        self.highlightingRules.append((QRegExp("\\b[A-Za-z0-9_]+(?=\\()"),
+                functionFormat))
+
+        self.commentStartExpression = QRegExp("/\\*")
+        self.commentEndExpression = QRegExp("\\*/")
+
+    def highlightBlock(self, text):
+        for pattern, format in self.highlightingRules:
+            expression = QRegExp(pattern)
+            index = expression.indexIn(text)
+            while index >= 0:
+                length = expression.matchedLength()
+                self.setFormat(index, length, format)
+                index = expression.indexIn(text, index + length)
+
+        self.setCurrentBlockState(0)
+
+        startIndex = 0
+        if self.previousBlockState() != 1:
+            startIndex = self.commentStartExpression.indexIn(text)
+
+        while startIndex >= 0:
+            endIndex = self.commentEndExpression.indexIn(text, startIndex)
+
+            if endIndex == -1:
+                self.setCurrentBlockState(1)
+                commentLength = len(text) - startIndex
+            else:
+                commentLength = endIndex - startIndex + self.commentEndExpression.matchedLength()
+
+            self.setFormat(startIndex, commentLength,
+                    self.multiLineCommentFormat)
+            startIndex = self.commentStartExpression.indexIn(text,
+                    startIndex + commentLength);
+
+

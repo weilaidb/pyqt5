@@ -158,7 +158,13 @@
          </layout>
         </item>
         <item>
-         <widget class="QTextEdit" name="textEdit_showresult"/>
+         <widget class="QTextEdit" name="textEdit_showresult">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
