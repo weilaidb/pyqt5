@@ -22,10 +22,145 @@ import pyperclip
 import os
 
 
+
+class Highlighter(QSyntaxHighlighter):
+    def __init__(self, parent=None):
+        super(Highlighter, self).__init__(parent)
+
+        keywordFormat = QTextCharFormat()
+        keywordFormat.setForeground(Qt.darkBlue)
+        keywordFormat.setFontWeight(QFont.Bold)
+
+        keywordPatterns = ["\\bchar\\b", "\\bclass\\b", "\\bconst\\b",
+                "\\bdouble\\b", "\\benum\\b", "\\bexplicit\\b", "\\bfriend\\b",
+                "\\binline\\b", "\\bint\\b", "\\blong\\b", "\\bnamespace\\b",
+                "\\boperator\\b", "\\bprivate\\b", "\\bprotected\\b",
+                "\\bpublic\\b", "\\bshort\\b", "\\bsignals\\b", "\\bsigned\\b",
+                "\\bslots\\b", "\\bstatic\\b", "\\bstruct\\b",
+                "\\btemplate\\b", "\\btypedef\\b", "\\btypename\\b",
+                "\\bunion\\b", "\\bunsigned\\b", "\\bvirtual\\b", "\\bvoid\\b",
+                "\\bvolatile\\b",
+                           "\\berror\\b" ,
+                           "\\bERROR\\b" ,
+                           "\\bfailed\\b" ,
+                           ]
+
+        self.highlightingRules = [(QRegExp(pattern), keywordFormat)
+                for pattern in keywordPatterns]
+
+        classFormat = QTextCharFormat()
+        classFormat.setFontWeight(QFont.Bold)
+        classFormat.setForeground(Qt.darkMagenta)
+        self.highlightingRules.append((QRegExp("\\bQ[A-Za-z]+\\b"),
+                classFormat))
+
+        singleLineCommentFormat = QTextCharFormat()
+        singleLineCommentFormat.setForeground(Qt.red)
+        self.highlightingRules.append((QRegExp("//[^\n]*"),
+                singleLineCommentFormat))
+
+        self.multiLineCommentFormat = QTextCharFormat()
+        self.multiLineCommentFormat.setForeground(Qt.red)
+
+        quotationFormat = QTextCharFormat()
+        quotationFormat.setForeground(Qt.darkGreen)
+        self.highlightingRules.append((QRegExp("\".*\""), quotationFormat))
+
+        functionFormat = QTextCharFormat()
+        functionFormat.setFontItalic(True)
+        functionFormat.setForeground(Qt.blue)
+        self.highlightingRules.append((QRegExp("\\b[A-Za-z0-9_]+(?=\\()"),
+                functionFormat))
+
+        self.commentStartExpression = QRegExp("/\\*")
+        self.commentEndExpression = QRegExp("\\*/")
+
+    def highlightBlock(self, text):
+        for pattern, format in self.highlightingRules:
+            expression = QRegExp(pattern)
+            index = expression.indexIn(text)
+            while index >= 0:
+                length = expression.matchedLength()
+                self.setFormat(index, length, format)
+                index = expression.indexIn(text, index + length)
+
+        self.setCurrentBlockState(0)
+
+        startIndex = 0
+        if self.previousBlockState() != 1:
+            startIndex = self.commentStartExpression.indexIn(text)
+
+        while startIndex >= 0:
+            endIndex = self.commentEndExpression.indexIn(text, startIndex)
+
+            if endIndex == -1:
+                self.setCurrentBlockState(1)
+                commentLength = len(text) - startIndex
+            else:
+                commentLength = endIndex - startIndex + self.commentEndExpression.matchedLength()
+
+            self.setFormat(startIndex, commentLength,
+                    self.multiLineCommentFormat)
+            startIndex = self.commentStartExpression.indexIn(text,
+                    startIndex + commentLength);
+
+
+
+
 class MyHighlighter(QSyntaxHighlighter):
 
     def __init__(self, parent):  # parent即绑定的QTextEdit对象
         QSyntaxHighlighter.__init__(self, parent)
+
+        keywordFormat = QTextCharFormat()
+        keywordFormat.setForeground(Qt.darkBlue)
+        keywordFormat.setFontWeight(QFont.Bold)
+
+        keywordPatterns = ["\\bchar\\b", "\\bclass\\b", "\\bconst\\b",
+                "\\bdouble\\b", "\\benum\\b", "\\bexplicit\\b", "\\bfriend\\b",
+                "\\binline\\b", "\\bint\\b", "\\blong\\b", "\\bnamespace\\b",
+                "\\boperator\\b", "\\bprivate\\b", "\\bprotected\\b",
+                "\\bpublic\\b", "\\bshort\\b", "\\bsignals\\b", "\\bsigned\\b",
+                "\\bslots\\b", "\\bstatic\\b", "\\bstruct\\b",
+                "\\btemplate\\b", "\\btypedef\\b", "\\btypename\\b",
+                "\\bunion\\b", "\\bunsigned\\b", "\\bvirtual\\b", "\\bvoid\\b",
+                "\\bvolatile\\b",
+                           "\\berror\\b" ,
+                           "\\bERROR\\b" ,
+                           "\\bfailed\\b" ,
+                           ]
+
+        self.highlightingRules = [(QRegExp(pattern), keywordFormat)
+                for pattern in keywordPatterns]
+
+        classFormat = QTextCharFormat()
+        classFormat.setFontWeight(QFont.Bold)
+        classFormat.setForeground(Qt.darkMagenta)
+        self.highlightingRules.append((QRegExp("\\bQ[A-Za-z]+\\b"),
+                classFormat))
+
+        singleLineCommentFormat = QTextCharFormat()
+        singleLineCommentFormat.setForeground(Qt.red)
+        self.highlightingRules.append((QRegExp("//[^\n]*"),
+                singleLineCommentFormat))
+
+        self.multiLineCommentFormat = QTextCharFormat()
+        self.multiLineCommentFormat.setForeground(Qt.red)
+
+        quotationFormat = QTextCharFormat()
+        quotationFormat.setForeground(Qt.darkGreen)
+        self.highlightingRules.append((QRegExp("\".*\""), quotationFormat))
+
+        functionFormat = QTextCharFormat()
+        functionFormat.setFontItalic(True)
+        functionFormat.setForeground(Qt.blue)
+        self.highlightingRules.append((QRegExp("\\b[A-Za-z0-9_]+(?=\\()"),
+                functionFormat))
+
+        self.commentStartExpression = QRegExp("/\\*")
+        self.commentEndExpression = QRegExp("\\*/")
+
+        #mine defination hight liters
         self.parent = parent
         self.highlight_data = []  # 存储匹配结果的列表
 
@@ -33,12 +168,44 @@ class MyHighlighter(QSyntaxHighlighter):
         brush = QBrush(Qt.yellow, Qt.SolidPattern)
         self.matched_format.setBackground(brush)
 
+
+
+
     def highlightBlock(self, text):
+        for pattern, format in self.highlightingRules:
+            expression = QRegExp(pattern)
+            index = expression.indexIn(text)
+            while index >= 0:
+                length = expression.matchedLength()
+                self.setFormat(index, length, format)
+                index = expression.indexIn(text, index + length)
+
+        self.setCurrentBlockState(0)
+
+        startIndex = 0
+        if self.previousBlockState() != 1:
+            startIndex = self.commentStartExpression.indexIn(text)
+
+        while startIndex >= 0:
+            endIndex = self.commentEndExpression.indexIn(text, startIndex)
+
+            if endIndex == -1:
+                self.setCurrentBlockState(1)
+                commentLength = len(text) - startIndex
+            else:
+                commentLength = endIndex - startIndex + self.commentEndExpression.matchedLength()
+
+            self.setFormat(startIndex, commentLength,
+                    self.multiLineCommentFormat)
+            startIndex = self.commentStartExpression.indexIn(text,
+                    startIndex + commentLength);
+
+        #mine definitioin pattern
         index = 0
         length = 0
         for item in self.highlight_data:
-            print("item:", item)
-            print("text:", text)
+            # print("item:", item)
+            # print("text:", text)
             if item.count('\n') != 0:
                 itemList = item.split('\n')
                 for part in itemList:
@@ -54,7 +221,8 @@ class MyHighlighter(QSyntaxHighlighter):
                     length = len(item)
                     self.setFormat(index, length, self.matched_format)
                 except Exception as e:
-                    print("exception:", e)
+                    # print("exception:", e)
+                    pass
 
     def setHighlightData(self, highlight_data):
         self.highlight_data = highlight_data
@@ -67,7 +235,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.0
+    versionnum = 2.1
     staticcharformat = 0
 
 
@@ -106,13 +274,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #high light something
         # self.setupEditor()
 
+        #using my highlighter
         self.CI = False     # case insensitive (i)
         self.MB = True     # ^$ match at line breaks (m)
         self.DM = False     # dot matched all (s)
         self.regex = ''
         self.data = ''
         self.previous_data = ''
-        self.highlighter = MyHighlighter(self.textEdit_showresult)
+        self.highlighter_my = MyHighlighter(self.textEdit_showresult)
 
 
 
@@ -247,7 +416,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         retval = default_insert_contetNameWithTime(data=(name, content))
         if(retval != 0xFFFF):
-            self.statusBar.showMessage("成功")
+            self.statusBar.showMessage("写入成功" + str(retval) + "条")
         elif (retval == 0xFFFF):
             # print("aaa")
             self.statusBar.showMessage("数据库未开启，请开启数据库")
@@ -545,8 +714,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         print("pattern:", pattern)
         print("data   :", self.data)
         dataMatched = re.findall(pattern, self.data)
-        self.highlighter.setHighlightData(dataMatched)
-        self.highlighter.rehighlight()
+        self.highlighter_my.setHighlightData(dataMatched)
+        self.highlighter_my.rehighlight()
 
     @pyqtSlot(bool)
     def on_textEdit_showresult_copyAvailable(self, b):
@@ -557,87 +726,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         @type bool
         """
         pass
-
-
-class Highlighter(QSyntaxHighlighter):
-    def __init__(self, parent=None):
-        super(Highlighter, self).__init__(parent)
-
-        keywordFormat = QTextCharFormat()
-        keywordFormat.setForeground(Qt.darkBlue)
-        keywordFormat.setFontWeight(QFont.Bold)
-
-        keywordPatterns = ["\\bchar\\b", "\\bclass\\b", "\\bconst\\b",
-                "\\bdouble\\b", "\\benum\\b", "\\bexplicit\\b", "\\bfriend\\b",
-                "\\binline\\b", "\\bint\\b", "\\blong\\b", "\\bnamespace\\b",
-                "\\boperator\\b", "\\bprivate\\b", "\\bprotected\\b",
-                "\\bpublic\\b", "\\bshort\\b", "\\bsignals\\b", "\\bsigned\\b",
-                "\\bslots\\b", "\\bstatic\\b", "\\bstruct\\b",
-                "\\btemplate\\b", "\\btypedef\\b", "\\btypename\\b",
-                "\\bunion\\b", "\\bunsigned\\b", "\\bvirtual\\b", "\\bvoid\\b",
-                "\\bvolatile\\b",
-                           "\\berror\\b" ,
-                           "\\bERROR\\b" ,
-                           "\\bfailed\\b" ,
-                           ]
-
-        self.highlightingRules = [(QRegExp(pattern), keywordFormat)
-                for pattern in keywordPatterns]
-
-        classFormat = QTextCharFormat()
-        classFormat.setFontWeight(QFont.Bold)
-        classFormat.setForeground(Qt.darkMagenta)
-        self.highlightingRules.append((QRegExp("\\bQ[A-Za-z]+\\b"),
-                classFormat))
-
-        singleLineCommentFormat = QTextCharFormat()
-        singleLineCommentFormat.setForeground(Qt.red)
-        self.highlightingRules.append((QRegExp("//[^\n]*"),
-                singleLineCommentFormat))
-
-        self.multiLineCommentFormat = QTextCharFormat()
-        self.multiLineCommentFormat.setForeground(Qt.red)
-
-        quotationFormat = QTextCharFormat()
-        quotationFormat.setForeground(Qt.darkGreen)
-        self.highlightingRules.append((QRegExp("\".*\""), quotationFormat))
-
-        functionFormat = QTextCharFormat()
-        functionFormat.setFontItalic(True)
-        functionFormat.setForeground(Qt.blue)
-        self.highlightingRules.append((QRegExp("\\b[A-Za-z0-9_]+(?=\\()"),
-                functionFormat))
-
-        self.commentStartExpression = QRegExp("/\\*")
-        self.commentEndExpression = QRegExp("\\*/")
-
-    def highlightBlock(self, text):
-        for pattern, format in self.highlightingRules:
-            expression = QRegExp(pattern)
-            index = expression.indexIn(text)
-            while index >= 0:
-                length = expression.matchedLength()
-                self.setFormat(index, length, format)
-                index = expression.indexIn(text, index + length)
-
-        self.setCurrentBlockState(0)
-
-        startIndex = 0
-        if self.previousBlockState() != 1:
-            startIndex = self.commentStartExpression.indexIn(text)
-
-        while startIndex >= 0:
-            endIndex = self.commentEndExpression.indexIn(text, startIndex)
-
-            if endIndex == -1:
-                self.setCurrentBlockState(1)
-                commentLength = len(text) - startIndex
-            else:
-                commentLength = endIndex - startIndex + self.commentEndExpression.matchedLength()
-
-            self.setFormat(startIndex, commentLength,
-                    self.multiLineCommentFormat)
-            startIndex = self.commentStartExpression.indexIn(text,
-                    startIndex + commentLength);
-
+    
+    @pyqtSlot()
+    def on_pushButton_insert_quickly_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        self.on_pushButton_paste_clicked()
+        self.on_pushButton_insert_clicked()
 

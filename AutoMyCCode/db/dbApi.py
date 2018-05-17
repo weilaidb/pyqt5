@@ -89,10 +89,10 @@ def insertTableData(cursor,connect, tablename,data):
         cursor.execute(sql % newdata)
         connect.commit()
         print('成功插入', cursor.rowcount, '条数据, curpos:',1)
-        return  True
+        return  cursor.rowcount
     except Exception as e :
         print('失败插入', cursor.rowcount, '条数据, reason:', e, 'curpos', 1)
-        return  False
+        return  cursor.rowcount
 
 
 
