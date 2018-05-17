@@ -10,6 +10,7 @@ from PyQt5.QtGui import *
 import platform
 import sys
 import html
+import re
 # from PyQt5.QtCore import QSize, Qt,pyqtSignal
 # from PyQt5.QtGui import QColor, QFont,QFontMetrics, QIcon, QKeySequence, QPixmap,QTextCharFormat
 # from PyQt5.QtWidgets import QAction,QApplication,QMenu,QTextEdit
@@ -19,6 +20,44 @@ from Ui_automyccode import *
 from dbApi import *
 import pyperclip
 import os
+
+
+class MyHighlighter(QSyntaxHighlighter):
+
+    def __init__(self, parent):  # parent即绑定的QTextEdit对象
+        QSyntaxHighlighter.__init__(self, parent)
+        self.parent = parent
+        self.highlight_data = []  # 存储匹配结果的列表
+
+        self.matched_format = QTextCharFormat()  # 定义高亮格式
+        brush = QBrush(Qt.yellow, Qt.SolidPattern)
+        self.matched_format.setBackground(brush)
+
+    def highlightBlock(self, text):
+        index = 0
+        length = 0
+        for item in self.highlight_data:
+            if item.count('\n') != 0:
+                itemList = item.split('\n')
+                for part in itemList:
+                    index = text.indexOf(part, index + length)
+                    if index == -1:
+                        index = 0
+                    else:
+                        length = len(part)
+                        self.setFormat(index, length, self.matched_format)
+            else:
+                # if (length == (0)):
+                #     print("error length is 0")
+                #     return
+                   index = text.index(item, index + length)
+                length = len(item)
+                self.setFormat(index, length, self.matched_format)
+
+    def setHighlightData(self, highlight_data):
+        self.highlight_data = highlight_data
+
+
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -65,6 +104,48 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #high light something
         self.setupEditor()
 
+        self.CI = False     # case insensitive (i)
+        self.MB = False     # ^$ match at line breaks (m)
+        self.DM = False     # dot matched all (s)
+        self.regex = ''
+        self.data = ''
+        self.previous_data = ''
+        self.highlighter = MyHighlighter(self.textEdit_showresult)
+
+
+
+
+    def dragEnterEvent(self, event):
+        print("dragEnter event")
+        if event.mimeData().hasFormat("application/x-icon-and-text"):
+            event.accept()
+        else:
+            event.ignore()
+
+
+    def dragMoveEvent(self, event):
+        print("dragMove event")
+        if event.mimeData().hasFormat("application/x-icon-and-text"):
+            event.setDropAction(Qt.CopyAction)
+            event.accept()
+        else:
+            event.ignore()
+
+
+    def dropEvent(self, event):
+        print("drop event")
+        if event.mimeData().hasFormat("application/x-icon-and-text"):
+            data = event.mimeData().data("application/x-icon-and-text")
+            stream = QDataStream(data, QIODevice.ReadOnly)
+            text = ""
+            #stream >> text
+            text=stream.readQString()
+            self.setText(text)
+            event.setDropAction(Qt.CopyAction)
+            event.accept()
+        else:
+            event.ignore()
+
     def setupEditor(self):
         font = QFont()
         font.setFamily('Courier')
@@ -106,7 +187,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     color = format.foreground().color()
                     text=html.escape(fragment.text())
                     if (format.verticalAlignment() ==
-                        QTextCharFormat.AlignSubScript):
+                            QTextCharFormat.AlignSubScript):
                         text = "<sub>{0}</sub>".format(text)
                     elif (format.verticalAlignment() ==
                           QTextCharFormat.AlignSuperScript):
@@ -342,6 +423,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         if(currentRow >= 0):
             self.textEdit_showresult.setText(self.contents[currentRow])
+            # self.highlighter.setHighlightData(keyword)
+            # self.highlighter.rehighlight()
+            return
+
+
+
             self.textEdit_showresult.textCursor().charFormat().setForeground(Qt.black)
 
             org_cursor = self.textEdit_showresult.textCursor()
@@ -380,7 +467,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                 print("find_cursor:", find_cursor)
                 find_cursor.movePosition(QTextCursor.WordRight,
-                                                      QTextCursor.KeepAnchor)
+                                         QTextCursor.KeepAnchor)
 
                 self.textEdit_showresult.mergeCurrentCharFormat(colorFormat)
 
@@ -423,8 +510,40 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
-        pass
+        keyword = self.getSearchText()
+        self.regex = keyword
+        if(self.regex.strip() == ''):
+            return
+        self.data = (self.textEdit_showresult.toPlainText())
+        if(self.data.strip() == ''):
+            return
+        if self.data != self.previous_data:
+            self.previous_data = self.data
+            self.matchData()
 
+    def matchData(self):
+        if (not self.CI) and (not self.MB) and (not self.DM):
+            pattern = re.compile(self.regex)
+        elif (not self.CI) and (not self.MB) and (self.DM):
+            pattern = re.compile(self.regex, re.S)
+        elif (not self.CI) and (self.MB) and (not self.DM):
+            pattern = re.compile(self.regex, re.M)
+        elif (not self.CI) and (self.MB) and (self.DM):
+            pattern = re.compile(self.regex, re.M | re.S)
+        elif (self.CI) and (not self.MB) and (not self.DM):
+            pattern = re.compile(self.regex, re.I)
+        elif (self.CI) and (not self.MB) and (self.DM):
+            pattern = re.compile(self.regex, re.I | re.S)
+        elif (self.CI) and (self.MB) and (not self.DM):
+            pattern = re.compile(self.regex, re.I | re.M)
+        elif (self.CI) and (self.MB) and (self.DM):
+            pattern = re.compile(self.regex, re.I | re.M | re.S)
+
+        print("pattern:", pattern)
+        print("data   :", self.data)
+        dataMatched = re.findall(pattern, self.data)
+        self.highlighter.setHighlightData(dataMatched)
+        self.highlighter.rehighlight()
 
     @pyqtSlot(bool)
     def on_textEdit_showresult_copyAvailable(self, b):
