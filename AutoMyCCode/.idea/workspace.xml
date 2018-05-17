@@ -14,8 +14,8 @@
       <file leaf-file-name="automyccode.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/automyccode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="239" />
+            <state relative-caret-position="266">
+              <caret line="270" column="20" selection-start-line="270" selection-start-column="20" selection-end-line="270" selection-end-column="20" />
               <folding>
                 <element signature="e#66#92#0" expanded="true" />
               </folding>
@@ -23,44 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbApi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/dbApi.py">
+      <file leaf-file-name="Ui_automyccode.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/Ui_automyccode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="regexTesterUi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/regexTesterUi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-              <folding>
-                <element signature="e#232#258#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="regexTester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/regexTester.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-              <folding>
-                <element signature="e#104#113#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="278">
+              <caret line="60" column="32" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -76,14 +43,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lineedit_sear</find>
-      <find>lineedit search return pressed</find>
-      <find>请输入搜索关键字</find>
       <find>pyperclip</find>
       <find>settext</find>
       <find>default_search_contetName</find>
       <find>ctrl</find>
-      <find>search express:</find>
+      <find />
       <find>replace</find>
       <find>htmltext</find>
       <find>returnPressed</find>
@@ -95,7 +59,7 @@
       <find>Highlighter</find>
       <find>colorFormat</find>
       <find>print\s+</find>
-      <find>from PyQt5.QtCore import * from PyQt5.QtWidgets import * from PyQt5.QtGui import *</find>
+      <find />
       <find>unicode</find>
       <find>QtCore.</find>
       <find>indexOf</find>
@@ -106,6 +70,9 @@
       <find>indexof</find>
       <find>成功</find>
       <find>default_insert_contetNameWithTime</find>
+      <find>请输入</find>
+      <find>showtipsinfo</find>
+      <find>textEdit</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -134,11 +101,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="580" />
-    <option name="y" value="84" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="298" />
+    <option name="y" value="63" />
     <option name="width" value="1320" />
-    <option name="height" value="636" />
+    <option name="height" value="668" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -332,16 +299,16 @@
     <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.19056974" visible="true" weight="0.19002375" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.31041667" visible="true" weight="0.12826604" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1920635" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23809524" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.80943024" side_tool="true" visible="true" weight="0.19002375" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.68958336" side_tool="true" visible="true" weight="0.12826604" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32857144" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.18253969" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47619048" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.28825912" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -356,7 +323,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -543,13 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/Ui_automyccode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="90" column="43" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/richtext.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/eric6/UI/LogView.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -709,10 +669,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/Ui_automyccode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/automyccode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="239" />
+        <state relative-caret-position="266">
+          <caret line="270" column="20" selection-start-line="270" selection-start-column="20" selection-end-line="270" selection-end-column="20" />
           <folding>
             <element signature="e#66#92#0" expanded="true" />
           </folding>

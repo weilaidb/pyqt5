@@ -21,6 +21,39 @@ from dbApi import *
 import pyperclip
 import os
 
+# 将一个字符串变量转换成raw字符串：
+escape_dict = {'\a': r'\a',
+               '\b': r'\b',
+               '\c': r'\c',
+               '\f': r'\f',
+               '\n': r'\n',
+               '\r': r'\r',
+               '\t': r'\t',
+               '\v': r'\v',
+               '\'': r'\'',
+               '\"': r'\"',
+               '\0': r'\0',
+               '\1': r'\1',
+               '\2': r'\2',
+               '\3': r'\3',
+               '\4': r'\4',
+               '\5': r'\5',
+               '\6': r'\6',
+               '\7': r'\7',
+               '\8': r'\8',
+               '\9': r'\9'}
+
+
+def raw(text):  # 将每个可能的转义字符都进行了替换
+    """Returns a raw string representation of text"""
+    new_string = ''
+    for char in text:
+        try:
+            new_string += escape_dict[char]
+        except KeyError:
+            new_string += char
+    return new_string
+
 
 
 class Highlighter(QSyntaxHighlighter):
@@ -235,7 +268,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.1
+    versionnum = 2.2
     staticcharformat = 0
 
 
@@ -256,7 +289,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer.timeout.connect(self.operate)  # 计时结束调用operate()方法
         # self.timer.start(2000)  # 设置计时间隔并启动
         self.aboutVersion()
-        self.showtipsinfo()
+        # self.showtipsinfo()
+        self.showtipsinfoSelf(self.lineEdit_search, ("请输入搜索关键字"))
+        self.showtipsinfoSelf(self.textEdit_regexpress, ("请输入替换正则表达式，格式: 查找项+空格+替换项"))
+        self.showtipsinfoSelf(self.textEdit_inserttext, ("请输入待处理的数据"))
+
         # 设置窗口的图标，引用当前目录下的web.png图片
         if(os.path.exists("web.png")):
             print("web.png exist")
@@ -283,6 +320,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.previous_data = ''
         self.highlighter_my = MyHighlighter(self.textEdit_showresult)
 
+        #regex mode ui
+        self.hideRegrexModeUi()
+
+
+
+    def hideRegrexModeUi(self):
+        self.textEdit_regexpress.hide()
+        self.pushButton_regular_mode.hide()
+
+    def showRegrexModeUi(self):
+        self.textEdit_inserttext.show()
+        self.textEdit_regexpress.show()
+        self.pushButton_regular_mode.show()
+
+        #hide list widget
+        self.listWidget_search.hide()
 
 
 
@@ -334,6 +387,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def showtipsinfo(self):
         # self.textEdit_showresult.setText("")
         self.lineEdit_search.setPlaceholderText("请输入搜索关键字")
+
+    def showtipsinfoSelf(self,ui, text):
+        # self.textEdit_showresult.setText("")
+        ui.setPlaceholderText(text)
 
     def insert2db(self):
         pass
@@ -395,6 +452,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
+        #hide regrex mode ui
+        self.hideRegrexModeUi()
+
         self.showinsertUI()
         print("insert 2 db")
         content = self.textEdit_inserttext.toPlainText()
@@ -427,6 +487,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer.start(2000)
 
     def showresultbyText(self,text):
+        #hide regrex mode ui
+        self.hideRegrexModeUi()
+
         self.lineEdit_search.setText(text)
         self.on_lineEdit_search_returnPressed()
         searchtext = self.lineEdit_search.text()
@@ -448,6 +511,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
+        #hide regrex mode ui
+        self.hideRegrexModeUi()
+
         self.showinsertUI()
         self.textEdit_inserttext.setText("")
 
@@ -456,6 +522,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
+        #hide regrex mode ui
+        self.hideRegrexModeUi()
+
         self.showinsertUI()
         self.textEdit_inserttext.setText(pyperclip.paste())
 
@@ -479,6 +548,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.listWidget_search.clear()
             self.lineEdit_search.setText("")
             return
+
+        #hide regrex mode ui
+        self.hideRegrexModeUi()
         print(searchtext)
         self.namelist.clear()
         self.contents.clear()
@@ -734,4 +806,92 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         self.on_pushButton_paste_clicked()
         self.on_pushButton_insert_clicked()
+    
+    @pyqtSlot()
+    def on_textEdit_regexpress_textChanged(self):
+        """
+        Slot documentation goes here.
+        """
+        pass
 
+
+    @pyqtSlot()
+    def on_pushButton_regular_mode_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        # pass
+        todotext = self.textEdit_inserttext.toPlainText()
+        patterntext = self.textEdit_regexpress.toPlainText()
+        splitlists = patterntext.split('\n')
+        apattern = []
+        bpattern = []
+        for sub in splitlists:
+            print("sub:", sub)
+            insub = re.split(r'\s+',sub)
+            print("insub     :", insub)
+            print("len(insub):", len(insub))
+            if (len(insub) > 1):
+                print("re.compile(raw(insub[0]:", re.compile(raw(insub[0])))
+                print("raw(insub[1]:", raw(insub[1]))
+                apattern.append(re.compile(raw(insub[0])))
+                bpattern.append(raw(insub[1]))
+            else:
+                print("invalid insub !!!")
+
+        print("apattern", apattern)
+        print("bpattern", bpattern)
+
+        # ##tuple 必须是初始化完成的，不能直接赋值，使用list
+        # combinepattern = [[re.compile(p)
+        #                    for p in apattern], bpattern]
+        # print("combinepattern", combinepattern)
+
+        #deal text todotext
+        # todotext
+        loop = 0
+        resulttext = todotext
+        for pattern in apattern:
+            print('Seeking "%s" ->'% pattern)
+            print('Replace "%s" ->'% bpattern[loop])
+            if(pattern.search(todotext)):
+                print('match')
+            else:
+                print('no match')
+
+            try:
+                print("Replace Text:", pattern.sub(bpattern[loop], resulttext))
+                resulttext = pattern.sub(bpattern[loop], resulttext)
+            except Exception as e:
+                print("replace error!,", e)
+
+
+            loop+=1
+
+
+        self.textEdit_showresult.setText(resulttext)
+        return
+        # replaceregexes = ([re.compile(p)
+        #                    for p in [raw(t)   for t in patterntext.split('\n')]])
+        # patternscombine  = ([p],[w]
+        #                    for p, w  in [raw(t.split(r"\s+")[0])   for t in patterntext.split('\n')]])
+        #
+        # searchpattern  = ([re.compile(p)
+        #                    for p in [raw(t.split(r"\s+")[0])   for t in patterntext.split('\n')]])
+        # replacepattern = ([w
+        #                    for w in [raw(t.split(r"\s+")[1])   for t in patterntext.split('\n')]])
+        # print("searchpattern :", searchpattern)
+        # print("replacepattern:", replacepattern)
+        # print("replaceregexes:", replaceregexes)
+
+        # for sub in replaceregexes:
+        #     print("sub:", sub)
+        #     insub = sub.split("\\s+")
+        #     print("insub size:", insub.count())
+    
+    @pyqtSlot()
+    def on_actionReGex_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        self.showRegrexModeUi()
