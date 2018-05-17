@@ -37,22 +37,24 @@ class MyHighlighter(QSyntaxHighlighter):
         index = 0
         length = 0
         for item in self.highlight_data:
+            print("item:", item)
+            print("text:", text)
             if item.count('\n') != 0:
                 itemList = item.split('\n')
                 for part in itemList:
-                    index = text.indexOf(part, index + length)
+                    index = text.index(part, index + length)
                     if index == -1:
                         index = 0
                     else:
                         length = len(part)
                         self.setFormat(index, length, self.matched_format)
             else:
-                # if (length == (0)):
-                #     print("error length is 0")
-                #     return
-                   index = text.index(item, index + length)
-                length = len(item)
-                self.setFormat(index, length, self.matched_format)
+                try:
+                    index = text.index(item, index + length)
+                    length = len(item)
+                    self.setFormat(index, length, self.matched_format)
+                except Exception as e:
+                    print("exception:", e)
 
     def setHighlightData(self, highlight_data):
         self.highlight_data = highlight_data
@@ -102,10 +104,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionSearchText.triggered.connect(self.searchtext)
 
         #high light something
-        self.setupEditor()
+        # self.setupEditor()
 
         self.CI = False     # case insensitive (i)
-        self.MB = False     # ^$ match at line breaks (m)
+        self.MB = True     # ^$ match at line breaks (m)
         self.DM = False     # dot matched all (s)
         self.regex = ''
         self.data = ''
@@ -515,6 +517,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if(self.regex.strip() == ''):
             return
         self.data = (self.textEdit_showresult.toPlainText())
+        print("self.data:", self.data)
         if(self.data.strip() == ''):
             return
         if self.data != self.previous_data:

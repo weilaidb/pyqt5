@@ -33,7 +33,7 @@ class MyHighlighter(QSyntaxHighlighter):
             if item.count('\n') != 0:
                 itemList = item.split('\n')
                 for part in itemList:
-                    index = text.indexOf(part, index + length)
+                    index = text.index(part, index + length)
                     if index == -1:
                         index = 0
                     else:
@@ -43,9 +43,14 @@ class MyHighlighter(QSyntaxHighlighter):
                 # if (length == (0)):
                 #     print("error length is 0")
                 #     return
-                index = text.index(item, index + length)
-                length = len(item)
-                self.setFormat(index, length, self.matched_format)
+                try:
+                    index = text.index(item, index + length)
+                    length = len(item)
+                    self.setFormat(index, length, self.matched_format)
+                except Exception as e:
+                    print("exception:", e)
+
+
         
     def setHighlightData(self, highlight_data):
         self.highlight_data = highlight_data
