@@ -268,7 +268,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.2
+    versionnum = 2.3
     staticcharformat = 0
 
 
@@ -328,6 +328,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def hideRegrexModeUi(self):
         self.textEdit_regexpress.hide()
         self.pushButton_regular_mode.hide()
+
+    def hideRegrexModeUiwhenPaste(self):
+        pass
+        # self.textEdit_regexpress.hide()
+        # self.pushButton_regular_mode.hide()
 
     def showRegrexModeUi(self):
         self.textEdit_inserttext.show()
@@ -523,7 +528,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Slot documentation goes here.
         """
         #hide regrex mode ui
-        self.hideRegrexModeUi()
+        # self.hideRegrexModeUi()
 
         self.showinsertUI()
         self.textEdit_inserttext.setText(pyperclip.paste())
