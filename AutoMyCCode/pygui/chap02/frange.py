@@ -20,8 +20,8 @@ def frange(arg0, arg1=None, arg2=None):
     frange(start, stop)        # start = arg0  stop = arg1  inc = 1.0
     frange(stop)               # start = 0.0   stop = arg0  inc = 1.0
     
-    >>> frange(5)
-    [0.0, 1.0, 2.0, 3.0, 4.0]
+    >>> frange(6)
+    [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
     >>> frange(5, 10)
     [5, 6.0, 7.0, 8.0, 9.0]
     >>> frange(2, 5, 0.5)
@@ -53,8 +53,8 @@ def gfrange(arg0, arg1=None, arg2=None):
     gfrange(start, stop) # inc == 1.0
     gfrange(stop) # start = 0.0, inc == 1.0
 
-    >>> list(gfrange(5))
-    [0.0, 1.0, 2.0, 3.0, 4.0]
+    >>> list(gfrange(6))
+    [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
     >>> list(gfrange(5, 10))
     [5, 6.0, 7.0, 8.0, 9.0]
     >>> list(gfrange(2, 5, 0.5))

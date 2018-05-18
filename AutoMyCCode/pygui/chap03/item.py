@@ -137,8 +137,8 @@ if __name__ == "__main__":
                            "bronze"))
     uniquematerials = set()
     for item in items:
-        print item
+        print(item)
         if hasattr(item, "material"):
             uniquematerials.add(item.material())
-    print "Sculptures use %d unique materials" % len(uniquematerials)
+    print("Sculptures use %d unique materials" % len(uniquematerials))
 

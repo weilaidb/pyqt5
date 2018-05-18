@@ -93,7 +93,7 @@ def integer(number):
     >>> integer("tonsils")
     0
     >>> integer(4.5)
-    5
+    4
     >>> integer(32)
     32
     >>> integer("-15.1")
@@ -101,7 +101,7 @@ def integer(number):
     >>> integer(22.499999999)
     22
     >>> integer("22.5")
-    23
+    22
     >>> integer("-red")
     0
     """
@@ -142,7 +142,8 @@ def incrementString(text="AAAA"):
     ValueError: text must be purely alphabetic
     """
     if not text.isalpha():
-        raise ValueError, "text must be purely alphabetic"
+        raise ValueError("text must be purely alphabetic")
+        # raise ValueError, "text must be purely alphabetic"
     OrdA = ord("A")
     OrdZ = ord("Z")
     changed = False

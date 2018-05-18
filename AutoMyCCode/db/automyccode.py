@@ -268,7 +268,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.3
+    versionnum = 2.4
     staticcharformat = 0
 
 
@@ -900,3 +900,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Slot documentation goes here.
         """
         self.showRegrexModeUi()
+    
+    @pyqtSlot()
+    def on_pushButton_toclipboard_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        pyperclip.copy(self.textEdit_showresult.toPlainText())

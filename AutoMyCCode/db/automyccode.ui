@@ -194,6 +194,25 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_toclipboard">
+            <property name="minimumSize">
+             <size>
+              <width>91</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>91</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>粘上</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item>

@@ -16,11 +16,11 @@
 class Dimension(object):
 
     def area(self):
-        raise NotImplementedError, "Dimension.area()"
+        raise NotImplementedError("Dimension.area()")
 
 
     def volume(self):
-        raise NotImplementedError, "Dimension.volume()"
+        raise NotImplementedError("Dimension.volume()")
 
 
 
@@ -106,11 +106,11 @@ class Sculpture(Item, Dimension):
 
 if __name__ == "__main__":
     painting = Painting("Cecil Collins", "The Poet", 1941, 298, 400)
-    print painting.area(), painting.volume()
+    print(painting.area(), painting.volume())
     sculpture = Sculpture("Auguste Rodin", "The Secret", 1925, "bronze")
     try:
-        print sculpture.area(), sculpture.volume()
+        print(sculpture.area(), sculpture.volume())
     except NotImplementedError:
-        print "Ooops, we forgot to implement area() and volume() for" + \
-              " Sculptures"
+        print("Ooops, we forgot to implement area() and volume() for" + \
+              " Sculptures")
 
