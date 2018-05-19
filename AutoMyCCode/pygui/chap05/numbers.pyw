@@ -13,8 +13,9 @@ import math
 import random
 import string
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 import numberformatdlg1
 import numberformatdlg2
 import numberformatdlg3
@@ -55,12 +56,15 @@ class Form(QDialog):
         layout.addLayout(buttonLayout)
         self.setLayout(layout)
 
-        self.connect(formatButton1, SIGNAL("clicked()"),
-                     self.setNumberFormat1)
-        self.connect(formatButton2, SIGNAL("clicked()"),
-                     self.setNumberFormat2)
-        self.connect(formatButton3, SIGNAL("clicked()"),
-                     self.setNumberFormat3)
+        formatButton1.clicked.connect(self.setNumberFormat1)
+        formatButton2.clicked.connect(self.setNumberFormat2)
+        formatButton3.clicked.connect(self.setNumberFormat3)
+        # self.connect(formatButton1, SIGNAL("clicked()"),
+        #              self.setNumberFormat1)
+        # self.connect(formatButton2, SIGNAL("clicked()"),
+        #              self.setNumberFormat2)
+        # self.connect(formatButton3, SIGNAL("clicked()"),
+        #              self.setNumberFormat3)
         self.setWindowTitle("Numbers")
         self.refreshTable()
 
@@ -105,7 +109,10 @@ class Form(QDialog):
 
     def setNumberFormat2(self):
         dialog = numberformatdlg2.NumberFormatDlg(self.format, self)
-        self.connect(dialog, SIGNAL("changed"), self.refreshTable)
+        # self.connect(dialog, SIGNAL("changed"), self.refreshTable)
+        self.connect(dialog.changed, self.refreshTable)
+        # dialog.changed.connect(self.refreshTable)
+        # self.changed.connect(dialog.refreshTable)
         dialog.show()
 
 

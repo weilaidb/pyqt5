@@ -10,8 +10,9 @@
 # the GNU General Public License for more details.
 
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 
 if sys.version_info[:2] < (2, 5):
@@ -45,19 +46,25 @@ class Form(QDialog):
         layout.addWidget(self.label)
         self.setLayout(layout)
 
-        self.connect(button1, SIGNAL("clicked()"), self.one)
+        # self.connect(button1, SIGNAL("clicked()"), self.one)
+        button1.clicked.connect(self.one)
         self.button2callback = partial(self.anyButton, "Two")
-        self.connect(button2, SIGNAL("clicked()"),
-                     self.button2callback)
+        # self.connect(button2, SIGNAL("clicked()"),
+        #              self.button2callback)
+        button2.clicked.connect(self.button2callback)
         self.button3callback = lambda who="Three": self.anyButton(who)
-        self.connect(button3, SIGNAL("clicked()"),
-                     self.button3callback)
-        self.connect(button4, SIGNAL("clicked()"), self.clicked)
-        self.connect(button5, SIGNAL("clicked()"), self.clicked)
+        # self.connect(button3, SIGNAL("clicked()"),
+        #              self.button3callback)
+        button3.clicked.connect(self.button3callback)
+        # self.connect(button4, SIGNAL("clicked()"), self.clicked)
+        button4.clicked.connect(self.clicked)
+        # self.connect(button5, SIGNAL("clicked()"), self.clicked)
+        button5.clicked.connect(self.clicked)
 
         self.setWindowTitle("Connections")
 
 
+    @pyqtSlot()
     def one(self):
         self.label.setText("You clicked button 'One'")
 

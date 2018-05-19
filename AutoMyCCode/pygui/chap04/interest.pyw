@@ -10,8 +10,10 @@
 # the GNU General Public License for more details.
 
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+
 
 class Form(QDialog):
 
@@ -47,13 +49,21 @@ class Form(QDialog):
         grid.addWidget(self.amountLabel, 3, 1)
         self.setLayout(grid)
 
-        self.connect(self.principalSpinBox,
-                     SIGNAL("valueChanged(double)"), self.updateUi)
-        self.connect(self.rateSpinBox,
-                     SIGNAL("valueChanged(double)"), self.updateUi)
-        self.connect(self.yearsComboBox,
-                SIGNAL("currentIndexChanged(int)"), self.updateUi)
-        
+        self.principalSpinBox.valueChanged.connect(self.updateUi)
+        self.rateSpinBox.valueChanged.connect(self.updateUi)
+        self.yearsComboBox.currentIndexChanged.connect(self.updateUi)
+
+
+        # self.connect(self.principalSpinBox,
+        #              SIGNAL("valueChanged(double)"), self.updateUi)
+        # self.connect(self.rateSpinBox,
+        #              SIGNAL("valueChanged(double)"), self.updateUi)
+        # self.connect(self.yearsComboBox,
+        #         SIGNAL("currentIndexChanged(int)"), self.updateUi)
+
+
+
+
         self.setWindowTitle("Interest")
         self.updateUi()
 

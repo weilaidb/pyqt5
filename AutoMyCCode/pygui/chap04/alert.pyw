@@ -11,8 +11,9 @@
 
 import sys
 import time
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 app = QApplication(sys.argv)
 
@@ -36,6 +37,6 @@ while QTime.currentTime() < due:
 label = QLabel("<font color=red size=72><b>" + message + "</b></font>")
 label.setWindowFlags(Qt.SplashScreen)
 label.show()
-QTimer.singleShot(60000, app.quit) # 1 minute
+QTimer.singleShot(10000, app.quit) # 1 minute
 app.exec_()
 

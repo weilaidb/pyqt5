@@ -83,7 +83,7 @@ class Length(object):
                     unit = length[i:].strip().lower()
                     break
             else:
-                raise ValueError, "need an amount and a unit"
+                raise ValueError("need an amount and a unit")
             self.__amount /= Length.convert[unit]
 
 
@@ -92,10 +92,10 @@ class Length(object):
 
         >>> x = Length("3m")
         >>> round(x.to("m"))
-        3.0
+        3
         >>> x.set("39 in")
         >>> round(x.to("m"))
-        1.0
+        1
         """
         self.__init__(length)
 
@@ -110,7 +110,7 @@ class Length(object):
         >>> str(x)
         '0.152m'
         >>> round(x.to("mm"))
-        152.0
+        152
         >>> round(x.to("ft"), 3)
         0.5
         >>> round(Length("1m"))
@@ -249,8 +249,8 @@ class Length(object):
         ValueError: Length * Length produces an area not a Length
         """
         if isinstance(other, Length):
-            raise ValueError, \
-                    "Length * Length produces an area not a Length"
+            raise ValueError(\
+                    "Length * Length produces an area not a Length")
         return Length("%fm" % (self.__amount * other))
 
 

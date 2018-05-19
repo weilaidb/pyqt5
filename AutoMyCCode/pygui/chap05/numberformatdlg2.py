@@ -9,9 +9,10 @@
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 # the GNU General Public License for more details.
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+import re
 
 class NumberFormatDlg(QDialog):
 
@@ -61,16 +62,18 @@ class NumberFormatDlg(QDialog):
         grid.addWidget(buttonBox, 4, 0, 1, 2)
         self.setLayout(grid)
 
-        self.connect(buttonBox.button(QDialogButtonBox.Apply),
-                     SIGNAL("clicked()"), self.apply)
-        self.connect(buttonBox, SIGNAL("rejected()"),
-                     self, SLOT("reject()"))
+        buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.apply)
+        buttonBox.rejected.connect(self.reject)
+        # self.connect(buttonBox.button(QDialogButtonBox.Apply),
+        #              SIGNAL("clicked()"), self.apply)
+        # self.connect(buttonBox, SIGNAL("rejected()"),
+        #              self, SLOT("reject()"))
         self.setWindowTitle("Set Number Format (Modeless)")
 
 
     def apply(self):
-        thousands = unicode(self.thousandsEdit.text())
-        decimal = unicode(self.decimalMarkerEdit.text())
+        thousands = (self.thousandsEdit.text())
+        decimal = (self.decimalMarkerEdit.text())
         if thousands == decimal:
             QMessageBox.warning(self, "Format Error",
                     "The thousands separator and the decimal marker "
@@ -91,6 +94,6 @@ class NumberFormatDlg(QDialog):
                 self.decimalPlacesSpinBox.value()
         self.format["rednegatives"] = \
                 self.redNegativesCheckBox.isChecked()
-        self.emit(SIGNAL("changed"))
+        self.emit(self.changed)
 
 

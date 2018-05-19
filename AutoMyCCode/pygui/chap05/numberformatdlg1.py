@@ -9,9 +9,9 @@
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 # the GNU General Public License for more details.
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 class NumberFormatDlg(QDialog):
 
@@ -47,11 +47,13 @@ class NumberFormatDlg(QDialog):
         grid.addWidget(self.redNegativesCheckBox, 3, 0, 1, 2)
         grid.addWidget(buttonBox, 4, 0, 1, 2)
         self.setLayout(grid)
+        buttonBox.accepted.connect(self.accept)
+        buttonBox.rejected.connect(self.reject)
 
-        self.connect(buttonBox, SIGNAL("accepted()"),
-                     self, SLOT("accept()"))
-        self.connect(buttonBox, SIGNAL("rejected()"),
-                     self, SLOT("reject()"))
+        # self.connect(buttonBox, SIGNAL("accepted()"),
+        #              self, SLOT("accept()"))
+        # self.connect(buttonBox, SIGNAL("rejected()"),
+        #              self, SLOT("reject()"))
         self.setWindowTitle("Set Number Format (Modal)")
 
 
@@ -60,36 +62,36 @@ class NumberFormatDlg(QDialog):
         class DecimalError(Exception): pass
         Punctuation = frozenset(" ,;:.")
 
-        thousands = unicode(self.thousandsEdit.text())
-        decimal = unicode(self.decimalMarkerEdit.text())
+        thousands = (self.thousandsEdit.text())
+        decimal = (self.decimalMarkerEdit.text())
         try:
             if len(decimal) == 0:
-                raise DecimalError, ("The decimal marker may not be "
+                raise DecimalError("The decimal marker may not be "
                                      "empty.")
             if len(thousands) > 1:
-                raise ThousandsError, ("The thousands separator may "
+                raise ThousandsError("The thousands separator may "
                                     "only be empty or one character.")
             if len(decimal) > 1:
-                raise DecimalError, ("The decimal marker must be "
+                raise DecimalError("The decimal marker must be "
                                      "one character.")
             if thousands == decimal:
-                raise ThousandsError, ("The thousands separator and "
+                raise ThousandsError("The thousands separator and "
                               "the decimal marker must be different.")
             if thousands and thousands not in Punctuation:
-                raise ThousandsError, ("The thousands separator must "
+                raise ThousandsError("The thousands separator must "
                                        "be a punctuation symbol.")
             if decimal not in Punctuation:
-                raise DecimalError, ("The decimal marker must be a "
+                raise DecimalError("The decimal marker must be a "
                                      "punctuation symbol.")
-        except ThousandsError, e:
+        except ThousandsError as e:
             QMessageBox.warning(self, "Thousands Separator Error",
-                                unicode(e))
+                                (e))
             self.thousandsEdit.selectAll()
             self.thousandsEdit.setFocus()
             return
-        except DecimalError, e:
+        except DecimalError as e:
             QMessageBox.warning(self, "Decimal Marker Error",
-                                unicode(e))
+                                (e))
             self.decimalMarkerEdit.selectAll()
             self.decimalMarkerEdit.setFocus()
             return

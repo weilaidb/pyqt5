@@ -10,9 +10,12 @@
 # the GNU General Public License for more details.
 
 import sys
-import urllib2
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+import urllib
+import urllib.request
+
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 
 class Form(QDialog):
@@ -39,18 +42,21 @@ class Form(QDialog):
         grid.addWidget(self.toComboBox, 2, 0)
         grid.addWidget(self.toLabel, 2, 1)
         self.setLayout(grid)
-        self.connect(self.fromComboBox,
-                SIGNAL("currentIndexChanged(int)"), self.updateUi)
-        self.connect(self.toComboBox,
-                SIGNAL("currentIndexChanged(int)"), self.updateUi)
-        self.connect(self.fromSpinBox,
-                SIGNAL("valueChanged(double)"), self.updateUi)
+        # self.connect(self.fromComboBox,
+        #         SIGNAL("currentIndexChanged(int)"), self.updateUi)
+        # self.connect(self.toComboBox,
+        #         SIGNAL("currentIndexChanged(int)"), self.updateUi)
+        # self.connect(self.fromSpinBox,
+        #         SIGNAL("valueChanged(double)"), self.updateUi)
         self.setWindowTitle("Currency")
+        self.fromComboBox.currentIndexChanged.connect(self.updateUi)
+        self.toComboBox.currentIndexChanged.connect(self.updateUi)
+        self.fromSpinBox.valueChanged.connect(self.updateUi)
 
 
     def updateUi(self):
-        to = unicode(self.toComboBox.currentText())
-        from_ = unicode(self.fromComboBox.currentText())
+        to = (self.toComboBox.currentText())
+        from_ = (self.fromComboBox.currentText())
         amount = (self.rates[from_] / self.rates[to]) * \
                  self.fromSpinBox.value()
         self.toLabel.setText("%0.2f" % amount)
@@ -60,7 +66,7 @@ class Form(QDialog):
         self.rates = {}
         try:
             date = "Unknown"
-            fh = urllib2.urlopen("http://www.bankofcanada.ca"
+            fh = urllib.request.urlopen("http://www.bankofcanada.ca"
                                  "/en/markets/csv/exchange_eng.csv")
             for line in fh:
                 line = line.rstrip()
@@ -72,11 +78,11 @@ class Form(QDialog):
                 else:
                     try:
                         value = float(fields[-1])
-                        self.rates[unicode(fields[0])] = value
+                        self.rates[(fields[0])] = value
                     except ValueError:
                         pass
             return "Exchange Rates Date: " + date
-        except Exception, e:
+        except Exception as e:
             return "Failed to download:\n%s" % e
 
 

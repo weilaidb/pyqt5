@@ -135,6 +135,8 @@ if __name__ == "__main__":
                            "plaster"))
     items.append(Sculpture("Auguste Rodin", "The Secret", 1925,
                            "bronze"))
+    items.append(Sculpture("Auguste Rodin", "The Secret", 1925,
+                           "tszre"))
     uniquematerials = set()
     for item in items:
         print(item)

@@ -17,13 +17,12 @@ class Stack(object):
     def __init__(self):
         """A stack class that supports pop(), top(), and push(), and
         special methods to support str() and len()
-        
+
         >>> s = Stack()
-        >>> print s
+        >>> print(s)
         []
         """
         self.__items = []
-
 
     def pop(self):
         """Returns and removes the stack's most recent (right-most) item
@@ -31,7 +30,7 @@ class Stack(object):
         >>> s = Stack()
         >>> s.push(1)
         >>> s.push(2)
-        >>> print s
+        >>> print(s)
         [1, 2]
         >>> s.pop()
         2
@@ -45,7 +44,6 @@ class Stack(object):
         if not self.__items:
             raise EmptyStackError
         return self.__items.pop()
-
 
     def top(self):
         """Returns the stack's most recent (right-most) item
@@ -64,18 +62,16 @@ class Stack(object):
             raise EmptyStackError
         return self.__items[-1]
 
-
     def push(self, item):
         """Pushes the given item onto (right-end of) the stack
 
         >>> s = Stack()
         >>> s.push(1)
         >>> s.push(2)
-        >>> print s
+        >>> print(s)
         [1, 2]
         """
         self.__items.append(item)
-
 
     def __len__(self):
         """Returns the number of items in the stack
@@ -91,7 +87,6 @@ class Stack(object):
         """
         return len(self.__items)
 
-
     def __str__(self):
         """Returns a string representation of the stack's contents from
         bottom to top
@@ -100,7 +95,7 @@ class Stack(object):
         >>> s.push(1)
         >>> s.push(2)
         >>> s.push("X")
-        >>> print s
+        >>> print(s)
         [1, 2, 'X']
         """
         return "[%s]" % ", ".join(["%r" % x for x in self.__items])
@@ -111,8 +106,8 @@ class Stack(object):
         # return "[%s]" % ", ".join(pieces)
 
 
-
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
 
