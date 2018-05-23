@@ -269,7 +269,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.5
+    versionnum = 2.6
     staticcharformat = 0
 
 
@@ -906,3 +906,34 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # file = open(filename)
             # data = file.read()
             # self.textEdit.setText(data)
+
+    def on_action_regex_common(self,text):
+        self.showRegrexModeUi()
+        self.textEdit_regexpress.setText(text)
+
+    @pyqtSlot()
+    def on_actionC_C_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        self.on_action_regex_common(r'''\s*\/\*([\s\S]+?)\*\/  
+\s*\/\/.*\n 
+static\s+  
+inline\s+   
+.*printf.*   
+.*mutex.*    
+.*#include.*\n  
+#define.*\n     
+#else\s*\n    
+#endif\s*\n   
+#undef.*\n    
+#ifdef.*\n    
+#ifndef.*\n ''')
+
+    
+    @pyqtSlot()
+    def on_actionPython_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        self.on_action_regex_common(r'''print\s+(.*)  print(\1)''')

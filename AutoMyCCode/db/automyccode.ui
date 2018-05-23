@@ -244,8 +244,15 @@
     <property name="title">
      <string>Operation</string>
     </property>
+    <widget class="QMenu" name="menuRegex_Mode">
+     <property name="title">
+      <string>Regex Mode</string>
+     </property>
+     <addaction name="actionC_C"/>
+     <addaction name="actionPython"/>
+    </widget>
     <addaction name="actionSearchText"/>
-    <addaction name="actionReGex"/>
+    <addaction name="menuRegex_Mode"/>
     <addaction name="actionImage_2_Text"/>
    </widget>
    <addaction name="menuOperation"/>
@@ -255,14 +262,19 @@
     <string>SearchText</string>
    </property>
   </action>
-  <action name="actionReGex">
-   <property name="text">
-    <string>Regex Mode</string>
-   </property>
-  </action>
   <action name="actionImage_2_Text">
    <property name="text">
     <string>图片转字符</string>
+   </property>
+  </action>
+  <action name="actionC_C">
+   <property name="text">
+    <string>C/C++</string>
+   </property>
+  </action>
+  <action name="actionPython">
+   <property name="text">
+    <string>Python</string>
    </property>
   </action>
  </widget>
