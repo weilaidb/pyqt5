@@ -11,37 +11,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="pyqt5header.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pygui/chap01/pyqt5header.py">
+      <file leaf-file-name="brush.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/brush.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret selection-end-line="2" selection-end-column="29" />
+              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#147#157#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="numberformatdlg3.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pygui/chap05/numberformatdlg3.py">
+      <file leaf-file-name="pen.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/pen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-523">
-              <caret line="67" column="47" lean-forward="true" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+            <state relative-caret-position="1550">
+              <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
               <folding>
-                <element signature="e#637#663#0" expanded="true" />
+                <element signature="e#148#158#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="numbers.pyw" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pygui/chap05/numbers.pyw">
+      <file leaf-file-name="color.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/color.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="115" column="21" lean-forward="true" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
+            <state relative-caret-position="875">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
-                <element signature="e#637#648#0" expanded="true" />
+                <element signature="e#153#163#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="point.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/point.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1100">
+              <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+              <folding>
+                <element signature="e#152#170#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="textedit.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/textedit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1075">
+              <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image2text.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forfun/image2text.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+              <folding>
+                <element signature="e#24#45#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,10 +168,17 @@
         <option value="$PROJECT_DIR$/pygui/chap05/numberformatdlg2.py" />
         <option value="$PROJECT_DIR$/pygui/chap05/numberformatdlg3.py" />
         <option value="$PROJECT_DIR$/pygui/chap05/numbers.pyw" />
+        <option value="$PROJECT_DIR$/pygui/chap05/pen.pyw" />
+        <option value="$PROJECT_DIR$/test/brush.py" />
+        <option value="$PROJECT_DIR$/test/pen.py" />
+        <option value="$PROJECT_DIR$/test/color.py" />
+        <option value="$PROJECT_DIR$/test/point.py" />
+        <option value="$PROJECT_DIR$/test/textedit.py" />
+        <option value="$PROJECT_DIR$/forfun/image2text.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="169" />
     <option name="y" value="292" />
     <option name="width" value="1320" />
@@ -159,29 +199,7 @@
             <path>
               <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="pygui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="pygui" type="462c0819:PsiDirectoryNode" />
-              <item name="chap01" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="pygui" type="462c0819:PsiDirectoryNode" />
-              <item name="chap05" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="forfun" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -219,8 +237,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.numbers.pyw">
-    <configuration name="interest.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.image2text">
+    <configuration name="color" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -228,17 +246,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygui/chap04" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygui/chap04/interest.pyw" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/color.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="numberformatdlg1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="image2text" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -246,17 +264,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygui/chap05" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forfun" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygui/chap05/numberformatdlg1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/forfun/image2text.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="numberformatdlg3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="pen" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -264,17 +282,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygui/chap05" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygui/chap05/numberformatdlg3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/pen.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="numbers.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="point" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -282,17 +300,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygui/chap05" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygui/chap05/numbers.pyw" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/point.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="signals.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="textedit" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -300,30 +318,30 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygui/chap04" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygui/chap04/signals.pyw" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/textedit.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.interest.pyw" />
-      <item itemvalue="Python.signals.pyw" />
-      <item itemvalue="Python.numberformatdlg1" />
-      <item itemvalue="Python.numberformatdlg3" />
-      <item itemvalue="Python.numbers.pyw" />
+      <item itemvalue="Python.pen" />
+      <item itemvalue="Python.color" />
+      <item itemvalue="Python.point" />
+      <item itemvalue="Python.textedit" />
+      <item itemvalue="Python.image2text" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.numbers.pyw" />
-        <item itemvalue="Python.numberformatdlg3" />
-        <item itemvalue="Python.numberformatdlg1" />
-        <item itemvalue="Python.signals.pyw" />
-        <item itemvalue="Python.interest.pyw" />
+        <item itemvalue="Python.image2text" />
+        <item itemvalue="Python.textedit" />
+        <item itemvalue="Python.point" />
+        <item itemvalue="Python.color" />
+        <item itemvalue="Python.pen" />
       </list>
     </recent_temporary>
   </component>
@@ -372,7 +390,7 @@
       <configuration name="Doctests in stack" configurationId="tests" />
     </history-entry>
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -385,14 +403,14 @@
     <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.83095723" visible="true" weight="0.2977039" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.50121653" visible="true" weight="0.13855898" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22063492" />
-      <window_info id="Structure" order="1" sideWeight="0.16904277" side_tool="true" visible="true" weight="0.2977039" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32857144" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36507937" />
+      <window_info id="Structure" order="1" sideWeight="0.49878347" side_tool="true" visible="true" weight="0.13855898" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.34761906" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24920635" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.28825912" />
@@ -418,50 +436,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1235271266/PyQt5/QtGui/QTextFormat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3525">
-          <caret line="141" column="35" selection-start-line="141" selection-start-column="35" selection-end-line="141" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygui/chap13/richtextlineedit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5900">
-          <caret line="243" column="14" selection-start-line="243" selection-start-column="14" selection-end-line="243" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygui/chap13/pythoneditor.pyw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/qsynctaxhighlighter.py" />
-    <entry file="file://$PROJECT_DIR$/test/syntaxhighlighter.py" />
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1235271266/PyQt5/QtGui/QSyntaxHighlighter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1235271266/PyQt5/QtWidgets/QAbstractItemView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="500" column="38" selection-start-line="500" selection-start-column="38" selection-end-line="500" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygui/chap01/answers.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/autoindb.ui">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -648,9 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="715">
           <caret line="354" column="8" selection-start-line="354" selection-start-column="8" selection-end-line="354" selection-end-column="8" />
-          <folding>
-            <element signature="e#66#92#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,9 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-125">
           <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding>
-            <element signature="e#637#668#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,9 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="51" selection-start-line="51" selection-end-line="53" selection-end-column="60" />
-          <folding>
-            <element signature="e#637#647#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -727,9 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-473">
           <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="46" />
-          <folding>
-            <element signature="e#637#663#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -737,9 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2277">
           <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
-          <folding>
-            <element signature="e#637#663#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,9 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-523">
           <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
-          <folding>
-            <element signature="e#637#647#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -757,19 +713,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="e#637#647#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pygui/chap05/numberformatdlg3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-523">
-          <caret line="67" column="47" lean-forward="true" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
-          <folding>
-            <element signature="e#637#663#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1625">
+          <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygui/chap05/numbers.pyw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2600">
+          <caret line="113" column="49" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -777,18 +734,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygui/chap05/pen.pyw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/brush.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#147#157#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pygui/chap05/numbers.pyw">
+    <entry file="file://$PROJECT_DIR$/test/pen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="115" column="21" lean-forward="true" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
+        <state relative-caret-position="1550">
+          <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
           <folding>
-            <element signature="e#637#648#0" expanded="true" />
+            <element signature="e#148#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/color.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#153#163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/point.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+          <folding>
+            <element signature="e#152#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/textedit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forfun/image2text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+          <folding>
+            <element signature="e#24#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
