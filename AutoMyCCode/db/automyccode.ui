@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>752</width>
+    <width>838</width>
     <height>536</height>
    </rect>
   </property>
@@ -236,7 +236,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>752</width>
+     <width>838</width>
      <height>23</height>
     </rect>
    </property>
@@ -246,6 +246,7 @@
     </property>
     <addaction name="actionSearchText"/>
     <addaction name="actionReGex"/>
+    <addaction name="actionImage_2_Text"/>
    </widget>
    <addaction name="menuOperation"/>
   </widget>
@@ -257,6 +258,11 @@
   <action name="actionReGex">
    <property name="text">
     <string>Regex Mode</string>
+   </property>
+  </action>
+  <action name="actionImage_2_Text">
+   <property name="text">
+    <string>图片转字符</string>
    </property>
   </action>
  </widget>

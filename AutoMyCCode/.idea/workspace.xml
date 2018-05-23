@@ -11,71 +11,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="brush.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/brush.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+            <state relative-caret-position="50">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="automyccode.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/automyccode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="271" column="20" selection-start-line="271" selection-start-column="20" selection-end-line="271" selection-end-column="20" />
               <folding>
-                <element signature="e#147#157#0" expanded="true" />
+                <element signature="e#66#92#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pen.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/pen.py">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/image2text/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1550">
-              <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-              <folding>
-                <element signature="e#148#158#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="color.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/color.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="e#153#163#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="point.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/point.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1100">
-              <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-              <folding>
-                <element signature="e#152#170#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="textedit.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/textedit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1075">
-              <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image2text.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forfun/image2text.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
-              <folding>
-                <element signature="e#24#45#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1450">
+              <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -149,7 +110,6 @@
         <option value="$PROJECT_DIR$/pygui/chap02/frange.py" />
         <option value="$PROJECT_DIR$/pygui/chap02/answers.py" />
         <option value="$PROJECT_DIR$/pygui/chap03/dimension.py" />
-        <option value="$PROJECT_DIR$/db/automyccode.py" />
         <option value="$PROJECT_DIR$/pygui/chap03/item.py" />
         <option value="$PROJECT_DIR$/pygui/chap03/length.py" />
         <option value="$PROJECT_DIR$/pygui/chap03/stack.py" />
@@ -175,6 +135,9 @@
         <option value="$PROJECT_DIR$/test/point.py" />
         <option value="$PROJECT_DIR$/test/textedit.py" />
         <option value="$PROJECT_DIR$/forfun/image2text.py" />
+        <option value="$PROJECT_DIR$/db/image2text/image2text.py" />
+        <option value="$PROJECT_DIR$/db/image2text/__init__.py" />
+        <option value="$PROJECT_DIR$/db/automyccode.py" />
       </list>
     </option>
   </component>
@@ -195,6 +158,17 @@
             <path>
               <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="image2text" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
@@ -220,6 +194,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\db\image2text" />
       <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\test" />
       <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\db" />
       <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\db\pymysqldb" />
@@ -237,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.image2text">
+  <component name="RunManager" selected="Python.main">
     <configuration name="color" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -274,7 +249,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="pen" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -282,11 +257,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/pen.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -329,19 +304,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.pen" />
       <item itemvalue="Python.color" />
       <item itemvalue="Python.point" />
       <item itemvalue="Python.textedit" />
       <item itemvalue="Python.image2text" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.image2text" />
         <item itemvalue="Python.textedit" />
         <item itemvalue="Python.point" />
         <item itemvalue="Python.color" />
-        <item itemvalue="Python.pen" />
       </list>
     </recent_temporary>
   </component>
@@ -403,14 +378,14 @@
     <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.50121653" visible="true" weight="0.13855898" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.460199" visible="true" weight="0.19398259" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36507937" />
-      <window_info id="Structure" order="1" sideWeight="0.49878347" side_tool="true" visible="true" weight="0.13855898" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.34761906" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36190477" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.539801" side_tool="true" visible="true" weight="0.19398259" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.34761906" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24920635" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.28825912" />
@@ -436,20 +411,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/autoindb.ui">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/sre_parse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="247" column="26" lean-forward="true" selection-start-line="247" selection-start-column="26" selection-end-line="247" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/highlight.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -524,13 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-721">
           <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -615,13 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2157">
           <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/automyccode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="354" column="8" selection-start-line="354" selection-start-column="8" selection-end-line="354" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -744,16 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/brush.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding>
-            <element signature="e#147#157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/pen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1550">
@@ -800,10 +737,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forfun/image2text.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+        <state relative-caret-position="122">
+          <caret line="49" column="44" lean-forward="true" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
           <folding>
             <element signature="e#24#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/brush.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding>
+            <element signature="e#147#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/image2text/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1450">
+          <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/image2text/image2text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-514">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/automyccode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="271" column="20" selection-start-line="271" selection-start-column="20" selection-end-line="271" selection-end-column="20" />
+          <folding>
+            <element signature="e#66#92#0" expanded="true" />
           </folding>
         </state>
       </provider>

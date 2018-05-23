@@ -20,6 +20,7 @@ from Ui_automyccode import *
 from dbApi import *
 import pyperclip
 import os
+from image2text import  user_image2text
 
 # 将一个字符串变量转换成raw字符串：
 escape_dict = {'\a': r'\a',
@@ -268,7 +269,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.4
+    versionnum = 2.5
     staticcharformat = 0
 
 
@@ -876,23 +877,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.textEdit_showresult.setText(resulttext)
         return
-        # replaceregexes = ([re.compile(p)
-        #                    for p in [raw(t)   for t in patterntext.split('\n')]])
-        # patternscombine  = ([p],[w]
-        #                    for p, w  in [raw(t.split(r"\s+")[0])   for t in patterntext.split('\n')]])
-        #
-        # searchpattern  = ([re.compile(p)
-        #                    for p in [raw(t.split(r"\s+")[0])   for t in patterntext.split('\n')]])
-        # replacepattern = ([w
-        #                    for w in [raw(t.split(r"\s+")[1])   for t in patterntext.split('\n')]])
-        # print("searchpattern :", searchpattern)
-        # print("replacepattern:", replacepattern)
-        # print("replaceregexes:", replaceregexes)
-
-        # for sub in replaceregexes:
-        #     print("sub:", sub)
-        #     insub = sub.split("\\s+")
-        #     print("insub size:", insub.count())
     
     @pyqtSlot()
     def on_actionReGex_triggered(self):
@@ -907,3 +891,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Slot documentation goes here.
         """
         pyperclip.copy(self.textEdit_showresult.toPlainText())
+
+    @pyqtSlot()
+    def on_actionImage_2_Text_triggered(self):
+        """
+        Slot documentation goes here.
+        图片转文字
+        """
+        filename, _ = QFileDialog.getOpenFileName(self, 'Open file', './')
+        if filename:
+            print("select filename ", filename)
+            result = user_image2text(filename)
+            self.textEdit_showresult.setText(result)
+            # file = open(filename)
+            # data = file.read()
+            # self.textEdit.setText(data)

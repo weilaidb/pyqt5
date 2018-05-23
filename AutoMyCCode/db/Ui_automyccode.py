@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(752, 536)
+        MainWindow.resize(838, 536)
         self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralWidget)
@@ -102,7 +102,7 @@ class Ui_MainWindow(object):
         self.statusBar.setObjectName("statusBar")
         MainWindow.setStatusBar(self.statusBar)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 752, 23))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 838, 23))
         self.menuBar.setObjectName("menuBar")
         self.menuOperation = QtWidgets.QMenu(self.menuBar)
         self.menuOperation.setObjectName("menuOperation")
@@ -111,8 +111,11 @@ class Ui_MainWindow(object):
         self.actionSearchText.setObjectName("actionSearchText")
         self.actionReGex = QtWidgets.QAction(MainWindow)
         self.actionReGex.setObjectName("actionReGex")
+        self.actionImage_2_Text = QtWidgets.QAction(MainWindow)
+        self.actionImage_2_Text.setObjectName("actionImage_2_Text")
         self.menuOperation.addAction(self.actionSearchText)
         self.menuOperation.addAction(self.actionReGex)
+        self.menuOperation.addAction(self.actionImage_2_Text)
         self.menuBar.addAction(self.menuOperation.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -132,6 +135,7 @@ class Ui_MainWindow(object):
         self.menuOperation.setTitle(_translate("MainWindow", "Operation"))
         self.actionSearchText.setText(_translate("MainWindow", "SearchText"))
         self.actionReGex.setText(_translate("MainWindow", "Regex Mode"))
+        self.actionImage_2_Text.setText(_translate("MainWindow", "图片转字符"))
 
 
 if __name__ == "__main__":
