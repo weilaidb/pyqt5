@@ -11,20 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="automyccode.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/automyccode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="271" column="20" selection-start-line="271" selection-start-column="20" selection-end-line="271" selection-end-column="20" />
+            <state relative-caret-position="177">
+              <caret line="396" column="33" selection-start-line="396" selection-start-column="33" selection-end-line="396" selection-end-column="33" />
               <folding>
                 <element signature="e#66#92#0" expanded="true" />
               </folding>
@@ -32,11 +23,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="QObject.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1235271266/PyQt5/QtCore/QObject.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="multipedes.pyw" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pygui/chap12/multipedes.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5498">
-              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            <state relative-caret-position="375">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -44,8 +44,8 @@
       <file leaf-file-name="multipedes2.pyw" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pygui/chap12/multipedes2.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5573">
-              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="275">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -55,6 +55,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1450">
               <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -70,10 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>settext</find>
-      <find>default_search_contetName</find>
-      <find>ctrl</find>
-      <find />
       <find>replace</find>
       <find>htmltext</find>
       <find>returnPressed</find>
@@ -100,6 +105,10 @@
       <find>self.textEdit_inserttext</find>
       <find>connect</find>
       <find>unicode</find>
+      <find>pos</find>
+      <find>source</find>
+      <find>dragEnterEvent</find>
+      <find>texteditshowresultinflag</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -113,7 +122,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/db/pymysqldb/__init__.py" />
-        <option value="$PROJECT_DIR$/db/main.py" />
         <option value="$PROJECT_DIR$/db/pymysqldb/dbApi.py" />
         <option value="$PROJECT_DIR$/db/pymysqldb/insert.py" />
         <option value="$PROJECT_DIR$/test/richtest.py" />
@@ -156,21 +164,23 @@
         <option value="$PROJECT_DIR$/db/image2text/image2text.py" />
         <option value="$PROJECT_DIR$/db/image2text/__init__.py" />
         <option value="$PROJECT_DIR$/pygui/chap12/pagedesigner_ans.pyw" />
+        <option value="$PROJECT_DIR$/db/main.py" />
         <option value="$PROJECT_DIR$/db/automyccode.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="169" />
-    <option name="y" value="292" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="67" />
+    <option name="y" value="-8" />
     <option name="width" value="1320" />
-    <option name="height" value="636" />
+    <option name="height" value="614" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,19 +191,12 @@
             <path>
               <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="pygui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="pygui" type="462c0819:PsiDirectoryNode" />
-              <item name="chap12" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,7 +230,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="color" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="automyccode" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -235,11 +238,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/color.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/automyccode.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -318,19 +321,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.color" />
       <item itemvalue="Python.point" />
       <item itemvalue="Python.textedit" />
       <item itemvalue="Python.image2text" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.automyccode" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.automyccode" />
         <item itemvalue="Python.image2text" />
         <item itemvalue="Python.textedit" />
         <item itemvalue="Python.point" />
-        <item itemvalue="Python.color" />
       </list>
     </recent_temporary>
   </component>
@@ -392,16 +395,16 @@
     <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46023688" visible="true" weight="0.19398259" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.18956044" visible="true" weight="0.22644497" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.061904762" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5397631" side_tool="true" visible="true" weight="0.19398259" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31904763" />
+      <window_info id="Structure" order="1" sideWeight="0.8104396" side_tool="true" visible="true" weight="0.22644497" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.34761906" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.24920635" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.42222223" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.28825912" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -425,27 +428,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1235271266/PyQt5/QtWidgets/QMainWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="295" lean-forward="true" selection-start-line="295" selection-end-line="295" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/regexTester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/dbApi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/doctest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -688,9 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1550">
           <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-          <folding>
-            <element signature="e#148#158#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,9 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="875">
           <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#153#163#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,9 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1100">
           <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-          <folding>
-            <element signature="e#152#170#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -732,9 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="49" column="44" lean-forward="true" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -742,9 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11">
           <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding>
-            <element signature="e#147#157#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,8 +731,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pygui/chap12/multipedes.pyw">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5498">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="375">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -778,22 +745,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pygui/chap12/multipedes2.pyw">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5573">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="275">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1235271266/PyQt5/QtGui/QNativeGestureEvent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="250">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1235271266/PyQt5/QtCore/QObject.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/1588.tmp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/automyccode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="271" column="20" selection-start-line="271" selection-start-column="20" selection-end-line="271" selection-end-column="20" />
+        <state relative-caret-position="177">
+          <caret line="396" column="33" selection-start-line="396" selection-start-column="33" selection-end-line="396" selection-end-column="33" />
           <folding>
             <element signature="e#66#92#0" expanded="true" />
           </folding>

@@ -8,6 +8,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ftpw = MainWindow()
     ftpw.show()
+    app.installEventFilter(ftpw)
     sys.exit(app.exec_())
     
  

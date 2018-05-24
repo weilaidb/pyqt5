@@ -22,6 +22,9 @@ import pyperclip
 import os
 from image2text import  user_image2text
 
+global texteditshowresultinflag
+
+
 # 将一个字符串变量转换成raw字符串：
 escape_dict = {'\a': r'\a',
                '\b': r'\b',
@@ -262,6 +265,37 @@ class MyHighlighter(QSyntaxHighlighter):
         self.highlight_data = highlight_data
 
 
+class MyFilter(QObject):
+    def __init__(self, parent=None):
+        QObject.__init__(self, parent)
+
+    def eventFilter(self, obj, e):
+        if e.type() == QEvent.KeyPress:
+            if e.key() == Qt.Key_B:
+                print("The event from the key will not reach the component")
+                return True
+        return QObject.eventFilter(self, obj, e)
+
+
+class MyF_TextEdit_ShowRes(QObject):
+
+    def __init__(self, parent=None):
+        QObject.__init__(self, parent)
+
+    def eventFilter(self, obj, e):
+        if e.type() == QEvent.KeyPress:
+            if e.key() == Qt.Key_B:
+                print("The event from the key will not reach the component")
+                return True
+        if e.type() == QEvent.Enter:
+            print("textedit show result enter")
+            texteditshowresultinflag = 1
+            return True
+        if e.type() == QEvent.Leave:
+            print("show result leave")
+            texteditshowresultinflag = 0
+            return  True
+        return QObject.eventFilter(self, obj, e)
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -269,7 +303,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.6
+    versionnum = 2.7
     staticcharformat = 0
 
 
@@ -324,6 +358,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #regex mode ui
         self.hideRegrexModeUi()
 
+        ##捕获拖动事件
+        self.setAcceptDrops(True)
+
+        #test for event filter
+        # self.textEdit_showresult.installEventFilter(MyFilter(self.textEdit_showresult))
+        self.textEdit_showresult.installEventFilter(MyF_TextEdit_ShowRes(self.textEdit_showresult))
 
 
     def hideRegrexModeUi(self):
@@ -344,10 +384,37 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.listWidget_search.hide()
 
 
+    def proc_dragEnter(self,event,obj):
+        for url in event.mimeData().urls():
+            path = url.toLocalFile()
+            print(path)
+            try:
+                text = open(path,'r',encoding='UTF-8').read()
+                # print(type(text))
+                obj.setText(text)
+            except Exception as e:
+                print(e)
+                obj.setText(str(e))
+            # obj.setText(text)
 
     def dragEnterEvent(self, event):
         print("dragEnter event")
-        if event.mimeData().hasFormat("application/x-icon-and-text"):
+        # if event.mimeData().hasFormat("application/x-icon-and-text"):
+        #     event.accept()
+        # else:
+        #     event.ignore()
+        # print("mimeData :", event.mimeData())
+        # print("texteditshowresultinflag", texteditshowresultinflag)
+        # if texteditshowresultinflag:
+        self.proc_dragEnter(event,self.textEdit_showresult)
+
+            # self.setText(path)
+        # text = event.mimeData().text()
+        # self.lineEdit.setText(text)
+        event.acceptProposedAction()
+        # self.enableBorder(False)
+
+        if event.mimeData().hasFormat('text/plain'):
             event.accept()
         else:
             event.ignore()
@@ -375,6 +442,54 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             event.accept()
         else:
             event.ignore()
+
+    """重写鼠标事件，实现窗口拖动。"""
+    def mousePressEvent(self, event):
+        print("mousepressevent")
+        if event.buttons() == Qt.LeftButton:
+            self.setCursor(Qt.OpenHandCursor)
+            self.parent.m_drag = True
+            self.parent.m_DragPosition = event.globalPos() - self.parent.pos()
+            event.accept()
+
+    def mouseMoveEvent(self, event):
+        print("mouseMoveEvent")
+        try:
+            if event.buttons() and Qt.LeftButton:
+                self.parent.move(event.globalPos() - self.parent.m_DragPosition)  # move将窗口移动到指定位置
+                event.accept()
+        except AttributeError:
+            pass
+
+    def mouseReleaseEvent(self, event):
+        print("mouseReleaseEvent")
+        if event.button() == Qt.LeftButton:
+            self.m_drag = False
+            self.unsetCursor()
+
+
+
+    ##显示鼠标位置
+    def eventFilter(self,  source,  event):
+        # print("source:", source)
+        # if source == self.textEdit_showresult:
+        if event.type() == QEvent.MouseMove:
+            if event.buttons() == Qt.NoButton:
+                pos = event.pos()
+                # print("source", source)
+                # self.textEdit_showresult.setText('x:%d, y:%d' % (pos.x(),  pos.y()))
+                # labelrect = QRect(self.textEdit_showresult.pos() + self.centralWidget.pos(),
+                #                   self.textEdit_showresult.size())
+                # print(labelrect)
+                # if(labelrect.contains(pos)):
+                #     print("in textedit result")
+                # else:
+                #     print("no in textedit result")
+
+            else:
+                pass # do other stuff
+        return QMainWindow.eventFilter(self,  source,  event)
+
 
     def setupEditor(self):
         font = QFont()
@@ -804,7 +919,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         @type bool
         """
         pass
-    
+
     @pyqtSlot()
     def on_pushButton_insert_quickly_clicked(self):
         """
@@ -812,7 +927,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         self.on_pushButton_paste_clicked()
         self.on_pushButton_insert_clicked()
-    
+
     @pyqtSlot()
     def on_textEdit_regexpress_textChanged(self):
         """
@@ -877,14 +992,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.textEdit_showresult.setText(resulttext)
         return
-    
+
     @pyqtSlot()
     def on_actionReGex_triggered(self):
         """
         Slot documentation goes here.
         """
         self.showRegrexModeUi()
-    
+
     @pyqtSlot()
     def on_pushButton_toclipboard_clicked(self):
         """
@@ -930,7 +1045,7 @@ inline\s+
 #ifdef.*\n    
 #ifndef.*\n ''')
 
-    
+
     @pyqtSlot()
     def on_actionPython_triggered(self):
         """
