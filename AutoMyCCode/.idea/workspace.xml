@@ -14,8 +14,8 @@
       <file leaf-file-name="automyccode.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/automyccode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="396" column="33" selection-start-line="396" selection-start-column="33" selection-end-line="396" selection-end-column="33" />
+            <state relative-caret-position="249">
+              <caret line="305" column="20" selection-start-line="305" selection-start-column="20" selection-end-line="305" selection-end-column="20" />
               <folding>
                 <element signature="e#66#92#0" expanded="true" />
               </folding>
@@ -63,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/db/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
-              <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="32" />
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -395,16 +395,16 @@
     <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.18956044" visible="true" weight="0.22644497" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.19114219" visible="true" weight="0.22644497" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31904763" />
-      <window_info id="Structure" order="1" sideWeight="0.8104396" side_tool="true" visible="true" weight="0.22644497" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31904763" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.8088578" side_tool="true" visible="true" weight="0.22644497" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.34761906" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.42222223" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42222223" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.28825912" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -760,7 +760,7 @@
     <entry file="file://$PROJECT_DIR$/db/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="32" />
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -780,8 +780,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/automyccode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="396" column="33" selection-start-line="396" selection-start-column="33" selection-end-line="396" selection-end-column="33" />
+        <state relative-caret-position="249">
+          <caret line="305" column="20" selection-start-line="305" selection-start-column="20" selection-end-line="305" selection-end-column="20" />
           <folding>
             <element signature="e#66#92#0" expanded="true" />
           </folding>

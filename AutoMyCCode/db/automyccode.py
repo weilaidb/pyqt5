@@ -303,7 +303,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.7
+    versionnum = 2.8
     staticcharformat = 0
 
 
@@ -1015,9 +1015,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         filename, _ = QFileDialog.getOpenFileName(self, 'Open file', './')
         if filename:
-            print("select filename ", filename)
-            result = user_image2text(filename)
-            self.textEdit_showresult.setText(result)
+            try:
+                print("select filename ", filename)
+                result = user_image2text(filename)
+                self.textEdit_showresult.setText(result)
+            except Exception as e:
+                self.textEdit_showresult.setText(str(e))
             # file = open(filename)
             # data = file.read()
             # self.textEdit.setText(data)
