@@ -9,8 +9,9 @@
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 # the GNU General Public License for more details.
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 import ui_newimagedlg
 
 
@@ -38,10 +39,12 @@ class NewImageDlg(QDialog, ui_newimagedlg.Ui_NewImageDlg):
                 (Qt.DiagCrossPattern, "Diagonal Cross")):
             self.brushComboBox.addItem(text, QVariant(value))
 
-        self.connect(self.colorButton, SIGNAL("clicked()"),
-                     self.getColor)
-        self.connect(self.brushComboBox, SIGNAL("activated(int)"),
-                     self.setColor)
+        self.colorButton.clicked.connect(self.getColor)
+        self.brushComboBox.activated.connect(self.setColor)
+        # self.connect(self.colorButton, SIGNAL("clicked()"),
+        #              self.getColor)
+        # self.connect(self.brushComboBox, SIGNAL("activated(int)"),
+        #              self.setColor)
         self.setColor()
         self.widthSpinBox.setFocus()
 
@@ -67,7 +70,7 @@ class NewImageDlg(QDialog, ui_newimagedlg.Ui_NewImageDlg):
     def _makePixmap(self, width, height):
         pixmap = QPixmap(width, height)
         style = self.brushComboBox.itemData(
-                        self.brushComboBox.currentIndex()).toInt()[0]
+                        int(self.brushComboBox.currentIndex()))
         brush = QBrush(self.color, Qt.BrushStyle(style))
         painter = QPainter(pixmap)
         painter.fillRect(pixmap.rect(), Qt.white)

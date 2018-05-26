@@ -11,8 +11,8 @@
 
 import re
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 def romanFromInt(integer):
     """

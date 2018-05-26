@@ -10,8 +10,9 @@
 # the GNU General Public License for more details.
 
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 MAC = "qt_mac_set_native_menubar" in dir()
 
@@ -41,7 +42,7 @@ class StringListDlg(QDialog):
             if text == "Close":
                 buttonLayout.addStretch()
             buttonLayout.addWidget(button)
-            self.connect(button, SIGNAL("clicked()"), slot)
+            button.clicked.connect(slot)
         layout = QHBoxLayout()
         layout.addWidget(self.listWidget)
         layout.addLayout(buttonLayout)
@@ -75,7 +76,7 @@ class StringListDlg(QDialog):
             return
         reply = QMessageBox.question(self, "Remove %s" % self.name,
                         "Remove %s `%s'?" % (
-                        self.name, unicode(item.text())),
+                        self.name, (item.text())),
                         QMessageBox.Yes|QMessageBox.No)
         if reply == QMessageBox.Yes:
             item = self.listWidget.takeItem(row)
@@ -103,11 +104,13 @@ class StringListDlg(QDialog):
 
 
     def accept(self):
-        self.stringlist = QStringList()
+        self.stringlist = []
         for row in range(self.listWidget.count()):
             self.stringlist.append(self.listWidget.item(row).text())
-        self.emit(SIGNAL("acceptedList(QStringList)"), self.stringlist)
+        self._signal.emit("acceptedList(QStringList)"), self.stringlist)
         QDialog.accept(self)
+
+    def acceptedList(self,QStringList):
 
 
 if __name__ == "__main__":
@@ -119,5 +122,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     form = StringListDlg("Fruit", fruit)
     form.exec_()
-    print "\n".join([unicode(x) for x in form.stringlist])
+    print("\n".join([(x) for x in form.stringlist]))
 

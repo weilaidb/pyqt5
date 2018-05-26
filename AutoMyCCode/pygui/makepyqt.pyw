@@ -13,8 +13,8 @@ import os
 import platform
 import stat
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 __version__ = "1.1.2"
 
@@ -440,7 +440,7 @@ app = QApplication(sys.argv)
 PATH = unicode(app.applicationDirPath())
 if sys.platform.startswith("win"):
     PATH = os.path.join(os.path.dirname(sys.executable),
-                        "Lib/site-packages/PyQt4")
+                        "Lib/site-packages/PyQt5")
 PYUIC4 = os.path.join(PATH, "pyuic4")
 PYRCC4 = os.path.join(PATH, "pyrcc4")
 PYLUPDATE4 = os.path.join(PATH, "pylupdate4")

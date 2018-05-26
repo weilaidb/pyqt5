@@ -11,8 +11,8 @@
 
 from __future__ import division
 import platform
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 X11 = "qt_x11_wait_for_window_manager" in dir()
 

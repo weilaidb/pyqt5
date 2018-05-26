@@ -14,8 +14,8 @@ import codecs
 import copy_reg
 import cPickle
 import gzip
-from PyQt4.QtCore import *
-from PyQt4.QtXml import *
+from PyQt5.QtCore import *
+from PyQt5.QtXml import *
 
 
 CODEC = "UTF-8"

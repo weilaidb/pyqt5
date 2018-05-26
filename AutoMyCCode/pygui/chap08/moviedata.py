@@ -14,8 +14,8 @@ import codecs
 import copy_reg
 import cPickle
 import gzip
-from PyQt4.QtCore import *
-from PyQt4.QtXml import *
+from PyQt5.QtCore import *
+from PyQt5.QtXml import *
 
 
 CODEC = "UTF-8"
@@ -27,7 +27,7 @@ DATEFORMAT = "ddd MMM d, yyyy"
 def intFromQStr(qstr):
     i, ok = qstr.toInt()
     if not ok:
-        raise ValueError, unicode(qstr)
+        raise ValueError(qstr)
     return i
 
 
@@ -235,7 +235,7 @@ class MovieContainer(object):
         try:
             fh = QFile(self.__fname)
             if not fh.open(QIODevice.WriteOnly):
-                raise IOError, unicode(fh.errorString())
+                raise IOError(fh.errorString())
             stream = QDataStream(fh)
             stream.writeInt32(MovieContainer.MAGIC_NUMBER)
             stream.writeInt32(MovieContainer.FILE_VERSION)
@@ -245,7 +245,7 @@ class MovieContainer(object):
                 stream.writeInt16(movie.year)
                 stream.writeInt16(movie.minutes)
                 stream << movie.acquired << movie.notes
-        except (IOError, OSError), e:
+        except (IOError, OSError) as e:
             error = "Failed to save: %s" % e
         finally:
             if fh is not None:
@@ -264,16 +264,16 @@ class MovieContainer(object):
         try:
             fh = QFile(self.__fname)
             if not fh.open(QIODevice.ReadOnly):
-                raise IOError, unicode(fh.errorString())
+                raise IOError(fh.errorString())
             stream = QDataStream(fh)
             magic = stream.readInt32()
             if magic != MovieContainer.MAGIC_NUMBER:
-                raise IOError, "unrecognized file type"
+                raise IOError("unrecognized file type")
             version = stream.readInt32()
             if version < MovieContainer.FILE_VERSION:
-                raise IOError, "old and unreadable file format"
+                raise IOError("old and unreadable file format")
             elif version > MovieContainer.FILE_VERSION:
-                raise IOError, "new and unreadable file format"
+                raise IOError("new and unreadable file format")
             stream.setVersion(QDataStream.Qt_4_2)
             self.clear(False)
             while not stream.atEnd():
@@ -285,7 +285,7 @@ class MovieContainer(object):
                 minutes = stream.readInt16()
                 stream >> acquired >> notes
                 self.add(Movie(title, year, minutes, acquired, notes))
-        except (IOError, OSError), e:
+        except (IOError, OSError) as e:
             error = "Failed to load: %s" % e
         finally:
             if fh is not None:
@@ -302,9 +302,9 @@ class MovieContainer(object):
         error = None
         fh = None
         try:
-            fh = gzip.open(unicode(self.__fname), "wb")
+            fh = gzip.open((self.__fname), "wb")
             cPickle.dump(self.__movies, fh, 2)
-        except (IOError, OSError), e:
+        except (IOError, OSError) as e:
             error = "Failed to save: %s" % e
         finally:
             if fh is not None:
@@ -326,7 +326,7 @@ class MovieContainer(object):
             self.__movies = cPickle.load(fh)
             for key, movie in self.__movies:
                 self.__movieFromId[id(movie)] = movie
-        except (IOError, OSError), e:
+        except (IOError, OSError) as e:
             error = "Failed to load: %s" % e
         finally:
             if fh is not None:
@@ -345,7 +345,7 @@ class MovieContainer(object):
         try:
             fh = QFile(self.__fname)
             if not fh.open(QIODevice.WriteOnly):
-                raise IOError, unicode(fh.errorString())
+                raise IOError(fh.errorString())
             stream = QTextStream(fh)
             stream.setCodec(CODEC)
             for key, movie in self.__movies:
@@ -356,7 +356,7 @@ class MovieContainer(object):
                 if not movie.notes.isEmpty():
                     stream << "\n" << movie.notes
                 stream << "\n{{ENDMOVIE}}\n"
-        except (IOError, OSError), e:
+        except (IOError, OSError) as e:
             error = "Failed to save: %s" % e
         finally:
             if fh is not None:
@@ -375,7 +375,7 @@ class MovieContainer(object):
         try:
             fh = QFile(self.__fname)
             if not fh.open(QIODevice.ReadOnly):
-                raise IOError, unicode(fh.errorString())
+                raise IOError(fh.errorString())
             stream = QTextStream(fh)
             stream.setCodec(CODEC)
             self.clear(False)
@@ -385,21 +385,21 @@ class MovieContainer(object):
                 line = stream.readLine()
                 lino += 1
                 if not line.startsWith("{{MOVIE}}"):
-                    raise ValueError, "no movie record found"
+                    raise ValueError("no movie record found")
                 else:
                     title = line.mid(len("{{MOVIE}}")).trimmed()
                 if stream.atEnd():
-                    raise ValueError, "premature end of file"
+                    raise ValueError("premature end of file")
                 line = stream.readLine()
                 lino += 1
                 parts = line.split(" ")
                 if parts.count() != 3:
-                    raise ValueError, "invalid numeric data"
+                    raise ValueError("invalid numeric data")
                 year = intFromQStr(parts[0])
                 minutes = intFromQStr(parts[1])
                 ymd = parts[2].split("-")
                 if ymd.count() != 3:
-                    raise ValueError, "invalid acquired date"
+                    raise ValueError("invalid acquired date")
                 acquired = QDate(intFromQStr(ymd[0]),
                                  intFromQStr(ymd[1]),
                                  intFromQStr(ymd[2]))

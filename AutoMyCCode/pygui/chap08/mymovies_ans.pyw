@@ -11,8 +11,8 @@
 
 import platform
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 import addeditmoviedlg_ans as addeditmoviedlg
 import moviedata_ans as moviedata
 import qrc_resources

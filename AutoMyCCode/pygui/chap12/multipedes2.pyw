@@ -13,8 +13,8 @@ from __future__ import division
 import math
 import random
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 SCENESIZE = 500
 INTERVAL = 1

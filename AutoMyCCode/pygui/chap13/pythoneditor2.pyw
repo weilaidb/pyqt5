@@ -11,8 +11,8 @@
 
 import os
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 import qrc_resources
 
 
@@ -68,7 +68,7 @@ class PythonHighlighter(QSyntaxHighlighter):
                 r"|\b[+-]?[0-9]+(?:\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\b"),
                 "number"))
         PythonHighlighter.Rules.append((QRegExp(
-                r"\bPyQt4\b|\bQt?[A-Z][a-z]\w+\b"), "pyqt"))
+                r"\bPyQt5\b|\bQt?[A-Z][a-z]\w+\b"), "pyqt"))
         PythonHighlighter.Rules.append((QRegExp(r"\b@\w+\b"), "decorator"))
         PythonHighlighter.Rules.append((QRegExp(r"#.*"), "comment"))       
         stringRe = QRegExp(r"""(?:'[^']*'|"[^"]*")""")

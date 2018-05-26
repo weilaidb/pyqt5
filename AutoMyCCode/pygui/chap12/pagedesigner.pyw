@@ -13,8 +13,8 @@ from __future__ import division
 import functools
 import random
 import sys
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 MAC = "qt_mac_set_native_menubar" in dir()
 

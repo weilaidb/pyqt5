@@ -10,8 +10,8 @@
 # the GNU General Public License for more details.
 
 from __future__ import division
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 BLANK, RED, YELLOW = range(3)
 

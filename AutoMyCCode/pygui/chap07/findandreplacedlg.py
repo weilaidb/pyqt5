@@ -10,8 +10,9 @@
 # the GNU General Public License for more details.
 
 import re
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 import ui_findandreplacedlg
 
 MAC = "qt_mac_set_native_menubar" in dir()
@@ -22,7 +23,7 @@ class FindAndReplaceDlg(QDialog,
 
     def __init__(self, text, parent=None):
         super(FindAndReplaceDlg, self).__init__(parent)
-        self.__text = unicode(text)
+        self.__text = (text)
         self.__index = 0
         self.setupUi(self)
         if not MAC:
@@ -33,15 +34,15 @@ class FindAndReplaceDlg(QDialog,
         self.updateUi()
 
 
-    @pyqtSignature("QString")
+    @pyqtSlot("QString")
     def on_findLineEdit_textEdited(self, text):
         self.__index = 0
         self.updateUi()
 
 
     def makeRegex(self):
-        findText = unicode(self.findLineEdit.text())
-        if unicode(self.syntaxComboBox.currentText()) == "Literal":
+        findText = (self.findLineEdit.text())
+        if (self.syntaxComboBox.currentText()) == "Literal":
             findText = re.escape(findText)
         flags = re.MULTILINE|re.DOTALL|re.UNICODE
         if not self.caseCheckBox.isChecked():
@@ -51,7 +52,7 @@ class FindAndReplaceDlg(QDialog,
         return re.compile(findText, flags)
 
 
-    @pyqtSignature("")
+    @pyqtSlot()
     def on_findButton_clicked(self):
         regex = self.makeRegex()
         match = regex.search(self.__text, self.__index)
@@ -60,24 +61,24 @@ class FindAndReplaceDlg(QDialog,
             self.emit(SIGNAL("found"), match.start())
         else:
             self.emit(SIGNAL("notfound"))
-        
-        
-    @pyqtSignature("")
+
+
+    @pyqtSlot()
     def on_replaceButton_clicked(self):
         regex = self.makeRegex()
         self.__text = regex.sub(unicode(self.replaceLineEdit.text()),
                                 self.__text, 1)
-        
 
-    @pyqtSignature("")
+
+    @pyqtSlot()
     def on_replaceAllButton_clicked(self):
         regex = self.makeRegex()
         self.__text = regex.sub(unicode(self.replaceLineEdit.text()),
                                 self.__text)
-        
+
 
     def updateUi(self):
-        enable = not self.findLineEdit.text().isEmpty()
+        enable = not (len(self.findLineEdit.text()) == 0 )
         self.findButton.setEnabled(enable)
         self.replaceButton.setEnabled(enable)
         self.replaceAllButton.setEnabled(enable)
@@ -103,16 +104,18 @@ to the President of the European Parliament
 http://www.effi.org/patentit/patents_torvalds_cox.html"""
 
     def found(where):
-        print "Found at %d" % where
+        print("Found at %d" % where)
 
     def nomore():
-        print "No more found"
+        print("No more found")
 
     app = QApplication(sys.argv)
     form = FindAndReplaceDlg(text)
-    form.connect(form, SIGNAL("found"), found)
-    form.connect(form, SIGNAL("notfound"), nomore)
+    # form.connect(form, SIGNAL("found"), found)
+    # form.connect(form, SIGNAL("notfound"), nomore)
+    # form.found.connect(found)
+    # form.notfound.connect(nomore)
     form.show()
     app.exec_()
-    print form.text()
+    print(form.text())
 

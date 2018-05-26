@@ -1,5 +1,6 @@
 @echo on
 @echo pyinstaller db/main.py
+cd /d E:\Qtexample\git\pyqt5\AutoMyCCode
 pyinstaller --noconsole   -i akregator.ico  db/main.py -F
 @echo pyinstaller db/main.py done!!!
 @echo off

@@ -13,15 +13,15 @@ import os
 import platform
 import stat
 import sys
-import PyQt4.QtCore
+import PyQt5.QtCore
 
 __version__ = "1.0.3"
 
 if sys.platform.startswith("win"):
     PATH = os.path.join(os.path.dirname(sys.executable),
-                        "Lib/site-packages/PyQt4")
+                        "Lib/site-packages/PyQt5")
 else:
-    app = PyQt4.QtCore.QCoreApplication([])
+    app = PyQt5.QtCore.QCoreApplication([])
     PATH = unicode(app.applicationDirPath())
     del app
 PYUIC4 = os.path.join(PATH, "pyuic4") # e.g. PYUIC4 = "/usr/bin/pyuic4"
@@ -109,7 +109,7 @@ def build(path):
             target = os.path.join(path,
                                   "qrc_" + name.replace(".qrc", ".py"))
             command = PYRCC4
-        process = PyQt4.QtCore.QProcess()
+        process = PyQt5.QtCore.QProcess()
         if target is not None:
             if not os.access(target, os.F_OK) or (
                os.stat(source)[stat.ST_MTIME] > \
@@ -171,7 +171,7 @@ def translate(path):
         return
     verbose = "-verbose" if Verbose else ""
     silent = "-silent" if not Verbose else ""
-    process = PyQt4.QtCore.QProcess()
+    process = PyQt5.QtCore.QProcess()
     for ts in tsfiles:
         qm = ts[:-3] + ".qm"
         command1 = PYLUPDATE4

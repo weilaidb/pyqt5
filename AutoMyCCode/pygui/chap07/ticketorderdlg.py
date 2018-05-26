@@ -10,9 +10,9 @@
 # the GNU General Public License for more details.
 
 import random
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 if random.choice((1, 2)) == 1:
     import ui_ticketorderdlg1 as ui_ticketorderdlg
@@ -33,17 +33,17 @@ class TicketOrderDlg(QDialog,
         self.customerLineEdit.setFocus()
 
 
-    @pyqtSignature("QString")
+    @pyqtSlot("QString")
     def on_customerLineEdit_textEdited(self, text):
         self.updateUi()
 
 
-    @pyqtSignature("double")
+    @pyqtSlot("double")
     def on_priceSpinBox_valueChanged(self, value):
         self.updateUi()
 
 
-    @pyqtSignature("int")
+    @pyqtSlot("int")
     def on_quantitySpinBox_valueChanged(self, value):
         self.updateUi()
 
@@ -51,14 +51,14 @@ class TicketOrderDlg(QDialog,
     def updateUi(self):
         amount = self.priceSpinBox.value() * \
                  self.quantitySpinBox.value()
-        enable = not self.customerLineEdit.text().isEmpty() and amount
+        enable = not (len(self.customerLineEdit.text()) == 0) and amount
         self.buttonBox.button(QDialogButtonBox.Ok).setEnabled(enable)
         self.amountLabel.setText("$ %0.2f" % amount)
 
 
     def result(self):
         when = self.whenDateTimeEdit.dateTime().toPyDateTime()
-        return (unicode(self.customerLineEdit.text()), when,
+        return ((self.customerLineEdit.text()), when,
                 self.priceSpinBox.value(), self.quantitySpinBox.value())
 
 
@@ -69,5 +69,5 @@ if __name__ == "__main__":
     form = TicketOrderDlg()
     form.show()
     app.exec_()
-    print form.result()
+    print(form.result())
 
