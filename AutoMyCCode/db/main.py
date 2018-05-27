@@ -2,6 +2,7 @@
 
 from automyccode import *
 from caculater import *
+from ssh import *
 
 if __name__ == '__main__':
     import sys
@@ -15,6 +16,9 @@ if __name__ == '__main__':
     cal = Calculator()
     ftpw.actionCalculator.triggered.connect(cal.show_w2)
     cal.hide()
+
+    ssh = SshWindow()
+    ftpw.actionSSH.triggered.connect(ssh.show_w3)
 
     sys.exit(app.exec_())
     

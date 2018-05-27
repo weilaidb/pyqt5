@@ -255,6 +255,7 @@
     <addaction name="menuRegex_Mode"/>
     <addaction name="actionImage_2_Text"/>
     <addaction name="actionCalculator"/>
+    <addaction name="actionSSH"/>
    </widget>
    <addaction name="menuOperation"/>
   </widget>
@@ -282,6 +283,11 @@
    <property name="text">
     <string>Python
 Calculator</string>
+   </property>
+  </action>
+  <action name="actionSSH">
+   <property name="text">
+    <string>SSH</string>
    </property>
   </action>
  </widget>

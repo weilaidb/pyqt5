@@ -305,7 +305,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.9
+    versionnum = 3.0
     staticcharformat = 0
 
 
@@ -1068,4 +1068,10 @@ inline\s+
         # form.show()
         # form.exec_()
         pass
-
+    
+    @pyqtSlot()
+    def on_actionSSH_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        pass

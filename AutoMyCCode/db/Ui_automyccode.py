@@ -119,12 +119,15 @@ class Ui_MainWindow(object):
         self.actionPython.setObjectName("actionPython")
         self.actionCalculator = QtWidgets.QAction(MainWindow)
         self.actionCalculator.setObjectName("actionCalculator")
+        self.actionSSH = QtWidgets.QAction(MainWindow)
+        self.actionSSH.setObjectName("actionSSH")
         self.menuRegex_Mode.addAction(self.actionC_C)
         self.menuRegex_Mode.addAction(self.actionPython)
         self.menuOperation.addAction(self.actionSearchText)
         self.menuOperation.addAction(self.menuRegex_Mode.menuAction())
         self.menuOperation.addAction(self.actionImage_2_Text)
         self.menuOperation.addAction(self.actionCalculator)
+        self.menuOperation.addAction(self.actionSSH)
         self.menuBar.addAction(self.menuOperation.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -149,6 +152,7 @@ class Ui_MainWindow(object):
         self.actionPython.setText(_translate("MainWindow", "Python"))
         self.actionCalculator.setText(_translate("MainWindow", "Python\n"
 "Calculator"))
+        self.actionSSH.setText(_translate("MainWindow", "SSH"))
 
 
 if __name__ == "__main__":
