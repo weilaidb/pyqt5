@@ -21,6 +21,8 @@ from dbApi import *
 import pyperclip
 import os
 from image2text import  user_image2text
+from caculater import *
+
 
 global texteditshowresultinflag
 
@@ -285,14 +287,14 @@ class MyF_TextEdit_ShowRes(QObject):
     def eventFilter(self, obj, e):
         if e.type() == QEvent.KeyPress:
             if e.key() == Qt.Key_B:
-                print("The event from the key will not reach the component")
+                # print("The event from the key will not reach the component")
                 return True
         if e.type() == QEvent.Enter:
-            print("textedit show result enter")
+            # print("textedit show result enter")
             texteditshowresultinflag = 1
             return True
         if e.type() == QEvent.Leave:
-            print("show result leave")
+            # print("show result leave")
             texteditshowresultinflag = 0
             return  True
         return QObject.eventFilter(self, obj, e)
@@ -303,7 +305,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 2.8
+    versionnum = 2.9
     staticcharformat = 0
 
 
@@ -1055,3 +1057,15 @@ inline\s+
         Slot documentation goes here.
         """
         self.on_action_regex_common(r'''print\s+(.*)  print(\1)''')
+    
+    @pyqtSlot()
+    def on_actionCalculator_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        # ca1 = QApplication(sys.argv)
+        # form = Calculator()
+        # form.show()
+        # form.exec_()
+        pass
+

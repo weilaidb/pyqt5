@@ -254,6 +254,7 @@
     <addaction name="actionSearchText"/>
     <addaction name="menuRegex_Mode"/>
     <addaction name="actionImage_2_Text"/>
+    <addaction name="actionCalculator"/>
    </widget>
    <addaction name="menuOperation"/>
   </widget>
@@ -275,6 +276,12 @@
   <action name="actionPython">
    <property name="text">
     <string>Python</string>
+   </property>
+  </action>
+  <action name="actionCalculator">
+   <property name="text">
+    <string>Python
+Calculator</string>
    </property>
   </action>
  </widget>

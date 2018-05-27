@@ -117,11 +117,14 @@ class Ui_MainWindow(object):
         self.actionC_C.setObjectName("actionC_C")
         self.actionPython = QtWidgets.QAction(MainWindow)
         self.actionPython.setObjectName("actionPython")
+        self.actionCalculator = QtWidgets.QAction(MainWindow)
+        self.actionCalculator.setObjectName("actionCalculator")
         self.menuRegex_Mode.addAction(self.actionC_C)
         self.menuRegex_Mode.addAction(self.actionPython)
         self.menuOperation.addAction(self.actionSearchText)
         self.menuOperation.addAction(self.menuRegex_Mode.menuAction())
         self.menuOperation.addAction(self.actionImage_2_Text)
+        self.menuOperation.addAction(self.actionCalculator)
         self.menuBar.addAction(self.menuOperation.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -144,6 +147,8 @@ class Ui_MainWindow(object):
         self.actionImage_2_Text.setText(_translate("MainWindow", "图片转字符"))
         self.actionC_C.setText(_translate("MainWindow", "C/C++"))
         self.actionPython.setText(_translate("MainWindow", "Python"))
+        self.actionCalculator.setText(_translate("MainWindow", "Python\n"
+"Calculator"))
 
 
 if __name__ == "__main__":

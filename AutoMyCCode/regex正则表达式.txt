@@ -1,0 +1,37 @@
+正则表达式
+C语言
+
+\s*\/\*([\s\S]+?)\*\/  
+\s*\/\/.*\n 
+static\s+  
+inline\s+   
+.*printf.*   
+.*mutex.*    
+.*#include.*\n  
+#define.*\n     
+#else\s*\n    
+#endif\s*\n   
+#undef.*\n    
+#ifdef.*\n    
+#ifndef.*\n    
+
+
+
+
+Python语言
+
+print\s+(.*)  print(\1)
+(raise\s+\w+),\s+(.*)  \1(\2)
+pyqt4 self.connect 四个元素替换为pyqt5的
+.*\.connect\((\w+),\s*SIGNAL\("(\w+)\(\)\"\),[\s\S]+?([\w.]+),\s*SLOT\(\"(\w+)\(\)\"\)\)
+\1\.\2\.connect\(\3\.\4\)
+
+
+					 
+pyqt4 self.connect 三个元素替换为pyqt5的
+.*\.connect\((\w+),\s*SIGNAL\("(\w+)\(?\)?\"\),[\s\S]+?([\w.]+)\)
+\1\.\2\.connect\(\3\)	
+
+
+
+
