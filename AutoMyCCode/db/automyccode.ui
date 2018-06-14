@@ -27,6 +27,25 @@
        <widget class="QWidget" name="layoutWidget">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
+          <widget class="QPushButton" name="pushButton_insert_quickly">
+           <property name="minimumSize">
+            <size>
+             <width>91</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>91</width>
+             <height>41</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>自动写入</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="pushButton_paste">
            <property name="minimumSize">
             <size>
@@ -80,25 +99,6 @@
            </property>
            <property name="text">
             <string>清除</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_insert_quickly">
-           <property name="minimumSize">
-            <size>
-             <width>91</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>91</width>
-             <height>41</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>快写</string>
            </property>
           </widget>
          </item>
@@ -257,7 +257,14 @@
     <addaction name="actionCalculator"/>
     <addaction name="actionSSH"/>
    </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>添加操作</string>
+    </property>
+    <addaction name="actioncommentadd"/>
+   </widget>
    <addaction name="menuOperation"/>
+   <addaction name="menu"/>
   </widget>
   <action name="actionSearchText">
    <property name="text">
@@ -288,6 +295,11 @@ Calculator</string>
   <action name="actionSSH">
    <property name="text">
     <string>SSH</string>
+   </property>
+  </action>
+  <action name="actioncommentadd">
+   <property name="text">
+    <string>注释添加</string>
    </property>
   </action>
  </widget>

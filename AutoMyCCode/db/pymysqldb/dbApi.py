@@ -126,8 +126,8 @@ def searchTale(cursor,connect, tablename):
     sql = "SELECT name,content FROM " + tablename + " WHERE content = '%s' "
     data = ('13512345678',)
     cursor.execute(sql % data)
-    for row in cursor.fetchall():
-        print("Name:%s\tSaving:%.2f" % row)
+    # for row in cursor.fetchall():
+    #     print("Name:%s\tSaving:%.2f" % row)
     print('共查找出', cursor.rowcount, '条数据')
 
 def deleteTable(cursor,connect, tablename):

@@ -20,3 +20,5 @@ __pycache__/
 /venv
 /code/ftp/build
 /code/ftp/dist/__init__.exe
+/AutoMyCCode/build/main
+/AutoMyCCode/dist/*.exe

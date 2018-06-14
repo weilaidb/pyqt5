@@ -131,7 +131,7 @@ def dealsign(data=('')):
 def searchTale(cursor,connect, tablename,data=('')):
     # 查询数据
     data = dealsign(data)
-    print("after deal data:",data)
+    # print("after deal data:",data)
     sql = '''SELECT name,content FROM '''\
           + tablename \
           + ''' WHERE content like "%''' + data +  '''%"''' \
@@ -141,7 +141,7 @@ def searchTale(cursor,connect, tablename,data=('')):
     #       + tablename + ''' WHERE content like "%''' + data +  '''%"'''
     # data = ('13512345678',)
     try:
-        print("search express:", sql)
+        # print("search express:", sql)
         cursor.execute(sql)
         names = []
         contents = []
@@ -153,7 +153,7 @@ def searchTale(cursor,connect, tablename,data=('')):
             # print((row[1]))
             names.append(row[0])
             contents.append(row[1])
-        print('共查找出', cursor.rowcount, '条数据')
+        # print('共查找出', cursor.rowcount, '条数据')
         retvalue = (cursor.rowcount, names,contents)
         return retvalue
     except Exception as e:

@@ -22,7 +22,10 @@ import pyperclip
 import os
 from image2text import  user_image2text
 from caculater import *
-
+# from text import *
+# import text
+##引用外部文件的办法
+from text.text_commentadd import get_commentadd_text
 
 global texteditshowresultinflag
 
@@ -305,7 +308,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 3.0
+    versionnum = 3.3
     staticcharformat = 0
 
 
@@ -664,7 +667,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
-        print("lineedit search return pressed")
+        # print("lineedit search return pressed")
         searchtext = self.lineEdit_search.text()
         if(len(searchtext.strip()) == 0):
             self.textEdit_showresult.setText("")
@@ -674,7 +677,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         #hide regrex mode ui
         self.hideRegrexModeUi()
-        print(searchtext)
+        # print(searchtext)
         self.namelist.clear()
         self.contents.clear()
         retval,self.namelist, self.contents = default_search_contetName(data=(searchtext.strip()))
@@ -702,8 +705,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # showtxtresult += "<h2>" + namelist[i][0] + "</h2>"
             # showtxtresult += '\n\n'
             splitlist = self.namelist[i].split("\n")
-            print(splitlist)
-            print(len(splitlist))
+            # print(splitlist)
+            # print(len(splitlist))
             showheight = 0
             maxline = 3
             if (len(splitlist) >= maxline):
@@ -713,18 +716,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if (showheight == 0):
                 showheight = 1
 
-            print(showheight)
+            # print(showheight)
 
             itemnamestring = ""
             for i in range(0,showheight):
-                print(splitlist[i])
+                # print(splitlist[i])
                 itemnamestring += splitlist[i]
                 if(i > 0 and i + 1 < showheight):
                     itemnamestring += '\n'
                 # itemnamelist.append(splitlist[i] + '\n')
                 # print(self.namelist[i])
 
-            print(itemnamestring)
+            # print(itemnamestring)
             self.listWidget_search.addItem(itemnamestring)
             # self.listWidget_search.addItem(self.namelist[i])
 
@@ -780,15 +783,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         @param currentRow DESCRIPTION
         @type int
         """
-        print(currentRow)
-        print("search text:", self.getSearchText())
+        if(currentRow < 0):
+            return
+        # print(currentRow)
+        # print("search text:", self.getSearchText())
         keyword = self.getSearchText()
         rowcontent = self.contents[currentRow]
-        print("after deal rowcontent:", rowcontent)
+        # print("after deal rowcontent:", rowcontent)
         # self.textEdit_showresult.mergeCurrentCharFormat(self.getshowresultOldCharFormat())
 
         if(currentRow >= 0):
-            self.textEdit_showresult.setText(self.contents[currentRow])
+            self.textEdit_showresult.setText(rowcontent)
             # self.highlighter.setHighlightData(keyword)
             # self.highlighter.rehighlight()
             return
@@ -803,7 +808,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # selection.cursor.clearSelection();
 
             to_find_text = self.getSearchText()
-            print("to find text:", to_find_text )
+            # print("to find text:", to_find_text )
 
             # functionFormat = QTextCharFormat()
             # functionFormat.setFontItalic(True)
@@ -814,7 +819,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             #move cursor to end
             self.textEdit_showresult.moveCursor(QTextCursor.End)
             while (self.textEdit_showresult.find(to_find_text, QTextDocument.FindBackward)):
-                print("while loop")
+                # print("while loop")
                 # self.__lastSearch = (txt, caseSensitive, wholeWord)
                 # flags = QTextDocument.FindFlags(QTextDocument.FindBackward)
                 # if caseSensitive:
@@ -831,7 +836,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 colorFormat = (org_cursor.charFormat())
                 # colorFormat.setForeground(Qt.blue)
 
-                print("find_cursor:", find_cursor)
+                # print("find_cursor:", find_cursor)
                 find_cursor.movePosition(QTextCursor.WordRight,
                                          QTextCursor.KeepAnchor)
 
@@ -876,17 +881,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Slot documentation goes here.
         """
+        # return
         keyword = self.getSearchText()
         self.regex = keyword
         if(self.regex.strip() == ''):
             return
         self.data = (self.textEdit_showresult.toPlainText())
-        print("self.data:", self.data)
+        # print("self.data:", self.data)
+        print("self.regex:", self.regex)
         if(self.data.strip() == ''):
             return
-        if self.data != self.previous_data:
+
+        if self.data != self.previous_data or self.key_old != keyword:
             self.previous_data = self.data
+            self.key_old = keyword
+            # try:
             self.matchData()
+            # except Exception as e:
+            #     print("e:",e)
 
     def matchData(self):
         if (not self.CI) and (not self.MB) and (not self.DM):
@@ -906,11 +918,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         elif (self.CI) and (self.MB) and (self.DM):
             pattern = re.compile(self.regex, re.I | re.M | re.S)
 
-        print("pattern:", pattern)
-        print("data   :", self.data)
-        dataMatched = re.findall(pattern, self.data)
-        self.highlighter_my.setHighlightData(dataMatched)
-        self.highlighter_my.rehighlight()
+        # print("pattern:", pattern)
+        # print("data   :", self.data)
+
+        try:
+            dataMatched = re.findall(pattern, self.data)
+            self.highlighter_my.setHighlightData(dataMatched)
+            self.highlighter_my.rehighlight()
+        except Exception as e:
+            print("replace error!,", e)
 
     @pyqtSlot(bool)
     def on_textEdit_showresult_copyAvailable(self, b):
@@ -950,20 +966,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         apattern = []
         bpattern = []
         for sub in splitlists:
-            print("sub:", sub)
+            # print("sub:", sub)
             insub = re.split(r'\s+',sub)
-            print("insub     :", insub)
-            print("len(insub):", len(insub))
+            # print("insub     :", insub)
+            # print("len(insub):", len(insub))
             if (len(insub) > 1):
-                print("re.compile(raw(insub[0]:", re.compile(raw(insub[0])))
-                print("raw(insub[1]:", raw(insub[1]))
+                # print("re.compile(raw(insub[0]:", re.compile(raw(insub[0])))
+                # print("raw(insub[1]:", raw(insub[1]))
                 apattern.append(re.compile(raw(insub[0])))
                 bpattern.append(raw(insub[1]))
             else:
                 print("invalid insub !!!")
 
-        print("apattern", apattern)
-        print("bpattern", bpattern)
+        # print("apattern", apattern)
+        # print("bpattern", bpattern)
 
         # ##tuple 必须是初始化完成的，不能直接赋值，使用list
         # combinepattern = [[re.compile(p)
@@ -975,8 +991,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         loop = 0
         resulttext = todotext
         for pattern in apattern:
-            print('Seeking "%s" ->'% pattern)
-            print('Replace "%s" ->'% bpattern[loop])
+            # print('Seeking "%s" ->'% pattern)
+            # print('Replace "%s" ->'% bpattern[loop])
             if(pattern.search(todotext)):
                 print('match')
             else:
@@ -1075,3 +1091,10 @@ inline\s+
         Slot documentation goes here.
         """
         pass
+    
+    @pyqtSlot()
+    def on_actioncommentadd_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        self.textEdit_showresult.setText(get_commentadd_text())
