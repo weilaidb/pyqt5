@@ -308,7 +308,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 3.3
+    versionnum = 3.4
     staticcharformat = 0
 
 
@@ -389,112 +389,112 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.listWidget_search.hide()
 
 
-    def proc_dragEnter(self,event,obj):
-        for url in event.mimeData().urls():
-            path = url.toLocalFile()
-            print(path)
-            try:
-                text = open(path,'r',encoding='UTF-8').read()
-                # print(type(text))
-                obj.setText(text)
-            except Exception as e:
-                print(e)
-                obj.setText(str(e))
-            # obj.setText(text)
-
-    def dragEnterEvent(self, event):
-        print("dragEnter event")
-        # if event.mimeData().hasFormat("application/x-icon-and-text"):
-        #     event.accept()
-        # else:
-        #     event.ignore()
-        # print("mimeData :", event.mimeData())
-        # print("texteditshowresultinflag", texteditshowresultinflag)
-        # if texteditshowresultinflag:
-        self.proc_dragEnter(event,self.textEdit_showresult)
-
-            # self.setText(path)
-        # text = event.mimeData().text()
-        # self.lineEdit.setText(text)
-        event.acceptProposedAction()
-        # self.enableBorder(False)
-
-        if event.mimeData().hasFormat('text/plain'):
-            event.accept()
-        else:
-            event.ignore()
-
-
-    def dragMoveEvent(self, event):
-        print("dragMove event")
-        if event.mimeData().hasFormat("application/x-icon-and-text"):
-            event.setDropAction(Qt.CopyAction)
-            event.accept()
-        else:
-            event.ignore()
+    # def proc_dragEnter(self,event,obj):
+    #     for url in event.mimeData().urls():
+    #         path = url.toLocalFile()
+    #         print(path)
+    #         try:
+    #             text = open(path,'r',encoding='UTF-8').read()
+    #             # print(type(text))
+    #             obj.setText(text)
+    #         except Exception as e:
+    #             print(e)
+    #             obj.setText(str(e))
+    #         # obj.setText(text)
+    #
+    # def dragEnterEvent(self, event):
+    #     print("dragEnter event")
+    #     # if event.mimeData().hasFormat("application/x-icon-and-text"):
+    #     #     event.accept()
+    #     # else:
+    #     #     event.ignore()
+    #     # print("mimeData :", event.mimeData())
+    #     # print("texteditshowresultinflag", texteditshowresultinflag)
+    #     # if texteditshowresultinflag:
+    #     self.proc_dragEnter(event,self.textEdit_showresult)
+    #
+    #         # self.setText(path)
+    #     # text = event.mimeData().text()
+    #     # self.lineEdit.setText(text)
+    #     event.acceptProposedAction()
+    #     # self.enableBorder(False)
+    #
+    #     if event.mimeData().hasFormat('text/plain'):
+    #         event.accept()
+    #     else:
+    #         event.ignore()
 
 
-    def dropEvent(self, event):
-        print("drop event")
-        if event.mimeData().hasFormat("application/x-icon-and-text"):
-            data = event.mimeData().data("application/x-icon-and-text")
-            stream = QDataStream(data, QIODevice.ReadOnly)
-            text = ""
-            #stream >> text
-            text=stream.readQString()
-            self.setText(text)
-            event.setDropAction(Qt.CopyAction)
-            event.accept()
-        else:
-            event.ignore()
-
-    """重写鼠标事件，实现窗口拖动。"""
-    def mousePressEvent(self, event):
-        print("mousepressevent")
-        if event.buttons() == Qt.LeftButton:
-            self.setCursor(Qt.OpenHandCursor)
-            self.parent.m_drag = True
-            self.parent.m_DragPosition = event.globalPos() - self.parent.pos()
-            event.accept()
-
-    def mouseMoveEvent(self, event):
-        print("mouseMoveEvent")
-        try:
-            if event.buttons() and Qt.LeftButton:
-                self.parent.move(event.globalPos() - self.parent.m_DragPosition)  # move将窗口移动到指定位置
-                event.accept()
-        except AttributeError:
-            pass
-
-    def mouseReleaseEvent(self, event):
-        print("mouseReleaseEvent")
-        if event.button() == Qt.LeftButton:
-            self.m_drag = False
-            self.unsetCursor()
+    # def dragMoveEvent(self, event):
+    #     print("dragMove event")
+    #     if event.mimeData().hasFormat("application/x-icon-and-text"):
+    #         event.setDropAction(Qt.CopyAction)
+    #         event.accept()
+    #     else:
+    #         event.ignore()
 
 
+    # def dropEvent(self, event):
+    #     print("drop event")
+    #     if event.mimeData().hasFormat("application/x-icon-and-text"):
+    #         data = event.mimeData().data("application/x-icon-and-text")
+    #         stream = QDataStream(data, QIODevice.ReadOnly)
+    #         text = ""
+    #         #stream >> text
+    #         text=stream.readQString()
+    #         self.setText(text)
+    #         event.setDropAction(Qt.CopyAction)
+    #         event.accept()
+    #     else:
+    #         event.ignore()
 
-    ##显示鼠标位置
-    def eventFilter(self,  source,  event):
-        # print("source:", source)
-        # if source == self.textEdit_showresult:
-        if event.type() == QEvent.MouseMove:
-            if event.buttons() == Qt.NoButton:
-                pos = event.pos()
-                # print("source", source)
-                # self.textEdit_showresult.setText('x:%d, y:%d' % (pos.x(),  pos.y()))
-                # labelrect = QRect(self.textEdit_showresult.pos() + self.centralWidget.pos(),
-                #                   self.textEdit_showresult.size())
-                # print(labelrect)
-                # if(labelrect.contains(pos)):
-                #     print("in textedit result")
-                # else:
-                #     print("no in textedit result")
+    # """重写鼠标事件，实现窗口拖动。"""
+    # def mousePressEvent(self, event):
+    #     print("mousepressevent")
+    #     if event.buttons() == Qt.LeftButton:
+    #         self.setCursor(Qt.OpenHandCursor)
+    #         self.parent.m_drag = True
+    #         self.parent.m_DragPosition = event.globalPos() - self.parent.pos()
+    #         event.accept()
+    #
+    # def mouseMoveEvent(self, event):
+    #     print("mouseMoveEvent")
+    #     try:
+    #         if event.buttons() and Qt.LeftButton:
+    #             self.parent.move(event.globalPos() - self.parent.m_DragPosition)  # move将窗口移动到指定位置
+    #             event.accept()
+    #     except AttributeError:
+    #         pass
+    #
+    # def mouseReleaseEvent(self, event):
+    #     print("mouseReleaseEvent")
+    #     if event.button() == Qt.LeftButton:
+    #         self.m_drag = False
+    #         self.unsetCursor()
+    #
 
-            else:
-                pass # do other stuff
-        return QMainWindow.eventFilter(self,  source,  event)
-
+    #
+    # ##显示鼠标位置
+    # def eventFilter(self,  source,  event):
+    #     # print("source:", source)
+    #     # if source == self.textEdit_showresult:
+    #     if event.type() == QEvent.MouseMove:
+    #         if event.buttons() == Qt.NoButton:
+    #             pos = event.pos()
+    #             # print("source", source)
+    #             # self.textEdit_showresult.setText('x:%d, y:%d' % (pos.x(),  pos.y()))
+    #             # labelrect = QRect(self.textEdit_showresult.pos() + self.centralWidget.pos(),
+    #             #                   self.textEdit_showresult.size())
+    #             # print(labelrect)
+    #             # if(labelrect.contains(pos)):
+    #             #     print("in textedit result")
+    #             # else:
+    #             #     print("no in textedit result")
+    #
+    #         else:
+    #             pass # do other stuff
+    #     return QMainWindow.eventFilter(self,  source,  event)
+    #
 
     def setupEditor(self):
         font = QFont()

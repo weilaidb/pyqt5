@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4899db88-265a-4f6a-ac0f-715540ae53cf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/text/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/text/text_commentadd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AutoMyCCode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AutoMyCCode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/Ui_automyccode.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/Ui_automyccode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/automyccode.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/automyccode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/automyccode.ui" beforeDir="false" afterPath="$PROJECT_DIR$/db/automyccode.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/dbApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/dbApi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/pymysqldb/dbApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/pymysqldb/dbApi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/ssh.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/ssh.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,20 +19,11 @@
       <file leaf-file-name="automyccode.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/automyccode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="265" column="33" selection-start-line="265" selection-start-column="33" selection-end-line="265" selection-end-column="33" />
+            <state relative-caret-position="125">
+              <caret line="310" column="20" selection-start-line="310" selection-start-column="20" selection-end-line="310" selection-end-column="20" />
               <folding>
                 <element signature="e#66#92#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="text_commentadd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/text/text_commentadd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -87,6 +67,7 @@
       <find>default_search_contetName</find>
       <find>print</find>
       <find>MyHighlighter</find>
+      <find>highlight</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -157,7 +138,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="-8" />
     <option name="width" value="1320" />
@@ -385,19 +366,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="-8" width="1307" height="784" extended-state="7" />
+    <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77796054" visible="true" weight="0.1844814" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7758985" visible="true" weight="0.1844814" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996041" weight="0.32857144" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50989705" side_tool="true" visible="true" weight="0.034920637" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.13697545" side_tool="true" visible="true" weight="0.24920635" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4996041" weight="0.32857144" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4996041" weight="0.32857144" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49010292" visible="true" weight="0.034920637" />
-      <window_info id="Structure" order="1" sideWeight="0.22203948" side_tool="true" visible="true" weight="0.1844814" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49010292" weight="0.034920637" />
+      <window_info id="Structure" order="1" sideWeight="0.22410148" side_tool="true" visible="true" weight="0.1844814" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4996041" weight="0.34761906" />
       <window_info id="Favorites" order="2" sideWeight="0.78546715" side_tool="true" weight="0.20427553" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8638163" weight="0.4952381" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.86302453" visible="true" weight="0.24920635" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.28825912" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -772,8 +753,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/automyccode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="265" column="33" selection-start-line="265" selection-start-column="33" selection-end-line="265" selection-end-column="33" />
+        <state relative-caret-position="125">
+          <caret line="310" column="20" selection-start-line="310" selection-start-column="20" selection-end-line="310" selection-end-column="20" />
           <folding>
             <element signature="e#66#92#0" expanded="true" />
           </folding>
