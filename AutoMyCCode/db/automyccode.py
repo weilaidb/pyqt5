@@ -26,6 +26,7 @@ from caculater import *
 # import text
 ##引用外部文件的办法
 from text.text_commentadd import get_commentadd_text
+from text.text_regular_C import get_regularC_text
 
 global texteditshowresultinflag
 
@@ -308,8 +309,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     global variable
     """
     namelist, contents = [],[]
-    versionnum = 3.4
+    versionnum = 3.5
     staticcharformat = 0
+    orgtextforautowrite = ""
 
 
     """
@@ -328,6 +330,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer = QTimer(self)  # 初始化一个定时器
         self.timer.timeout.connect(self.operate)  # 计时结束调用operate()方法
         # self.timer.start(2000)  # 设置计时间隔并启动
+
+        self.autowritetimer = QTimer(self)
+        self.autowritetimer.timeout.connect(self.autowrite)
         self.aboutVersion()
         # self.showtipsinfo()
         self.showtipsinfoSelf(self.lineEdit_search, ("请输入搜索关键字"))
@@ -658,6 +663,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #具体操作
         self.statusBar.showMessage("")
         self.timer.stop()
+
+
+    def autowrite(self):
+        currentcliptext = pyperclip.paste()
+        if(self.orgtextforautowrite != currentcliptext):
+            self.orgtextforautowrite = currentcliptext
+            self.on_pushButton_insert_quickly_clicked()
 
     def getSearchText(self):
         return self.lineEdit_search.text().strip()
@@ -1098,3 +1110,23 @@ inline\s+
         Slot documentation goes here.
         """
         self.textEdit_showresult.setText(get_commentadd_text())
+    
+    @pyqtSlot()
+    def on_actionC_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        self.textEdit_showresult.setText(get_regularC_text())
+    
+    @pyqtSlot(bool)
+    def on_checkBox_autowrite_clicked(self, checked):
+        """
+        Slot documentation goes here.
+        
+        @param checked DESCRIPTION
+        @type bool
+        """
+        if(checked):
+            self.autowritetimer.start(1000)
+        else:
+            self.autowritetimer.stop()

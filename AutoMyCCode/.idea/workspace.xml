@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4899db88-265a-4f6a-ac0f-715540ae53cf" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/db/text/text_regular_C.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/Ui_automyccode.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/Ui_automyccode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/automyccode.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/automyccode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/automyccode.ui" beforeDir="false" afterPath="$PROJECT_DIR$/db/automyccode.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,12 +19,12 @@
     <favorites_list name="AutoMyCCode" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+    <leaf>
       <file leaf-file-name="automyccode.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/automyccode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="310" column="20" selection-start-line="310" selection-start-column="20" selection-end-line="310" selection-end-column="20" />
+            <state relative-caret-position="265">
+              <caret line="671" column="53" selection-start-line="671" selection-start-column="53" selection-end-line="671" selection-end-column="53" />
               <folding>
                 <element signature="e#66#92#0" expanded="true" />
               </folding>
@@ -39,9 +43,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>strip</find>
-      <find>data:</find>
-      <find>data</find>
       <find>highlightBlock</find>
       <find>indexof</find>
       <find>成功</find>
@@ -68,11 +69,16 @@
       <find>print</find>
       <find>MyHighlighter</find>
       <find>highlight</find>
+      <find>commentadd</find>
+      <find>pyperclip</find>
+      <find>autowritetimer</find>
+      <find>self.timer</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>index</replace>
       <replace>PyQt5</replace>
+      <replace>regularC</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -84,7 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pygui/chap04/interest.pyw" />
         <option value="$PROJECT_DIR$/pygui/chap04/signals.pyw" />
         <option value="$PROJECT_DIR$/pygui/chap01/pyqt5header.py" />
         <option value="$PROJECT_DIR$/pygui/chap05/numberformatdlg1.py" />
@@ -134,15 +139,16 @@
         <option value="$PROJECT_DIR$/db/dbApi.py" />
         <option value="$PROJECT_DIR$/db/text/__init__.py" />
         <option value="$PROJECT_DIR$/db/text/text_commentadd.py" />
+        <option value="$PROJECT_DIR$/db/text/text_regular_C.py" />
         <option value="$PROJECT_DIR$/db/automyccode.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="347" />
+    <option name="y" value="34" />
     <option name="width" value="1320" />
-    <option name="height" value="521" />
+    <option name="height" value="522" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -152,7 +158,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,10 +170,17 @@
               <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="text" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,11 +196,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\db\text" />
       <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\test\subprocess" />
       <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\db" />
       <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\db\image2text" />
       <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\test" />
-      <recent name="E:\Qtexample\git\pyqt5\AutoMyCCode\db\pymysqldb" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -369,16 +381,16 @@
     <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7758985" visible="true" weight="0.1844814" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.13705584" visible="true" weight="0.33570862" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996041" weight="0.32857144" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.13697545" side_tool="true" visible="true" weight="0.24920635" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5114806" side_tool="true" weight="0.034920637" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4885194" visible="true" weight="0.061904762" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4996041" weight="0.32857144" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4996041" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49010292" weight="0.034920637" />
-      <window_info id="Structure" order="1" sideWeight="0.22410148" side_tool="true" visible="true" weight="0.1844814" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.8629442" side_tool="true" visible="true" weight="0.33570862" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4996041" weight="0.34761906" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.86302453" weight="0.05873016" />
       <window_info id="Favorites" order="2" sideWeight="0.78546715" side_tool="true" weight="0.20427553" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.86302453" visible="true" weight="0.24920635" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.28825912" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -403,13 +415,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/image2text/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/image2text/image2text.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-514">
@@ -737,13 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/text/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/text/text_commentadd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -751,10 +749,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/automyccode.py">
+    <entry file="file://$PROJECT_DIR$/db/text/text_regular_C.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/text/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="310" column="20" selection-start-line="310" selection-start-column="20" selection-end-line="310" selection-end-column="20" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/automyccode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="671" column="53" selection-start-line="671" selection-start-column="53" selection-end-line="671" selection-end-column="53" />
           <folding>
             <element signature="e#66#92#0" expanded="true" />
           </folding>
