@@ -31,6 +31,7 @@ class Dialog(QDialog, Ui_Dialog):
         """
         # TODO: not implemented yet
         self.label.setText('ok Hello world!')
+		self.label.setText('nihaoma')
         
     @pyqtSlot()
     def on_pushButton_cancle_clicked(self):
