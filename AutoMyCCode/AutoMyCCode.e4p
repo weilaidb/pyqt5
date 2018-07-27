@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project AutoMyCCode -->
-<!-- Saved: 2018-05-08, 23:53:10 -->
+<!-- Saved: 2018-07-27, 22:19:23 -->
 <!-- Copyright (C) 2018 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -16,6 +16,7 @@
     <Source>db/Ui_automyccode.py</Source>
     <Source>db/automyccode.py</Source>
     <Source>db/main.py</Source>
+    <Source>main_rc.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/__init__.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/__main__.py</Source>
     <Source>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/pip/_vendor/__init__.py</Source>
@@ -267,6 +268,9 @@
   <Forms>
     <Form>db/automyccode.ui</Form>
   </Forms>
+  <Resources>
+    <Resource>main.qrc</Resource>
+  </Resources>
   <Others>
     <Other>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/EGG-INFO/SOURCES.txt</Other>
     <Other>venv/Lib/site-packages/pip-9.0.1-py3.6.egg/EGG-INFO/dependency_links.txt</Other>

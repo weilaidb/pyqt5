@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4899db88-265a-4f6a-ac0f-715540ae53cf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/db/sendemail.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mouse/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mouse/monisearch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/Ui_automyccode.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/Ui_automyccode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/automyccode.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/automyccode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/automyccode.ui" beforeDir="false" afterPath="$PROJECT_DIR$/db/automyccode.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello/HelloWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/../hello/HelloWindow.py" afterDir="false" />
-    </list>
+    <list default="true" id="4899db88-265a-4f6a-ac0f-715540ae53cf" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +26,8 @@
       <file leaf-file-name="automyccode.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/automyccode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="350" column="24" selection-start-line="350" selection-start-column="24" selection-end-line="350" selection-end-column="24" />
+            <state relative-caret-position="240">
+              <caret line="352" column="13" selection-start-line="352" selection-start-column="13" selection-end-line="352" selection-end-column="13" />
               <folding>
                 <element signature="e#66#92#0" expanded="true" />
               </folding>
@@ -165,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="67" />
     <option name="y" value="-8" />
     <option name="width" value="1320" />
@@ -388,7 +379,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
+    <frame x="67" y="-8" width="1307" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81038374" visible="true" weight="0.27315915" />
@@ -775,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/automyccode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="350" column="24" selection-start-line="350" selection-start-column="24" selection-end-line="350" selection-end-column="24" />
+        <state relative-caret-position="240">
+          <caret line="352" column="13" selection-start-line="352" selection-start-column="13" selection-end-line="352" selection-end-column="13" />
           <folding>
             <element signature="e#66#92#0" expanded="true" />
           </folding>
