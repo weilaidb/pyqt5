@@ -11,6 +11,7 @@ import platform
 import sys
 import html
 import re
+from main_rc import *
 # from PyQt5.QtCore import QSize, Qt,pyqtSignal
 # from PyQt5.QtGui import QColor, QFont,QFontMetrics, QIcon, QKeySequence, QPixmap,QTextCharFormat
 # from PyQt5.QtWidgets import QAction,QApplication,QMenu,QTextEdit
@@ -345,7 +346,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             print("web.png no exist!")
         # self.setWindowIcon(QIcon('web.png'))
-        self.setWindowIcon(QIcon('akregator.png'))
+        # self.setWindowIcon(QIcon('akregator.png'))
+        self.setWindowIcon(QIcon(':/akregator.ico'))
+        qInitResources()
 
         # computer_item->setIcon(QIcon(":/res/pix/computer.png"));
 

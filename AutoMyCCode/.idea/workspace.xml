@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4899db88-265a-4f6a-ac0f-715540ae53cf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/db/text/text_regular_C.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/sendemail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mouse/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mouse/monisearch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/Ui_automyccode.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/Ui_automyccode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/automyccode.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/automyccode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/automyccode.ui" beforeDir="false" afterPath="$PROJECT_DIR$/db/automyccode.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello/HelloWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/../hello/HelloWindow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,15 +22,33 @@
     <favorites_list name="AutoMyCCode" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="monisearch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mouse/monisearch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2048">
+              <caret line="189" column="17" selection-start-line="189" selection-start-column="17" selection-end-line="189" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="automyccode.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/automyccode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="671" column="53" selection-start-line="671" selection-start-column="53" selection-end-line="671" selection-end-column="53" />
+            <state relative-caret-position="190">
+              <caret line="350" column="24" selection-start-line="350" selection-start-column="24" selection-end-line="350" selection-end-column="24" />
               <folding>
                 <element signature="e#66#92#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_rc.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_rc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="310" column="20" selection-start-line="310" selection-start-column="4" selection-end-line="310" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -43,8 +64,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>highlightBlock</find>
-      <find>indexof</find>
       <find>成功</find>
       <find>default_insert_contetNameWithTime</find>
       <find>请输入</find>
@@ -73,6 +92,8 @@
       <find>pyperclip</find>
       <find>autowritetimer</find>
       <find>self.timer</find>
+      <find>pushButton_insert_quickly</find>
+      <find>__init</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -90,8 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pygui/chap04/signals.pyw" />
-        <option value="$PROJECT_DIR$/pygui/chap01/pyqt5header.py" />
         <option value="$PROJECT_DIR$/pygui/chap05/numberformatdlg1.py" />
         <option value="$PROJECT_DIR$/pygui/chap05/numberformatdlg2.py" />
         <option value="$PROJECT_DIR$/pygui/chap05/numberformatdlg3.py" />
@@ -140,13 +159,15 @@
         <option value="$PROJECT_DIR$/db/text/__init__.py" />
         <option value="$PROJECT_DIR$/db/text/text_commentadd.py" />
         <option value="$PROJECT_DIR$/db/text/text_regular_C.py" />
+        <option value="$PROJECT_DIR$/db/sendemail.py" />
+        <option value="$PROJECT_DIR$/mouse/monisearch.py" />
         <option value="$PROJECT_DIR$/db/automyccode.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="347" />
-    <option name="y" value="34" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="-8" />
     <option name="width" value="1320" />
     <option name="height" value="522" />
   </component>
@@ -164,17 +185,6 @@
             <path>
               <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoMyCCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoMyCCode" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="text" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,7 +244,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="sshtest3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="monisearch" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -242,17 +252,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/ssh" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mouse" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/ssh/sshtest3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mouse/monisearch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="sshtest4" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="sendemail" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutoMyCCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -260,11 +270,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/ssh" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/ssh/sshtest4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/sendemail.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -308,18 +318,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.sshtest3" />
-      <item itemvalue="Python.sshtest4" />
       <item itemvalue="Python.subprocesstest1" />
       <item itemvalue="Python.subprocesstest2" />
+      <item itemvalue="Python.sendemail" />
+      <item itemvalue="Python.monisearch" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.monisearch" />
+        <item itemvalue="Python.sendemail" />
         <item itemvalue="Python.subprocesstest2" />
         <item itemvalue="Python.subprocesstest1" />
-        <item itemvalue="Python.sshtest4" />
-        <item itemvalue="Python.sshtest3" />
       </list>
     </recent_temporary>
   </component>
@@ -381,23 +391,23 @@
     <frame x="67" y="-8" width="1307" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.13705584" visible="true" weight="0.33570862" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81038374" visible="true" weight="0.27315915" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996041" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5114806" side_tool="true" weight="0.034920637" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4885194" visible="true" weight="0.061904762" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4996041" weight="0.32857144" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4996041" weight="0.32857144" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.8629442" side_tool="true" visible="true" weight="0.33570862" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4885194" visible="true" weight="0.2968254" />
+      <window_info id="Structure" order="1" sideWeight="0.18961625" side_tool="true" visible="true" weight="0.27315915" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4996041" weight="0.34761906" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.86302453" weight="0.05873016" />
       <window_info id="Favorites" order="2" sideWeight="0.78546715" side_tool="true" weight="0.20427553" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.86302453" weight="0.05873016" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.28825912" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -415,34 +425,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/image2text/image2text.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-514">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygui/chap12/multipedes.pyw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygui/chap12/pagedesigner_ans.pyw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="532" column="47" lean-forward="true" selection-start-line="532" selection-start-column="47" selection-end-line="532" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygui/chap12/multipedes2.pyw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1235271266/PyQt5/QtGui/QNativeGestureEvent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -763,10 +745,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/email/mime/image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="955">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/sendemail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mouse/monisearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2048">
+          <caret line="189" column="17" selection-start-line="189" selection-start-column="17" selection-end-line="189" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_rc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="310" column="20" selection-start-line="310" selection-start-column="4" selection-end-line="310" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/automyccode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="671" column="53" selection-start-line="671" selection-start-column="53" selection-end-line="671" selection-end-column="53" />
+        <state relative-caret-position="190">
+          <caret line="350" column="24" selection-start-line="350" selection-start-column="24" selection-end-line="350" selection-end-column="24" />
           <folding>
             <element signature="e#66#92#0" expanded="true" />
           </folding>
