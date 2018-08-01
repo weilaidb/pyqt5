@@ -28,6 +28,9 @@ from caculater import *
 ##引用外部文件的办法
 from text.text_commentadd import get_commentadd_text
 from text.text_regular_C import get_regularC_text
+from character.b_randomchar import  *
+
+
 
 global texteditshowresultinflag
 
@@ -378,6 +381,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.textEdit_showresult.installEventFilter(MyFilter(self.textEdit_showresult))
         self.textEdit_showresult.installEventFilter(MyF_TextEdit_ShowRes(self.textEdit_showresult))
 
+        ##处理随机生成字符串
+        self.randomtimer = QTimer(self)
+        self.randomtimer.timeout.connect(self.procrandom)
+
+
 
     def hideRegrexModeUi(self):
         self.textEdit_regexpress.hide()
@@ -673,6 +681,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if(self.orgtextforautowrite != currentcliptext):
             self.orgtextforautowrite = currentcliptext
             self.on_pushButton_insert_quickly_clicked()
+
+
+    def procrandom(self):
+        # print("proc random character")
+        chars = generateRandomCharN(30)
+        self.textEdit_showresult.append(chars)
+        # len = self.textEdit_showresult.toPlainText().length()
+        # print("len:%d" % len)
+        # self.statusBar.showMessage("char length:%d" % len)
+        pass
+
+
 
     def getSearchText(self):
         return self.lineEdit_search.text().strip()
@@ -1133,3 +1153,18 @@ inline\s+
             self.autowritetimer.start(1000)
         else:
             self.autowritetimer.stop()
+    
+    @pyqtSlot()
+    def on_actionrandomgencharstart_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        self.textEdit_showresult.setText("")
+        self.randomtimer.start(1000)
+    
+    @pyqtSlot()
+    def on_actionrandomgencharstop_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        self.randomtimer.stop()

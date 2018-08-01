@@ -258,11 +258,19 @@
      <addaction name="actionC_C"/>
      <addaction name="actionPython"/>
     </widget>
+    <widget class="QMenu" name="menu_3">
+     <property name="title">
+      <string>随机字符生成器</string>
+     </property>
+     <addaction name="actionrandomgencharstart"/>
+     <addaction name="actionrandomgencharstop"/>
+    </widget>
     <addaction name="actionSearchText"/>
     <addaction name="menuRegex_Mode"/>
     <addaction name="actionImage_2_Text"/>
     <addaction name="actionCalculator"/>
     <addaction name="actionSSH"/>
+    <addaction name="menu_3"/>
    </widget>
    <widget class="QMenu" name="menu">
     <property name="title">
@@ -331,6 +339,16 @@ Calculator</string>
   <action name="actionC">
    <property name="text">
     <string>C</string>
+   </property>
+  </action>
+  <action name="actionrandomgencharstart">
+   <property name="text">
+    <string>开始</string>
+   </property>
+  </action>
+  <action name="actionrandomgencharstop">
+   <property name="text">
+    <string>结束</string>
    </property>
   </action>
  </widget>
